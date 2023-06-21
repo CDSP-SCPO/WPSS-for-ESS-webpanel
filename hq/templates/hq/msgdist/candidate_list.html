@@ -1,0 +1,61 @@
+{% extends 'hq/base.html' %}
+{% load qxsms_tags django_bootstrap5 i18n %}
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem 'hq:msg-distribution-list' %}{% trans "Message deliveries" %}{% endbreadcrumbitem %}
+    {% breadcrumbitem 'hq:msg-distribution-detail' object.pk %}{% trans "Details" %}{% endbreadcrumbitem %}
+    {% breadcrumbitem 'hq:msg-distribution-send' object.pk %}{% trans "Send messages" %}{% endbreadcrumbitem %}
+{% endblock %}
+{% block content %}
+<table>
+    <tr>
+        <th>Panel</th>
+        <th>ESS ID</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Status</th>
+    </tr>
+    {% for link in links %}
+        <tr>
+            <td>{{ link.panel }}</td>
+            <td>{{ link.ess_id }}</td>
+            {% if link.phone %}
+                <td class="table-success">
+                    {% icon 'check' 'icon-lg'%}
+                </td>
+            {% else %}
+                <td class="table-danger text-center">
+                    {% icon 'x-lg' %}
+                </td>
+            {% endif %}
+            {% if link.email %}
+                <td class="table-success">
+                    {% icon 'check' 'icon-lg'%}
+                </td>
+            {% else %}
+                <td class="table-danger text-center">
+                    {% icon 'x-lg' %}
+                </td>
+            {% endif %}
+            <td>{{ link.status }}</td>
+        </tr>
+    {% endfor %}
+</table>
+    <div class="pagination">
+    <span class="step-links">
+        {% if links.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ links.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ links.number }} of {{ links.paginator.num_pages }}.
+        </span>
+
+        {% if links.has_next %}
+            <a href="?page={{ links.next_page_number }}">next</a>
+            <a href="?page={{ links.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+{% endblock %}

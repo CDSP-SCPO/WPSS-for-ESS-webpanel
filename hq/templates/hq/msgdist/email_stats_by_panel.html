@@ -1,0 +1,52 @@
+{% load qxsms_tags %}
+<div class="table-responsive">
+<table class="table table-bordered bg-white">
+    <thead class="table-light">
+        <tr>
+            <th>Panel</th>
+            <th>Current Panelists</th>
+            {% if schedule %}
+                <th title="{{ object.get_send_date }}">Scheduled ({{ days }} days)</th>
+            {% else %}
+                <th>Attempted</th>
+            {% endif %}
+            <th>Delivered</th>
+             <th title="Delivered messages that have been opened">Opened (at least)</th>
+            <th>Soft Bounce</th>
+            <th>Hard Bounce</th>
+            <th>Other Failures</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for panel, stats in stats.items %}
+        {% if panel == "Total" %}
+            <tr class="table-success">
+                <td>{{ panel }}</td>
+                <td>{{ stats.total_panelists }}</td>
+                <td>{{ stats.total }}</td>
+                <td>{{ stats.success }}</td>
+                <td>{{ stats.opened }}</td>
+                <td>{{ stats.soft_bounced }}</td>
+                <td>{{ stats.hard_bounced }}</td>
+                <td>{{ stats.failed }}</td>
+            </tr>
+        {% else %}
+            <tr>
+                <td>
+                    <a href="{% url 'hq:msg-distribution-history' object.pk stats.pk %}">
+                    {{ panel }}
+                    </a>
+                </td>
+                <td>{{ stats.total_panelists }}</td>
+                <td>{{ stats.total }}</td>
+                <td>{{ stats.success }}</td>
+                <td>{{ stats.opened }}</td>
+                <td>{{ stats.soft_bounced }}</td>
+                <td>{{ stats.hard_bounced }}</td>
+                <td>{{ stats.failed }}</td>
+            </tr>
+        {% endif %}
+    {% endfor %}
+    </tbody>
+</table>
+</div>

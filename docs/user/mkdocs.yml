@@ -1,0 +1,79 @@
+site_name: WPSS, a web panel sample service for online comparative longitudinal surveys
+site_author: CDSP
+remote_name: github
+docs_dir: src
+copyright: "This project has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreements No 871063. <a href='https://doi.org/10.3030/871063'>DOI:10.3030/871063</a> and No 823782 <a href='https://doi.org/10.3030/823782'>DOI:10.3030/823782</a>. Content is Licensed as CC BY 4.0"
+theme:
+    name: material
+    favicon: img/favicon-32x32.png
+    logo: img/favicon-32x32.png
+    palette:
+        primary: indigo
+        accent: orange
+    features:
+        - navigation.tabs
+        - navigation.indexes
+markdown_extensions:
+    - toc:
+          permalink: "🔗"
+    - pymdownx.highlight:
+          linenums: true
+    - pymdownx.superfences
+    - pymdownx.caret
+    - pymdownx.critic
+    - pymdownx.keys
+    - admonition
+    - pymdownx.details
+    - pymdownx.snippets
+    - abbr
+    - def_list
+    - pymdownx.tasklist:
+          custom_checkbox: true
+nav:
+    - WPSS:
+          - wpss/in-brief.md
+          - The project: index.md
+          - wpss/components.md
+          - wpss/roles.md
+    - USER GUIDES:
+          - Study coordinator:
+                - hq/index.md
+                - hq/seeding-a-study.md
+                - Questionnaire: hq/questionnaire.md
+                - Fieldwork: hq/fieldwork.md
+                - hq/other-operations.md
+          - Sample manager:
+                - nc/index.md
+                - Sample operations:
+                    - nc/importing-a-sample.md
+                    - nc/sample-import-export-fields.md
+                    - nc/panelist-deactivation.md
+                - Panelist portal settings: nc/panel-level-variables.md
+                - Fieldwork monitoring:
+                    - nc/survey-monitoring.md
+                    - nc/message-delivery-monitoring.md
+          - Survey manager:
+                - survey/index.md
+                - survey/survey-creation.md
+                - survey/survey-collaboration.md
+                - Survey pre-publication: survey/survey-pre-publication.md
+          - Message editor:
+                - m/index.md
+                - m/message-edition.md
+          - Translation editor:
+                - tr/index.md
+                - tr/questionnaire-translation.md
+                - tr/messages-translation.md
+                - tr/wpss-panelist-portal-translation.md
+          - Data archive staff:
+                - d/index.md
+          - Panelist:
+                - p/index.md
+    - USE CASES:
+          - Opinion Study for "Country": use/opinion-study-for-country.md
+          - use/country-specific-waves.md
+          - use/push-to-web.md
+    - ABOUT US:
+          - About us: about/index.md
+#    - HOW TO CITE:
+#        - Citation template: cite/index.md

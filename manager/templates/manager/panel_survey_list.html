@@ -1,0 +1,45 @@
+{% extends 'manager/panel_detail.html' %}
+{% load qxsms_tags i18n %}
+
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem 'manager:panel-survey-list' panel.pk %}{% trans "Individual links" %}{% endbreadcrumbitem %}
+{% endblock %}
+{% block title_lead %}{% trans "Sets of individual survey links generated for this panel" %}{% endblock %}
+
+{% block content %}
+    <section class="container">
+        {% if object_list %}
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover bg-white">
+                    <thead class="table-light">
+                        <tr>
+                            <th>{% trans "Link set" %}</th>
+                            <th>{% trans "Survey" %}</th>
+                            <th>{% trans "Epires in" %}</th>
+                            <th>{% trans "Action" %}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for dist in object_list %}
+                            <tr>
+                                <td>({{ dist.short_uid }}) {{ dist.description }}</td>
+                                <td>{{ dist.survey.name }}</td>
+                                <td>
+                                    {{ dist.expiration_date|timeuntil }}
+                                </td>
+                                <td>
+                                    <a href="{% url 'manager:panel-survey-detail' object.pk dist.pk %}" class="btn btn-sm btn-info">
+                                        {% icon 'search' 'me-2' %}{% trans "Details" %}
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <div class="alert alert-info">{% trans "No survey available" %}</div>
+        {% endif %}
+    </section>
+{% endblock %}

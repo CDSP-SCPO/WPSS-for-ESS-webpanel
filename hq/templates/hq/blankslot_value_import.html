@@ -1,0 +1,68 @@
+{% extends 'hq/panel_member_list.html' %}
+{% load qxsms_tags django_bootstrap5 i18n %}
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem 'hq:panelmember-list' %}{% trans 'Import' %}{% endbreadcrumbitem %}
+{% endblock %}
+{% block title_lead %}{% trans 'Modify additional variables values from a CSV file' %}{% endblock %}
+{% block content %}
+    <section class="container">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <button type="submit" class="btn btn-success me-2">{% trans 'Confirm' %}</button>
+            {% url 'hq:panelmember-list' as cancel_url %}
+            {% include 'utils/cancel_button.html' %}
+        </form>
+
+        {% if result %}
+            <div class="mt-3 alert alert-danger">{% trans 'Something went awry. No data was imported.'%}</div>
+            {# Non-validation errors, only to be shown when debugging #}
+            {% if result.has_errors and debug %}
+                <h3>Base errors</h3>
+                <ul>
+                    {% for error in result.base_errors %}
+                        <li>
+                            <p>Line number: {{ line }} - {{ error.error }}</p>
+                            <pre><code>{{ error.row.values|join:", " }}</code></pre>
+                            <div>{{ error.traceback|linebreaks }}</div>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <h3>Line errors</h3>
+                <ul>
+                    {% for line, errors in result.row_errors %}
+                        {% for error in errors %}
+                            <li>
+                                <p>Line number: {{ line }} - {{ error.error }}</p>
+                                <pre><code>{{ error.row.values|join:", " }}</code></pre>
+                                <div>{{ error.traceback|linebreaks }}</div>
+                            </li>
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            {# Show validation errors to the user #}
+            {% if result.has_errors %}
+                <ul class="list-unstyled ps-0">
+                    {% for line, errors in result.row_errors %}
+                        {% for error in errors %}
+                            <li><b>Line {{ line }}</b> - {{ error.error }}</li>
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            {% if result.has_validation_errors %}
+                <ul class="list-unstyled ps-0">
+                    {% for row in result.invalid_rows %}
+                        <li{% if not forloop.last %} class="mb-3"{% endif %}><b>Line {{ row.number }}</b><ul class="list-unstyled ps-3">
+                            {% for field, errors in row.error.message_dict.items %}
+                                <li><span class="badge rounded-pill bg-danger">{{ field }}</span> {% for error in errors %}{{ error }}{% if not forloop.last %} | {% endif %}{% endfor %}</li>
+                            {% endfor %}
+                        </ul></li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endif %}
+    </section>
+{% endblock %}

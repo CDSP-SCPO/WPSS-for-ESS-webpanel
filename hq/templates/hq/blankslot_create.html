@@ -1,0 +1,18 @@
+{% extends 'hq/blankslot_list.html' %}
+{% load qxsms_tags django_bootstrap5 i18n %}
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem 'hq:blankslot-create' %}{% trans 'New additional variable' %}{% endbreadcrumbitem %}
+{% endblock %}
+{% block title_lead %}{% endblock %}
+{% block content %}
+    <section class="container">
+        <form method="post">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <button type="submit" class="btn btn-success me-2">{% trans 'Create' %}</button>
+            {% url 'hq:blankslot-list' as cancel_url %}
+            {% include 'utils/cancel_button.html' %}
+        </form>
+    </section>
+{% endblock %}

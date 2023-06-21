@@ -1,0 +1,801 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-06 09:06+0000\n"
+"PO-Revision-Date: 2021-08-02 15:44+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0\n"
+
+#. Translators: ignore
+#: panelist/forms.py:194
+msgid "Cannot assign multiple values to the same variable"
+msgstr ""
+
+#. Translators: ignore
+#: panelist/models.py:32
+msgid "Must be between 1 and 99."
+msgstr ""
+
+#. Translators: ignore
+#: panelist/models.py:38
+msgid "Must be between 1 and 31, or 77, 88, 99."
+msgstr ""
+
+#. Translators: ignore
+#: panelist/models.py:44
+msgid "Must be between 1 and 12, or 77, 88, 99."
+msgstr ""
+
+#. Translators: ignore
+#: panelist/models.py:50
+msgid "Must be between 1900 and 2005, or 7777, 8888, 9999."
+msgstr ""
+
+#: panelist/models.py:144
+msgid "Austria"
+msgstr "Áustria"
+
+#: panelist/models.py:145
+msgid "Belgium"
+msgstr "Bélgica"
+
+#: panelist/models.py:146
+msgid "Bulgaria"
+msgstr "Bulgária"
+
+#: panelist/models.py:147
+msgid "Czechia"
+msgstr "República Checa"
+
+#: panelist/models.py:148
+msgid "Croatia"
+msgstr "Croácia"
+
+#: panelist/models.py:149
+msgid "Cyprus"
+msgstr "Chipre"
+
+#: panelist/models.py:150
+msgid "Estonia"
+msgstr "Estónia"
+
+#: panelist/models.py:151
+msgid "Finland"
+msgstr "Finlândia"
+
+#: panelist/models.py:152
+msgid "France"
+msgstr "França"
+
+#: panelist/models.py:153
+msgid "Germany"
+msgstr "Alemanha"
+
+#: panelist/models.py:154
+msgid "Hungary"
+msgstr "Hungria"
+
+#: panelist/models.py:155
+msgid "Iceland"
+msgstr "Islândia"
+
+#: panelist/models.py:156
+msgid "Ireland"
+msgstr "Irlanda"
+
+#: panelist/models.py:157
+msgid "Italy"
+msgstr "Itália"
+
+#: panelist/models.py:158
+msgid "Latvia"
+msgstr "Letónia"
+
+#: panelist/models.py:159
+msgid "Lithuania"
+msgstr "Lituânia"
+
+#: panelist/models.py:160
+msgid "The Netherlands"
+msgstr "Holanda"
+
+#: panelist/models.py:161
+msgid "Norway"
+msgstr "Noruega"
+
+#: panelist/models.py:162
+msgid "Poland"
+msgstr "Polónia"
+
+#: panelist/models.py:163
+msgid "Portugal"
+msgstr "Portugal"
+
+#: panelist/models.py:164
+msgid "Slovakia"
+msgstr "Eslováquia"
+
+#: panelist/models.py:165
+msgid "Slovenia"
+msgstr "Eslovénia"
+
+#: panelist/models.py:166
+msgid "Sweden"
+msgstr "Suécia"
+
+#: panelist/models.py:167
+msgid "United Kingdom"
+msgstr "Reino Unido"
+
+#: panelist/models.py:168
+msgid "Switzerland"
+msgstr "Suíça"
+
+#: panelist/models.py:169
+msgid "Albania"
+msgstr "Albânia"
+
+#: panelist/models.py:170
+msgid "Denmark"
+msgstr "Dinamarca"
+
+#: panelist/models.py:171
+msgid "Israel"
+msgstr "Israel"
+
+#: panelist/models.py:172
+msgid "Montenegro"
+msgstr "Montenegro"
+
+#: panelist/models.py:173
+msgid "Serbia"
+msgstr "Sérvia"
+
+#: panelist/models.py:174
+msgid "Spain"
+msgstr "Espanha"
+
+#: panelist/models.py:175
+msgid "Greece"
+msgstr "Grécia"
+
+#: panelist/models.py:176
+msgid "Kosovo"
+msgstr "Kosovo"
+
+#: panelist/models.py:177
+msgid "Luxembourg"
+msgstr "Luxemburgo"
+
+#: panelist/models.py:178
+msgid "Romania"
+msgstr "Roménia"
+
+#: panelist/models.py:179
+msgid "Russia"
+msgstr "Rússia"
+
+#: panelist/models.py:180
+msgid "Turkey"
+msgstr "Turquia"
+
+#: panelist/models.py:181
+msgid "Ukraine"
+msgstr "Ucrânia"
+
+#. Translators: ignore
+#: panelist/models.py:190
+msgid "Never logged in"
+msgstr ""
+
+#. Translators: ignore
+#: panelist/models.py:192
+msgid "Has logged in"
+msgstr ""
+
+#. Translators: ignore
+#: panelist/models.py:194
+msgid "Deactivated"
+msgstr ""
+
+#: panelist/models.py:202
+msgid "first name"
+msgstr "nome"
+
+#: panelist/models.py:203
+msgid "last name"
+msgstr "apelido"
+
+#: panelist/models.py:205 qxauth/forms.py:43
+msgid "email address"
+msgstr "endereço de e-mail"
+
+#: panelist/models.py:210 qxauth/forms.py:66
+msgid "A user with that email address already exists."
+msgstr "Já existe um utilizador com esse endereço de e-mail."
+
+#: panelist/models.py:223 qxauth/forms.py:49
+msgid "phone number"
+msgstr "número de telefone"
+
+#: panelist/models.py:228
+msgid "A user with that phone number already exists."
+msgstr "Já existe um utilizador com esse número de telefone."
+
+#: panelist/models.py:233
+msgid "language"
+msgstr "língua"
+
+#: panelist/models.py:235
+msgid "name of property"
+msgstr "nome da propriedade"
+
+#: panelist/models.py:236
+msgid "number"
+msgstr "número"
+
+#: panelist/models.py:237
+msgid "address line 1"
+msgstr "endereço linha 1"
+
+#: panelist/models.py:238
+msgid "address line 2"
+msgstr "endereço linha 2"
+
+#: panelist/models.py:239
+msgid "city"
+msgstr "cidade"
+
+#: panelist/models.py:240
+msgid "county"
+msgstr "concelho"
+
+#: panelist/models.py:241
+msgid "postcode"
+msgstr "código postal"
+
+#: panelist/models.py:242
+msgid "country"
+msgstr "país"
+
+#: panelist/models.py:244
+msgid "day of birth"
+msgstr "dia de nascimento"
+
+#: panelist/models.py:245
+msgid "month of birth"
+msgstr "mês de nascimento"
+
+#: panelist/models.py:246
+msgid "year of birth"
+msgstr "ano de nascimento"
+
+#: panelist/models.py:347
+msgid "Male"
+msgstr "Masculino"
+
+#: panelist/models.py:348
+msgid "Female"
+msgstr "Feminino"
+
+#: panelist/models.py:349
+msgid "Other"
+msgstr "Outro"
+
+#: panelist/models.py:350 panelist/models.py:361
+msgid "Refusal"
+msgstr "Recusa"
+
+#: panelist/models.py:351 panelist/models.py:362
+msgid "Don't know"
+msgstr "Não sabe"
+
+#: panelist/models.py:352 panelist/models.py:363
+msgid "No answer"
+msgstr "Sem resposta"
+
+#: panelist/models.py:356
+msgid "Never"
+msgstr "Nunca"
+
+#: panelist/models.py:357
+msgid "Only occasionally"
+msgstr "Só de vez em quando"
+
+#: panelist/models.py:358
+msgid "A few times a week"
+msgstr "Algumas vezes por semana"
+
+#: panelist/models.py:359
+msgid "Most days"
+msgstr "Na maior parte dos dias"
+
+#: panelist/models.py:360
+msgid "Every day"
+msgstr "Todos os dias"
+
+#: panelist/models.py:374
+msgid "Not available"
+msgstr "Não disponível"
+
+#: panelist/models.py:377
+msgid "sex"
+msgstr "sexo"
+
+#: panelist/models.py:378
+msgid "internet use"
+msgstr "uso da internet"
+
+#: panelist/models.py:380
+msgid "years of education"
+msgstr "anos de escolaridade"
+
+#. Translators: ignore
+#: panelist/models.py:443 panelist/models.py:445
+msgid "Email or phone number required."
+msgstr ""
+
+#. Translators: ignore
+#: panelist/models.py:449
+msgid "The panelist should be opt out if a date or reason is filled."
+msgstr ""
+
+#. Translators: ignore
+#: panelist/models.py:482
+msgid "{attr.capitalize()} belongs to another user."
+msgstr ""
+
+#. Translators: ignore
+#: panelist/models.py:514
+msgid "The distributionId generated on qualtrics when this link was created"
+msgstr ""
+
+#: panelist/models.py:589
+msgid "Finished"
+msgstr "Concluído"
+
+#: panelist/models.py:591
+msgid "Started"
+msgstr "Iniciado"
+
+#: panelist/models.py:593
+msgid "Not started"
+msgstr "Não iniciado"
+
+#: panelist/templates/panelist/base.html:9
+#: panelist/templates/panelist/survey_list.html:5
+msgid "My surveys"
+msgstr "Os meus inquéritos"
+
+#: panelist/templates/panelist/base.html:10
+#: panelist/templates/panelist/help.html:5
+#: panelist/templates/panelist/index.html:29
+msgid "Help"
+msgstr "Ajuda"
+
+#: panelist/templates/panelist/email_change.html:6
+#: panelist/templates/panelist/profile_update.html:22
+msgid "Change your email"
+msgstr "Alterar o e-mail"
+
+#: panelist/templates/panelist/email_change.html:11
+msgid ""
+"<p>This page allows you to change the email address linked to your account. "
+"We need to ensure that the new address is valid as it is used as a login "
+"identifier and as a primary means of communication,</p> <p>Once you have "
+"changed the email address, you will receive a link to validate the new email "
+"address. The change will be effective only after the link is clicked. In the "
+"meantime, your old email address will still be used for login and "
+"communication.</p>"
+msgstr ""
+"<p>Esta página permite-lhe alterar o endereço de e-mail associado à sua "
+"conta. O novo endereço deve ser válido, pois é usado como identificador de "
+"login e como o principal meio de comunicação,</p><p>Depois de alterar o seu "
+"endereço de e-mail, receberá um link para validar o novo endereço de e-mail. "
+"A alteração só será efetivada depois de clicar no link. Entretanto, pode "
+"continuar a utilizar o seu endereço de e-mail antigo para fazer login e para "
+"comunicar.</p>"
+
+#: panelist/templates/panelist/email_change.html:18
+msgid "Send request"
+msgstr "Enviar pedido"
+
+#: panelist/templates/panelist/email_change_confirm.html:6
+#: panelist/templates/panelist/email_change_subject.txt:1
+msgid "Confirm your email"
+msgstr "Confirmar o e-mail"
+
+#: panelist/templates/panelist/email_change_confirm.html:11
+#, python-format
+msgid ""
+"<p>Are you sure you want to change your email %(email)s by %(temp_email)s?</"
+"p>"
+msgstr ""
+"<p>Tem a certeza que deseja alterar o seu e-mail %(email)s para "
+"%(temp_email)s?</p>"
+
+#: panelist/templates/panelist/email_change_confirm.html:17
+msgid "Confirm request"
+msgstr "Confirmar o pedido"
+
+#: panelist/templates/panelist/email_change_confirm.html:20
+msgid ""
+"This link is invalid, possibly because it has already been used. Please "
+"request a new link to change your email."
+msgstr ""
+"Este link é inválido, possivelmente porque já foi usado. Por favor, solicite "
+"um novo link para alterar o seu e-mail."
+
+#: panelist/templates/panelist/email_change_email.html:2
+#, python-format
+msgid ""
+"\n"
+"We have sent you this email because you requested to change the email "
+"address linked to your account on %(site_name)s.\n"
+"Please visit the link below to confirm the new email address:\n"
+msgstr ""
+"\n"
+"Enviamos-lhe este e-mail porque solicitou a alteração do endereço de e-mail "
+"associado à sua conta em %(site_name)s.\n"
+"Por favor, visite o link abaixo para confirmar o novo endereço de e-mail:\n"
+
+#: panelist/templates/panelist/help.html:11
+#, python-format
+msgid ""
+"<p><b>The %(INSTANCE_NAME)s</b> is a study of carefully selected people who "
+"are asked to give their views on a wide range of topical social issues, such "
+"as family life, work, health, the media and politics. The information "
+"collected will provide researchers and policy makers (amongst others) with "
+"valuable insights regarding the most important topics in our society today.</"
+"p> <p>A new survey will be issued every 1-2 months and you will receive a "
+"‘thank you’ gift of <b>%(incentive_amount)s</b> with each survey invitation."
+"</p> <p>Only you can complete the survey so please do not share your details "
+"with anyone else.</p> <p>No special knowledge is needed to answer the "
+"surveys  there are no wrong answers, we just want to know your opinions and "
+"experiences.</p> <p>Your data will be handled in the strictest confidence "
+"and in accordance with the General Data Protection Regulation (GDPR).</p>"
+msgstr ""
+"<p><b>O %(INSTANCE_NAME)s</b> é um estudo que aborda diversos assuntos "
+"relacionados com questões sociais atuais, como a vida familiar, trabalho, "
+"saúde, meios de comunicação e política e destina-se a conhecer as opiniões "
+"de um conjunto de pessoas aleatoriamente selecionadas. Os dados recolhidos "
+"fornecem a cientistas sociais e decisores políticos (entre outros) "
+"informação importante sobre os assuntos mais relevantes da sociedade "
+"portuguesa atual.</p> <p>A cada 2-3 meses será lançado um novo inquérito e "
+"cada convite que receber será acompanhado de um cartão-brinde no valor de <b>"
+"%(incentive_amount)s</b> como forma de reconhecimento pela sua participação."
+"</p> <p>O inquérito só pode ser preenchido por si. Por isso, por favor, não "
+"partilhe os seus dados com ninguém.</p> <p>A resposta aos inquéritos não "
+"exige nenhum conhecimento técnico e não existem respostas erradas; apenas "
+"queremos saber a sua opinião e as suas experiências.</p> <p>Os seus dados "
+"serão tratados de acordo com o Regulamento Geral sobre a Proteção de Dados "
+"(RGPD) garantindo a total confidencialidade.</p>"
+
+#: panelist/templates/panelist/help.html:18
+msgid "Contact us"
+msgstr "Contacte-nos"
+
+#: panelist/templates/panelist/help.html:22
+#, python-format
+msgid ""
+"<p>If you need to get in touch, please contact <b>%(manager.first_name)s "
+"%(manager.last_name)s (<a href=\"mailto:%(manager.email)s\">"
+"%(manager.email)s</a> / <a href=\"tel:%(manager.email)s\">%(manager.email)s</"
+"a>)</b>.</p>"
+msgstr ""
+"<p>Se precisar de falar connosco, por favor contacte <b>"
+"%(manager.first_name)s %(manager.last_name)s (<a href=\"mailto:"
+"%(manager.email)s\">%(manager.email)s</a> / <a href=\"tel:%(manager.email)s"
+"\">%(manager.email)s</a>)</b>.</p>"
+
+#: panelist/templates/panelist/index.html:6
+#, python-format
+msgid "Welcome %(panelist_first_name)s"
+msgstr "Bem-vindo/a %(panelist_first_name)s"
+
+#: panelist/templates/panelist/index.html:10
+msgid "Latest surveys"
+msgstr "Inquéritos mais recentes"
+
+#: panelist/templates/panelist/index.html:13
+msgid "See more"
+msgstr "Ver mais"
+
+#: panelist/templates/panelist/index.html:17
+msgid "Other actions"
+msgstr "Outras acções"
+
+#: panelist/templates/panelist/index.html:22
+#: panelist/templates/panelist/profile_update.html:9
+msgid "Change your contact details"
+msgstr "Alterar os dados de contacto"
+
+#: panelist/templates/panelist/password_change.html:6
+msgid "Password change"
+msgstr "Alterar a palavra-passe"
+
+#: panelist/templates/panelist/profile_update.html:6 templates/base.html:33
+msgid "Profile"
+msgstr "Perfil"
+
+#: panelist/templates/panelist/profile_update.html:20
+#: templates/password_change_form.html:6
+msgid "Save"
+msgstr "Gravar"
+
+#: panelist/templates/panelist/profile_update.html:21
+msgid "Change your password"
+msgstr "Alterar a palavra-passe"
+
+#: panelist/templates/panelist/utils/survey_list.html:15
+msgid "No survey available"
+msgstr "Nenhum inquérito disponível"
+
+#: panelist/views.py:71
+msgid "Your personal information has been updated"
+msgstr "Os seus dados pessoais foram atualizados"
+
+#: panelist/views.py:100
+msgid "Request email change"
+msgstr "Solicitar alteração de e-mail"
+
+#: panelist/views.py:101
+#, python-format
+msgid "Email sent to %(email)s, with a link to validate the address"
+msgstr "E-mail enviado para %(email)s, com um link para validar o endereço"
+
+#: panelist/views.py:117
+msgid "Confirm email change"
+msgstr "Confirme a alteração de e-mail"
+
+#: qxauth/forms.py:27
+#, python-brace-format
+msgid ""
+"Follow this link to reset your password on {site_name} : {protocol}://"
+"{domain}{url}"
+msgstr ""
+"Clique neste link para redefinir a sua palavra-passe em {site_name} : "
+"{protocol}://{domain}{url}"
+
+#: qxauth/forms.py:44
+msgid "Email"
+msgstr "E-mail"
+
+#: qxauth/forms.py:50 qxauth/forms.py:120
+msgid "Phone number"
+msgstr "Número de telefone"
+
+#: qxauth/forms.py:65
+msgid "The two email address didn't match."
+msgstr "Não há correspondência entre os dois endereços de e-mail."
+
+#: qxauth/forms.py:73
+msgid "New email"
+msgstr "Novo e-mail"
+
+#: qxauth/forms.py:76
+msgid "New email confirmation"
+msgstr "Confirmação do novo e-mail"
+
+#: qxauth/views.py:83
+msgid "An email with a password reset link has been sent."
+msgstr "Foi enviado um e-mail com um link de redefinição de palavra-passe."
+
+#: qxauth/views.py:90
+msgid "An sms with a password reset link has been sent."
+msgstr "Foi enviado um sms com um link de redefinição de palavra-passe."
+
+#: qxauth/views.py:97
+msgid "Password updated!"
+msgstr "Palavra-passe atualizada!"
+
+#: qxsms/settings.py:159
+msgid "Czech"
+msgstr "Checo"
+
+#: qxsms/settings.py:160
+msgid "German"
+msgstr "Alemão"
+
+#: qxsms/settings.py:161
+msgid "English"
+msgstr "Inglês"
+
+#: qxsms/settings.py:162
+msgid "Finnish"
+msgstr "Finlandês"
+
+#: qxsms/settings.py:163
+msgid "French"
+msgstr "Francês"
+
+#: qxsms/settings.py:164
+msgid "Hungarian"
+msgstr "Húngaro"
+
+#: qxsms/settings.py:165
+msgid "Icelandic"
+msgstr "Islandês"
+
+#: qxsms/settings.py:166
+msgid "Italian"
+msgstr "Italiano"
+
+#: qxsms/settings.py:167
+msgid "Dutch"
+msgstr "Holandês"
+
+#: qxsms/settings.py:168
+msgid "Portuguese"
+msgstr "Português"
+
+#: qxsms/settings.py:169
+msgid "Slovenian"
+msgstr "Esloveno"
+
+#: qxsms/settings.py:170
+msgid "Swedish"
+msgstr "Sueco"
+
+#: templates/403.html:6
+msgid "Permission denied"
+msgstr "Acesso negado"
+
+#: templates/403.html:10
+msgid "You do not have access to this part of the application"
+msgstr "Não tem acesso a esta parte da aplicação"
+
+#: templates/404.html:6
+msgid "Not found"
+msgstr "Não encontrado"
+
+#: templates/404.html:10
+msgid "Did you mispell the URL?"
+msgstr "Enganou-se no URL?"
+
+#: templates/base.html:35 templates/base.html:38
+msgid "Log out"
+msgstr "Sair da sessão"
+
+#: templates/login.html:26 templates/login.html:34
+msgid "Log in"
+msgstr "Iniciar sessão"
+
+#: templates/login.html:28
+msgid "First Log in"
+msgstr "Primeiro início de sessão"
+
+#: templates/login.html:36 templates/password_reset.html:25
+msgid "Use email"
+msgstr "Usar o e-mail"
+
+#: templates/login.html:38 templates/password_reset.html:27
+msgid "Use phone number"
+msgstr "Usar o número de telefone"
+
+#: templates/login.html:44
+msgid "Forgot password ?"
+msgstr "Esqueceu-se da palavra-passe ?"
+
+#: templates/password_reset.html:5
+msgid "Reset password"
+msgstr "Redefinir a palavra-passe"
+
+#: templates/password_reset.html:10
+msgid "Enter your phone number to receive a link to reset your password."
+msgstr ""
+"Introduza o seu número de telefone para receber um link para redefinir a sua "
+"palavra-passe."
+
+#: templates/password_reset.html:12
+msgid "Enter your email address to receive a link to reset your password."
+msgstr ""
+"Introduza o seu e-mail para receber um link para redefinir a sua palavra-"
+"passe."
+
+#: templates/password_reset.html:21
+msgid "Send"
+msgstr "Enviar"
+
+#: templates/password_reset_confirm.html:6
+msgid "Choose a new password"
+msgstr "Escolher uma palavra-passe nova"
+
+#: templates/password_reset_confirm.html:15
+msgid "Confirm password"
+msgstr "Confirmar a palavra-passe"
+
+#: templates/password_reset_confirm.html:21
+#, python-format
+msgid ""
+"This link is invalid, possibly because it has already been used or expired. "
+"Please <a href=\"%(password_reset_url)s\">request a new link</a> to reset "
+"your password."
+msgstr ""
+"Este link é inválido, possivelmente porque já foi usado ou expirou. Por "
+"favor, <a href=\"%(password_reset_url)s\">solicite um novo link</a> para "
+"redefinir a sua palavra-passe."
+
+#: templates/password_reset_email.html:2
+msgid ""
+"We have sent you this email because you requested to change the password of "
+"your account"
+msgstr ""
+"Enviamos-lhe este e-mail porque pediu para alterar a palavra-passe da sua "
+"conta"
+
+#: templates/password_reset_email.html:4
+msgid "Please go to the following page and choose a new password:"
+msgstr "Por favor, siga para esta página para escolher a nova palavra passe:"
+
+#: utils/context_processors.py:46
+msgid "Opinion Study"
+msgstr "Estudo de Opinião"
+
+#: utils/context_processors.py:49
+#, python-format
+msgid "Opinion Study for %(country)s"
+msgstr "Estudo de Opinião em  %(country)s"
+
+#: utils/signals.py:13
+#, python-brace-format
+msgid "{user} has been Logged out"
+msgstr "{user} terminou sessão"
+
+#: utils/templates/utils/cancel_button.html:2
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: utils/templates/utils/distribution_status.html:4
+msgid "Sent"
+msgstr "Enviado"
+
+#: utils/templates/utils/distribution_status.html:8
+msgid "Sending"
+msgstr "A enviar"
+
+#: utils/templates/utils/distribution_status.html:11
+msgid "Not sent"
+msgstr "Não enviado"
+
+#~ msgid "SMS"
+#~ msgstr "SMS"
+
+#~ msgid "N/A"
+#~ msgstr "N/A"
+
+#~ msgid "All"
+#~ msgstr "Todos/as"
+
+#~ msgid "Survey completed"
+#~ msgstr "Inquérito concluído"
+
+#~ msgid "Survey not completed"
+#~ msgstr "Inquérito não concluído"
+
+#~ msgid "First log in / Reset password"
+#~ msgstr "Primeiro login / Redefinir palavra-passe"
+
+#~ msgid "Update password"
+#~ msgstr "Atualizar a palavra-passe"
+
+#~ msgid "Your username, in case you’ve forgotten:"
+#~ msgstr "O seu nome de utilizador, caso se tenha esquecido:"
+
+#~ msgid "Thanks for using our site!"
+#~ msgstr "Obrigado por usar o nosso site!"
+
+#~ msgid "Successfully logged out <strong>{user}</strong>"
+#~ msgstr "Sessão terminada com sucesso <strong>{user}</strong>"

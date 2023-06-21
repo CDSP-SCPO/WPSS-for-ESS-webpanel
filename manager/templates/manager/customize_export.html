@@ -1,0 +1,40 @@
+{% extends 'manager/panel_member_list.html' %}
+{% load static qxsms_tags django_bootstrap5 i18n %}
+
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem 'manager:home' %}{% trans "Export CSV" %}{% endbreadcrumbitem %}
+{% endblock %}
+{% block title_lead %}{% trans "Select fields to export" %}{% endblock %}
+
+{% block content %}
+    <section class="container">
+        <a class="btn btn-secondary me-2" type="button" onclick="selectAll()">{% trans "Select all" %}</a>
+        <a class="btn btn-secondary" type="button" onclick="unselectAll()">{% trans "Unselect all" %}</a>
+        <form method="post" class="d-md-flex flex-wrap mt-3">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="col-md-3">
+                    {% bootstrap_field field %}
+                </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-success d-block">{% icon 'download' 'me-2' %} {% trans "Export (CSV)" %}</button>
+        </form>
+    </section>
+{% endblock %}
+{% block js %}
+    <script>
+        let  checkboxes = document.querySelectorAll('.form-check-input');
+        function selectAll() {
+            for (let i = 0; i < checkboxes.length; i++) {
+                checkboxes[i].checked = true;
+            }
+        };
+
+        function unselectAll() {
+            for (let i = 0; i < checkboxes.length; i++) {
+                checkboxes[i].checked = false;
+            }
+        };
+    </script>
+{% endblock %}

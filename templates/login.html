@@ -1,0 +1,47 @@
+{% load static qxsms_tags i18n django_bootstrap5 %}{% spaceless %}
+{% get_current_language as LANGUAGE_CODE %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+    {% include 'meta.html' %}
+    <title>{% block title %}{{ INSTANCE_NAME }}{% endblock %}</title>
+    {% block head %}
+        <link rel="stylesheet" href="{% static 'css/qxsms.css' %}?{{ QXSMS_VERSION }}">
+    {% endblock %}
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <main class="d-flex flex-column justify-content-center align-items-center bg-sshoc-stripes">
+        {% if messages %}
+            <section id="main-messages" class="bg-white">
+                <div class="container">{% bootstrap_messages %}</div>
+            </section>
+        {% endif %}
+        <h1 class="my-3 mt-md-0 mb-md-5 text-white">{% icon 'logo' 'icon-xl' %}</h1>
+        <div class="card bg-light">
+            <div class="card-body p-md-5">
+                <h2 class="card-title  text-center">{% trans "Log in" %}</h2>
+                <div class="mb-4 text-center mb-4">
+                    <a href="{% url 'password-reset' %}">{% trans "First login" %}</a>
+                </div>
+                <form method="post" style="width: 300px">
+                    {% csrf_token %}
+                    {% bootstrap_form form %}
+                    <div class="d-flex justify-content-between align-items-center">
+                        <button type="submit" class="btn btn-primary me-2">{% trans "Log in" %}</button>
+                        {% if login_method == 'phone' %}
+                            <a href="{% url 'login' %}">{% trans "Use email" %}</a>
+                        {% else %}
+                            <a href="?phone">{% trans "Use phone number" %}</a>
+                        {% endif %}
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer text-center">
+                <a href="{% url 'password-reset' %}">{% trans "Forgot password?" %}</a>
+            </div>
+        </div>
+    </main>
+    {% include 'footer.html' %}
+</body>
+</html>
+{% endspaceless %}

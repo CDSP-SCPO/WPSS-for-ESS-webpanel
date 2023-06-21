@@ -1,0 +1,31 @@
+{% extends 'hq/dist/detail.html' %}
+{% load qxsms_tags i18n %}
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem 'hq:link-distribution-detail' object.pk %}{% trans "Delete set of individual links" %}{% endbreadcrumbitem %}
+{% endblock %}
+{% block title_lead %}{% endblock %}
+
+{% block content %}
+    <section class="container">
+        <div class="d-flex justify-content-center">
+            <div class="card">
+                <div class="card-body">
+                    <p>
+                        {% blocktrans with link=object.description %}
+                            You are about to delete a set of individual links "{{ link }}".
+                        {% endblocktrans %}
+                    </p>
+
+                    <p>{% trans "Do you want to proceed ?" %}</p>
+                    <form method="post" class="text-center">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger me-2">{% trans "Yes" %}</button>
+                        {% url 'hq:link-distribution-detail' object.pk as cancel_url %}
+                        {% include 'utils/cancel_button.html' %}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

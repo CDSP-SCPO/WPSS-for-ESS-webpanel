@@ -1,0 +1,53 @@
+{% extends 'manager/base.html' %}
+{% load qxsms_tags i18n django_bootstrap5 %}
+
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem 'manager:panel-list' %}{% trans "Panels" %}{% endbreadcrumbitem %}
+    {% breadcrumbitem 'manager:panel-member-list' profile.panel.pk %}{{ profile.panel.name }}{% endbreadcrumbitem %}
+    {% breadcrumbitem 'manager:panel-member-list' profile.panel.pk %}{% trans "Panelists" %}{% endbreadcrumbitem %}
+    {% breadcrumbitem 'manager:panel-member-update' profile.pk %}{% trans "Update panelist information" %}{% endbreadcrumbitem %}
+{% endblock %}
+
+{% block content %}
+    <section class="container">
+        {% if object.anonymized_since %}
+            <div class="alert alert-warning">This panelist has been deactivated since {{ object.anonymized_since }}. Contact information has been anonymized.</div>
+        {% endif %}
+        <form method="post">
+            <div class="mb-3">
+                <label for="id_panelist_id" class="form-label">{% trans "Panelist ID" %}</label>
+                <input id="id_panelist_id" class="form-control" type="text" value="{{ profile.panelist_id }}" disabled/>
+            </div>
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <div class="float-md-start">
+                <button type="submit" class="btn btn-success me-2">{% trans "Save" %}</button>
+                {% url 'manager:panel-member-list' profile.panel_id as cancel_url %}
+                {% include 'utils/cancel_button.html' %}
+            </div>
+        </form>
+        <div class="float-md-end d-flex flex-wrap mt-3 mt-md-0">
+            {% if object.is_active %}
+                <div class="btn-group me-2">
+                    <button class="btn btn-warning dropdown-toggle" type="button" id="pwd-menu-dropdown" data-bs-toggle="dropdown" aria-expanded="false">{% trans "Send password change link" %}</button>
+                    <div class="dropdown-menu" aria-labelledby="pwd-menu-dropdown">
+                        <form method="post" action="{% url 'manager:panel-member-password-reset' object.pk %}?phone">
+                            {% csrf_token %}
+                            <input type="hidden" name="email_0" id="id_email_0" value="+{{ profile.phone.country_code }}">
+                            <input type="hidden" name="email_1" id="id_email_1" value="{{ profile.phone.national_number }}">
+                            <button class="dropdown-item"{% if not profile.phone %} title="No associated phone number." disabled{% endif %}>{% trans 'By phone' %}</button>
+                        </form>
+                        <form method="post" action="{% url 'manager:panel-member-password-reset' object.pk %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="email" id="id_email" value="{{ profile.email }}">
+                            <button class="dropdown-item"{% if not profile.email %} title="No associated email address." disabled{% endif %}>{% trans 'By email' %}</button>
+                        </form>
+                    </div>
+                </div>
+                <a href="{% url 'manager:panel-member-deactivate' object.pk %}" class="btn btn-warning me-2">{% trans "Anonymize & Deactivate" %}</a>
+            {% endif %}
+            <a href="{% url 'manager:panel-member-delete' object.pk %}" class="btn btn-danger">{% trans "Delete" %}</a>
+        </div>
+    </section>
+{% endblock %}

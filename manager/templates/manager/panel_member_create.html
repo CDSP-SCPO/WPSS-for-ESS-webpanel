@@ -1,0 +1,20 @@
+{% extends 'manager/panel_member_list.html' %}
+{% load qxsms_tags django_bootstrap5 i18n %}
+
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem 'manager:panel-member-create' panel.pk %}{% trans "New panelist" %}{% endbreadcrumbitem %}
+{% endblock %}
+{% block title_lead %}{% trans "Add a panelist account to this panel" %}{% endblock %}
+
+{% block content %}
+    <section class="container">
+        <form method="post">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <button type="submit" class="btn btn-success me-2">{% trans "Create" %}</button>
+            {% url 'manager:panel-member-list' panel.pk as cancel_url %}
+            {% include 'utils/cancel_button.html' %}
+        </form>
+    </section>
+{% endblock %}

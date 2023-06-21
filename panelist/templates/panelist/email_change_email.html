@@ -1,0 +1,6 @@
+{% load i18n %}
+{% blocktrans %}
+We have sent you this email because you requested to change the email address linked to your account on {{ site_name }}.
+Please visit the link below to confirm the new email address:
+{% endblocktrans %}
+{{ protocol }}://{{ domain }}{% url 'email-change-confirm' uidb64=uid token=token %}

@@ -1,0 +1,31 @@
+{% extends "distributions/base.html" %}
+{% block content %}
+    <h2>Link sets</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>UID</th>
+                <th>Created</th>
+                <th>Survey</th>
+                <th>Description</th>
+                <th>Links generated</th>
+                <th>Links expire</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for dist in object_list %}
+                <tr>
+                    <td><a href="{% url 'dist:detail' dist.pk %}">{{ dist.short_uid }}</a></td>
+                    <td>{{ dist.created_date|date:'Y-m-d H\hi' }}</td>
+                    <td>{{ dist.survey.name }}</td>
+                    <td>{{ dist.description }}</td>
+                    <td>{{ dist.qx_created_date|date:'Y-m-d H\hi'|default_if_none:'' }}</td>
+                    <td>{{ dist.expiration_date|date:'Y-m-d H\hi'|default_if_none:'' }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'dist:create' %}">Create</a>
+{% endblock %}
+</body>
+</html>

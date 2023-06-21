@@ -1,0 +1,805 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: WPSS\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-06 09:06+0000\n"
+"PO-Revision-Date: 2021-08-16 13:20+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: is\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);\n"
+"X-Generator: Poedit 3.0\n"
+
+#. Translators: ignore
+#: panelist/forms.py:194
+msgid "Cannot assign multiple values to the same variable"
+msgstr ""
+
+#. Translators: ignore
+#: panelist/models.py:32
+msgid "Must be between 1 and 99."
+msgstr ""
+
+#. Translators: ignore
+#: panelist/models.py:38
+msgid "Must be between 1 and 31, or 77, 88, 99."
+msgstr ""
+
+#. Translators: ignore
+#: panelist/models.py:44
+msgid "Must be between 1 and 12, or 77, 88, 99."
+msgstr ""
+
+#. Translators: ignore
+#: panelist/models.py:50
+msgid "Must be between 1900 and 2005, or 7777, 8888, 9999."
+msgstr ""
+
+#: panelist/models.py:144
+msgid "Austria"
+msgstr "Austurríki"
+
+#: panelist/models.py:145
+msgid "Belgium"
+msgstr "Belgía"
+
+#: panelist/models.py:146
+msgid "Bulgaria"
+msgstr "Búlgaría"
+
+#: panelist/models.py:147
+msgid "Czechia"
+msgstr "Tékkland"
+
+#: panelist/models.py:148
+msgid "Croatia"
+msgstr "Króatía"
+
+#: panelist/models.py:149
+msgid "Cyprus"
+msgstr "Kýpur"
+
+#: panelist/models.py:150
+msgid "Estonia"
+msgstr "Eistland"
+
+#: panelist/models.py:151
+msgid "Finland"
+msgstr "Finnland"
+
+#: panelist/models.py:152
+msgid "France"
+msgstr "Frakkland"
+
+#: panelist/models.py:153
+msgid "Germany"
+msgstr "Þýskaland"
+
+#: panelist/models.py:154
+msgid "Hungary"
+msgstr "Ungverjaland"
+
+#: panelist/models.py:155
+msgid "Iceland"
+msgstr "Ísland"
+
+#: panelist/models.py:156
+msgid "Ireland"
+msgstr "Írland"
+
+#: panelist/models.py:157
+msgid "Italy"
+msgstr "Ítalía"
+
+#: panelist/models.py:158
+msgid "Latvia"
+msgstr "Lettland"
+
+#: panelist/models.py:159
+msgid "Lithuania"
+msgstr "Litháen"
+
+#: panelist/models.py:160
+msgid "The Netherlands"
+msgstr "Holland"
+
+#: panelist/models.py:161
+msgid "Norway"
+msgstr "Noregur"
+
+#: panelist/models.py:162
+msgid "Poland"
+msgstr "Pólland"
+
+#: panelist/models.py:163
+msgid "Portugal"
+msgstr "Portúgal"
+
+#: panelist/models.py:164
+msgid "Slovakia"
+msgstr "Slóvakía"
+
+#: panelist/models.py:165
+msgid "Slovenia"
+msgstr "Slóvenía"
+
+#: panelist/models.py:166
+msgid "Sweden"
+msgstr "Svíþjóð"
+
+#: panelist/models.py:167
+msgid "United Kingdom"
+msgstr "Bretland"
+
+#: panelist/models.py:168
+msgid "Switzerland"
+msgstr "Sviss"
+
+#: panelist/models.py:169
+msgid "Albania"
+msgstr "Albanía"
+
+#: panelist/models.py:170
+msgid "Denmark"
+msgstr "Danmörk"
+
+#: panelist/models.py:171
+msgid "Israel"
+msgstr "Ísrael"
+
+#: panelist/models.py:172
+msgid "Montenegro"
+msgstr "Svartfjallaland"
+
+#: panelist/models.py:173
+msgid "Serbia"
+msgstr "Serbía"
+
+#: panelist/models.py:174
+msgid "Spain"
+msgstr "Spánn"
+
+#: panelist/models.py:175
+msgid "Greece"
+msgstr "Grikkland"
+
+#: panelist/models.py:176
+msgid "Kosovo"
+msgstr "Kósóvó"
+
+#: panelist/models.py:177
+msgid "Luxembourg"
+msgstr "Lúxemborg"
+
+#: panelist/models.py:178
+msgid "Romania"
+msgstr "Rúmenía"
+
+#: panelist/models.py:179
+msgid "Russia"
+msgstr "Rússland"
+
+#: panelist/models.py:180
+msgid "Turkey"
+msgstr "Tyrkland"
+
+#: panelist/models.py:181
+msgid "Ukraine"
+msgstr "Úkraína"
+
+#. Translators: ignore
+#: panelist/models.py:190
+msgid "Never logged in"
+msgstr ""
+
+#. Translators: ignore
+#: panelist/models.py:192
+msgid "Has logged in"
+msgstr ""
+
+#. Translators: ignore
+#: panelist/models.py:194
+msgid "Deactivated"
+msgstr ""
+
+#: panelist/models.py:202
+msgid "first name"
+msgstr "fornafn"
+
+#: panelist/models.py:203
+msgid "last name"
+msgstr "föðurnafn/eftirnafn"
+
+#: panelist/models.py:205 qxauth/forms.py:43
+msgid "email address"
+msgstr "netfang"
+
+#: panelist/models.py:210 qxauth/forms.py:66
+msgid "A user with that email address already exists."
+msgstr "Notandi með þetta netfang er þegar skráður."
+
+#: panelist/models.py:223 qxauth/forms.py:49
+msgid "phone number"
+msgstr "símanúmer"
+
+#: panelist/models.py:228
+msgid "A user with that phone number already exists."
+msgstr "Notandi með þetta símanúmer er þegar skráður."
+
+#: panelist/models.py:233
+msgid "language"
+msgstr "tungumál"
+
+#: panelist/models.py:235
+msgid "name of property"
+msgstr "nafn á eign"
+
+#: panelist/models.py:236
+msgid "number"
+msgstr "númer"
+
+#: panelist/models.py:237
+msgid "address line 1"
+msgstr "heimilisfang lína 1"
+
+#: panelist/models.py:238
+msgid "address line 2"
+msgstr "heimilisfang lína 2"
+
+#: panelist/models.py:239
+msgid "city"
+msgstr "borg"
+
+#: panelist/models.py:240
+msgid "county"
+msgstr "sveitarfélag"
+
+#: panelist/models.py:241
+msgid "postcode"
+msgstr "póstnúmer"
+
+#: panelist/models.py:242
+msgid "country"
+msgstr "land"
+
+#: panelist/models.py:244
+msgid "day of birth"
+msgstr "fæðingardagur"
+
+#: panelist/models.py:245
+msgid "month of birth"
+msgstr "fæðingarmánuður"
+
+#: panelist/models.py:246
+msgid "year of birth"
+msgstr "fæðingarár"
+
+#: panelist/models.py:347
+msgid "Male"
+msgstr "Karl"
+
+#: panelist/models.py:348
+msgid "Female"
+msgstr "Kona"
+
+#: panelist/models.py:349
+msgid "Other"
+msgstr "Annað"
+
+#: panelist/models.py:350 panelist/models.py:361
+msgid "Refusal"
+msgstr "Neitun"
+
+#: panelist/models.py:351 panelist/models.py:362
+msgid "Don't know"
+msgstr "Veit ekki"
+
+#: panelist/models.py:352 panelist/models.py:363
+msgid "No answer"
+msgstr "Ekkert svar"
+
+#: panelist/models.py:356
+msgid "Never"
+msgstr "Aldrei"
+
+#: panelist/models.py:357
+msgid "Only occasionally"
+msgstr "Aðeins öðru hverju"
+
+#: panelist/models.py:358
+msgid "A few times a week"
+msgstr "Nokkrum sinnum í viku"
+
+#: panelist/models.py:359
+msgid "Most days"
+msgstr "Flesta daga"
+
+#: panelist/models.py:360
+msgid "Every day"
+msgstr "Á hverjum degi"
+
+#: panelist/models.py:374
+msgid "Not available"
+msgstr "Ekki tiltæk/ur"
+
+#: panelist/models.py:377
+msgid "sex"
+msgstr "kyn"
+
+#: panelist/models.py:378
+msgid "internet use"
+msgstr "internetnotkun"
+
+#: panelist/models.py:380
+msgid "years of education"
+msgstr "menntun í árum"
+
+#. Translators: ignore
+#: panelist/models.py:443 panelist/models.py:445
+msgid "Email or phone number required."
+msgstr ""
+
+#. Translators: ignore
+#: panelist/models.py:449
+msgid "The panelist should be opt out if a date or reason is filled."
+msgstr ""
+
+#. Translators: ignore
+#: panelist/models.py:482
+msgid "{attr.capitalize()} belongs to another user."
+msgstr ""
+
+#. Translators: ignore
+#: panelist/models.py:514
+msgid "The distributionId generated on qualtrics when this link was created"
+msgstr ""
+
+#: panelist/models.py:589
+msgid "Finished"
+msgstr "Lokið"
+
+#: panelist/models.py:591
+msgid "Started"
+msgstr "Byrjað"
+
+#: panelist/models.py:593
+msgid "Not started"
+msgstr "Ekki byrjað"
+
+#: panelist/templates/panelist/base.html:9
+#: panelist/templates/panelist/survey_list.html:5
+msgid "My surveys"
+msgstr "Mínar kannanir"
+
+#: panelist/templates/panelist/base.html:10
+#: panelist/templates/panelist/help.html:5
+#: panelist/templates/panelist/index.html:29
+msgid "Help"
+msgstr "Hjálp"
+
+#: panelist/templates/panelist/email_change.html:6
+#: panelist/templates/panelist/profile_update.html:22
+msgid "Change your email"
+msgstr "Breyta netfangi"
+
+#: panelist/templates/panelist/email_change.html:11
+msgid ""
+"<p>This page allows you to change the email address linked to your account. "
+"We need to ensure that the new address is valid as it is used as a login "
+"identifier and as a primary means of communication,</p> <p>Once you have "
+"changed the email address, you will receive a link to validate the new email "
+"address. The change will be effective only after the link is clicked. In the "
+"meantime, your old email address will still be used for login and "
+"communication.</p>"
+msgstr ""
+"<p>Þessi síða gerir þér kleift að breyta netfanginu sem er tengt við "
+"aðganginn þinn. Við þurfum að tryggja að nýja netfangið sé gilt þar sem það "
+"er notað til að auðkenna innskráningu og er aðalsamskiptaleiðin,</p> "
+"<p>Þegar þú hefur breytt netfanginu þínu muntu fá sendan hlekk til þess að "
+"staðfesta nýja netfangið. Breytingin mun eiga sér stað um leið og þú hefur "
+"smellt á hlekkinn. Þangað til verður gamla netfangið þitt notað fyrir "
+"innskráningu og fyrir samskipti.</p>"
+
+#: panelist/templates/panelist/email_change.html:18
+msgid "Send request"
+msgstr "Senda beiðni"
+
+#: panelist/templates/panelist/email_change_confirm.html:6
+#: panelist/templates/panelist/email_change_subject.txt:1
+msgid "Confirm your email"
+msgstr "Staðfesta netfangið þitt"
+
+#: panelist/templates/panelist/email_change_confirm.html:11
+#, python-format
+msgid ""
+"<p>Are you sure you want to change your email %(email)s by %(temp_email)s?</"
+"p>"
+msgstr ""
+"<p>Ertu viss um að þú viljir breyta netfanginu þínu %(email)s í "
+"%(temp_email)s?</p>"
+
+#: panelist/templates/panelist/email_change_confirm.html:17
+msgid "Confirm request"
+msgstr "Staðfesta beiðni"
+
+#: panelist/templates/panelist/email_change_confirm.html:20
+msgid ""
+"This link is invalid, possibly because it has already been used. Please "
+"request a new link to change your email."
+msgstr ""
+"Þessi hlekkur er ógildur, kannski vegna þess að hann hafi þegar verið "
+"notaður. Óskaðu eftir nýjum hlekk til að breyta netfanginu þínu."
+
+#: panelist/templates/panelist/email_change_email.html:2
+#, python-format
+msgid ""
+"\n"
+"We have sent you this email because you requested to change the email "
+"address linked to your account on %(site_name)s.\n"
+"Please visit the link below to confirm the new email address:\n"
+msgstr ""
+"\n"
+"Við sendum þér þennan tölvupóst þar sem þú óskaðir eftir að breyta "
+"netfanginu sem er tengt við aðganginn þinn í %(site_name)s.\n"
+"Til að staðfesta nýtt netfang, smelltu á hlekkinn hér að neðan:\n"
+
+#: panelist/templates/panelist/help.html:11
+#, python-format
+msgid ""
+"<p><b>The %(INSTANCE_NAME)s</b> is a study of carefully selected people who "
+"are asked to give their views on a wide range of topical social issues, such "
+"as family life, work, health, the media and politics. The information "
+"collected will provide researchers and policy makers (amongst others) with "
+"valuable insights regarding the most important topics in our society today.</"
+"p> <p>A new survey will be issued every 1-2 months and you will receive a "
+"‘thank you’ gift of <b>%(incentive_amount)s</b> with each survey invitation."
+"</p> <p>Only you can complete the survey so please do not share your details "
+"with anyone else.</p> <p>No special knowledge is needed to answer the "
+"surveys  there are no wrong answers, we just want to know your opinions and "
+"experiences.</p> <p>Your data will be handled in the strictest confidence "
+"and in accordance with the General Data Protection Regulation (GDPR).</p>"
+msgstr ""
+"<p><b>%(INSTANCE_NAME)s</b> er könnun meðal sérvalins hóps sem er beðinn um "
+"að gefa álit sitt á fjölbreyttum samfélagslegum málefnum, svo sem "
+"fjölskyldulífi, vinnu, heilsu, fjölmiðlum og stjórnmálum. Upplýsingarnar sem "
+"safnað er gefa fræðimönnum og stefnumótunaraðilum (ásamt öðrum) dýrmæta "
+"innsýn í mikilvæg málefni líðandi stundar.</p> <p>Ný könnun verður gerð á "
+"tveggja til þriggja mánaða fresti og þú munt fá sendan þakklætisvott að "
+"andvirði <b>%(incentive_amount)s</b> fyrir hverja könnun sem þú færð boð um."
+"</p> <p>Einungis þú getur svarað könnununum og við biðjum þig því að deila "
+"ekki upplýsingum um þær með öðrum.</p> <p>Það þarf enga sérstaka þekkingu "
+"til að svara þessum könnunum, það eru engin röng svör, við viljum bara heyra "
+"þínar skoðanir og um þína reynslu.</p> <p>Farið verður með allar upplýsingar "
+"sem trúnaðarmál og þær meðhöndlaðar í samræmi við persónuverndarlög.</p>"
+
+#: panelist/templates/panelist/help.html:18
+msgid "Contact us"
+msgstr "Hafðu samband"
+
+#: panelist/templates/panelist/help.html:22
+#, python-format
+msgid ""
+"<p>If you need to get in touch, please contact <b>%(manager.first_name)s "
+"%(manager.last_name)s (<a href=\"mailto:%(manager.email)s\">"
+"%(manager.email)s</a> / <a href=\"tel:%(manager.email)s\">%(manager.email)s</"
+"a>)</b>.</p>"
+msgstr ""
+"<p>Ef þú þarft að hafa samband, sendu póst á <b>%(manager.first_name)s "
+"%(manager.last_name)s (<a href=\"mailto:%(manager.email)s\">"
+"%(manager.email)s</a> / <a href=\"tel:%(manager.email)s\">%(manager.email)s</"
+"a>)</b>.</p>"
+
+#: panelist/templates/panelist/index.html:6
+#, python-format
+msgid "Welcome %(panelist_first_name)s"
+msgstr "Vertu velkomin/n %(panelist_first_name)s"
+
+#: panelist/templates/panelist/index.html:10
+msgid "Latest surveys"
+msgstr "Síðustu kannanir"
+
+#: panelist/templates/panelist/index.html:13
+msgid "See more"
+msgstr "Sjá nánar"
+
+#: panelist/templates/panelist/index.html:17
+msgid "Other actions"
+msgstr "Aðrar aðgerðir"
+
+#: panelist/templates/panelist/index.html:22
+#: panelist/templates/panelist/profile_update.html:9
+msgid "Change your contact details"
+msgstr "Breyta samskiptaupplýsingum þínum"
+
+#: panelist/templates/panelist/password_change.html:6
+msgid "Password change"
+msgstr "Breyting á aðgangsorði"
+
+#: panelist/templates/panelist/profile_update.html:6 templates/base.html:33
+msgid "Profile"
+msgstr "Persónulýsing"
+
+#: panelist/templates/panelist/profile_update.html:20
+#: templates/password_change_form.html:6
+msgid "Save"
+msgstr "Vista"
+
+#: panelist/templates/panelist/profile_update.html:21
+msgid "Change your password"
+msgstr "Breyta lykilorði"
+
+#: panelist/templates/panelist/utils/survey_list.html:15
+msgid "No survey available"
+msgstr "Engin könnun tiltæk"
+
+#: panelist/views.py:71
+msgid "Your personal information has been updated"
+msgstr "Persónuupplýsingar þínar hafa verið uppfærðar"
+
+#: panelist/views.py:100
+msgid "Request email change"
+msgstr "Óska eftir að breyta netfangi"
+
+#: panelist/views.py:101
+#, python-format
+msgid "Email sent to %(email)s, with a link to validate the address"
+msgstr ""
+"Tölvupóstur sendur á <b>%(email)s</b>, með hlekk til að staðfesta netfang"
+
+#: panelist/views.py:117
+msgid "Confirm email change"
+msgstr "Staðfesta breytt netfang"
+
+#: qxauth/forms.py:27
+#, python-brace-format
+msgid ""
+"Follow this link to reset your password on {site_name} : {protocol}://"
+"{domain}{url}"
+msgstr ""
+"Smelltu á þennan hlekk til að breyta lykilorði þínu á {site_name} : "
+"{protocol}://{domain}{url}"
+
+#: qxauth/forms.py:44
+msgid "Email"
+msgstr "Netfang"
+
+#: qxauth/forms.py:50 qxauth/forms.py:120
+msgid "Phone number"
+msgstr "Símanúmer"
+
+#: qxauth/forms.py:65
+msgid "The two email address didn't match."
+msgstr "Ósamræmi var í þessum tveimur netföngum."
+
+#: qxauth/forms.py:73
+msgid "New email"
+msgstr "Nýtt netfang"
+
+#: qxauth/forms.py:76
+msgid "New email confirmation"
+msgstr "Staðfesting á nýju netfangi"
+
+#: qxauth/views.py:83
+msgid "An email with a password reset link has been sent."
+msgstr "Tölvupóstur hefur verið sendur með hlekk til að endurstilla lykilorð."
+
+#: qxauth/views.py:90
+msgid "An sms with a password reset link has been sent."
+msgstr "Sms hefur verið sent með hlekk til að endurstilla lykilorð."
+
+#: qxauth/views.py:97
+msgid "Password updated!"
+msgstr "Lykilorð uppfært!"
+
+#: qxsms/settings.py:159
+msgid "Czech"
+msgstr "Tékki"
+
+#: qxsms/settings.py:160
+msgid "German"
+msgstr "Þjóðverji"
+
+#: qxsms/settings.py:161
+msgid "English"
+msgstr "Englendingur"
+
+#: qxsms/settings.py:162
+msgid "Finnish"
+msgstr "Finni"
+
+#: qxsms/settings.py:163
+msgid "French"
+msgstr "Frakki"
+
+#: qxsms/settings.py:164
+msgid "Hungarian"
+msgstr "Ungverji"
+
+#: qxsms/settings.py:165
+msgid "Icelandic"
+msgstr "Íslendingur"
+
+#: qxsms/settings.py:166
+msgid "Italian"
+msgstr "Ítali"
+
+#: qxsms/settings.py:167
+msgid "Dutch"
+msgstr "Hollendingur"
+
+#: qxsms/settings.py:168
+msgid "Portuguese"
+msgstr "Portúgali"
+
+#: qxsms/settings.py:169
+msgid "Slovenian"
+msgstr "Slóveni"
+
+#: qxsms/settings.py:170
+msgid "Swedish"
+msgstr "Svíi"
+
+#: templates/403.html:6
+msgid "Permission denied"
+msgstr "Aðgangi hafnað"
+
+#: templates/403.html:10
+msgid "You do not have access to this part of the application"
+msgstr "Þú hefur ekki aðgang að þessum hluta forritsins"
+
+#: templates/404.html:6
+msgid "Not found"
+msgstr "Fannst ekki"
+
+#: templates/404.html:10
+msgid "Did you mispell the URL?"
+msgstr "Er vefslóðin rétt skrifuð?"
+
+#: templates/base.html:35 templates/base.html:38
+msgid "Log out"
+msgstr "Útskráning"
+
+#: templates/login.html:26 templates/login.html:34
+msgid "Log in"
+msgstr "Innskráning"
+
+#: templates/login.html:28
+msgid "First Log in"
+msgstr "Fyrsta innskráning"
+
+#: templates/login.html:36 templates/password_reset.html:25
+msgid "Use email"
+msgstr "Nota netfang"
+
+#: templates/login.html:38 templates/password_reset.html:27
+msgid "Use phone number"
+msgstr "Nota símanúmer"
+
+#: templates/login.html:44
+msgid "Forgot password ?"
+msgstr "Gleymt lykilorð?"
+
+#: templates/password_reset.html:5
+msgid "Reset password"
+msgstr "Endurstilla lykilorð"
+
+#: templates/password_reset.html:10
+msgid "Enter your phone number to receive a link to reset your password."
+msgstr ""
+"Sláðu inn símanúmerið þitt til að fá sendan hlekk til að endurstilla "
+"lykilorðið."
+
+#: templates/password_reset.html:12
+msgid "Enter your email address to receive a link to reset your password."
+msgstr ""
+"Sláðu inn netfangið þitt til að fá sendan hlekk til að endurstilla "
+"lykilorðið."
+
+#: templates/password_reset.html:21
+msgid "Send"
+msgstr "Senda"
+
+#: templates/password_reset_confirm.html:6
+msgid "Choose a new password"
+msgstr "Veldu nýtt lykilorð"
+
+#: templates/password_reset_confirm.html:15
+msgid "Confirm password"
+msgstr "Staðfesta lykilorð"
+
+#: templates/password_reset_confirm.html:21
+#, python-format
+msgid ""
+"This link is invalid, possibly because it has already been used or expired. "
+"Please <a href=\"%(password_reset_url)s\">request a new link</a> to reset "
+"your password."
+msgstr ""
+"Þessi hlekkur er ógildur, kannski vegna þess að hann hafi verið notaður áður "
+"eða sé útrunninn. Óskaðu eftir <a href=\"%(password_reset_url)s\">nýjum "
+"hlekk</a> til að endurstilla lykilorðið þitt."
+
+#: templates/password_reset_email.html:2
+msgid ""
+"We have sent you this email because you requested to change the password of "
+"your account"
+msgstr ""
+"Við sendum þér þennan tölvupóst þar sem þú óskaðir eftir að breyta lykilorði "
+"þínu"
+
+#: templates/password_reset_email.html:4
+msgid "Please go to the following page and choose a new password:"
+msgstr "Farðu á eftirfarandi síðu og veldu nýtt lykilorð:"
+
+#: utils/context_processors.py:46
+msgid "Opinion Study"
+msgstr "Viðhorfsrannsókn"
+
+#: utils/context_processors.py:49
+#, python-format
+msgid "Opinion Study for %(country)s"
+msgstr "Viðhorfsrannsókn fyrir %(country)s"
+
+#: utils/signals.py:13
+#, python-brace-format
+msgid "{user} has been Logged out"
+msgstr "{user} hefur verið skráð/ur út"
+
+#: utils/templates/utils/cancel_button.html:2
+msgid "Cancel"
+msgstr "Hætta við"
+
+#: utils/templates/utils/distribution_status.html:4
+msgid "Sent"
+msgstr "Sent"
+
+#: utils/templates/utils/distribution_status.html:8
+msgid "Sending"
+msgstr "Er að senda"
+
+#: utils/templates/utils/distribution_status.html:11
+msgid "Not sent"
+msgstr "Ekki sent"
+
+#~ msgid "Wrong message for primary contact"
+#~ msgstr "Ekki rétt skilaboð til aðaltengiliðs"
+
+#~ msgid "Wrong message for fallback contact"
+#~ msgstr "Ekki rétt skilaboð til varatengiliðs"
+
+#~ msgid "SMS"
+#~ msgstr "SMS"
+
+#~ msgid "N/A"
+#~ msgstr "Á ekki við"
+
+#~ msgid "All"
+#~ msgstr "Allir"
+
+#~ msgid "Survey completed"
+#~ msgstr "Könnun er lokið"
+
+#~ msgid "Survey not completed"
+#~ msgstr "Könnun er ekki lokið"
+
+#~ msgid "First log in / Reset password"
+#~ msgstr "Innskráning fyrst / Endurstilla lykilorð"
+
+#~ msgid "Update password"
+#~ msgstr "Uppfæra lykilorð"
+
+#~ msgid "Your username, in case you’ve forgotten:"
+#~ msgstr "Notandanafn þitt, ef þú hafðir gleymt því:"
+
+#~ msgid "Thanks for using our site!"
+#~ msgstr "Kærar þakkir fyrir að nota síðuna okkar!"
+
+#~ msgid "Successfully logged out <strong>{user}</strong>"
+#~ msgstr "Útskráning tókst <strong>{user}</strong>"

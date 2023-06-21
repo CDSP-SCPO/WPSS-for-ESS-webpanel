@@ -1,0 +1,6 @@
+{% load i18n %}
+{% blocktrans %}
+We have sent you this text message because you requested to change the phone number linked to your account on {{ site_name }}.
+Please visit the link below to confirm the new phone number:
+{% endblocktrans %}
+{{ protocol }}://{{ domain }}{% url 'phone-change-confirm' uidb64=uid token=token %}

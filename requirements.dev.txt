@@ -1,0 +1,13 @@
+coverage
+diff-cover
+django-debug-toolbar
+django-extensions
+django-hijack
+django-rainbowtests
+factory_boy
+flake8
+ipython
+isort
+memory-profiler
+pdbpp
+tblib

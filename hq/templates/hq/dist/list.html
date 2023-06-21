@@ -1,0 +1,70 @@
+{% extends 'hq/base.html' %}
+{% load static qxsms_tags i18n %}
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem 'hq:link-distribution-list' %}{% trans "Individual links" %}{% endbreadcrumbitem %}
+{% endblock %}
+{% block title_lead %}{% trans "Sets of individual survey links generated for a selection of panels." %}{% endblock %}
+{% block content %}
+    <section class="container">
+        <p>
+            The first step in the process of distributing a survey to
+            panelits is to create a <b>set of individual links.</b> Given a
+            selection of panels, each panelist will get a unique link
+            that can be used to answer the survey.
+
+            This link will be accessible in the panelist portal, but
+            most importantly, when a set of individual links is
+            generated, it can be communicated by email or SMS to its
+            recipients.  This can be orchestrated from the <a href="{% url 'hq:msg-distribution-list' %}">Message
+            deliveries</a> section.
+        </p>
+        <p>
+            The list below summarizes the existing link sets. For more
+            details, click on the link set's identifier in the first
+            column called. Link sets that have no generation and
+            expiration date are ready but not yet generated.
+        </p>
+        <p>
+            The button below will take you to an interface through
+            which you can create a new set of individual links. Note
+            that several independent sets of links can be generated
+            for the same survey through time. An example use case for
+            this would be a recurring survey that needs to be
+            delivered monthly to a panel.
+        </p>
+        <a href="{% url 'hq:link-distribution-create' %}" class="btn btn-success mb-3">
+            {% icon 'plus-lg' 'me-2' %}{% trans "New set of individual links" %}
+        </a>
+        {% if object_list %}
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover bg-white">
+                    <thead class="table-light">
+                        <tr>
+                            <th>{% trans "UID"  %}</th>
+                            <th>{% trans "Created"  %}</th>
+                            <th>{% trans "Survey"  %}</th>
+                            <th>{% trans "Description"  %}</th>
+                            <th>{% trans "Links generated"  %}</th>
+                            <th>{% trans "Links expire"  %}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for dist in object_list %}
+                            <tr>
+                                <td><a href="{% url 'hq:link-distribution-detail' dist.pk %}">{{ dist.short_uid }}</a></td>
+                                <td>{{ dist.created_date|date:'Y-m-d H\hi' }}</td>
+                                <td>{{ dist.survey.name }}</td>
+                                <td>{{ dist.description }}</td>
+                                <td>{{ dist.qx_created_date|date:'Y-m-d H\hi'|default_if_none:'' }}</td>
+                                <td>{{ dist.expiration_date|date:'Y-m-d H\hi'|default_if_none:'' }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <div class="alert alert-info">{% trans "No individual link sets have been created yet." %}</div>
+        {% endif %}
+    </section>
+{% endblock %}

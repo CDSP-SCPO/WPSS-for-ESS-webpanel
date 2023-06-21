@@ -1,0 +1,36 @@
+{% extends 'hq/panel_member_list.html' %}
+{% load static qxsms_tags i18n %}
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem 'hq:blankslotvalue-list' profile.pk %}{% trans 'Additional variables list' %}{% endbreadcrumbitem %}
+{% endblock %}
+{% block title_lead %}
+    {% blocktrans with panelist_id=profile.panelist_id %}Additional variables for <strong>{{ panelist_id }}</strong>{% endblocktrans %}
+{% endblock %}
+{% block content %}
+    <section class="container">
+        <a href="{% url 'hq:blankslotvalue-update' profile.pk %}" class="btn btn-info mb-3">Edit</a>
+        {% if object_list %}
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover bg-white">
+                    <thead class="table-light">
+                    <tr>
+                        <th>{% trans 'Name' %}</th>
+                        <th>{% trans 'Value' %}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for bsv in object_list %}
+                    <tr>
+                        <td>{{ bsv.blankslot.name }}</td>
+                        <td>{{ bsv.value }}</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <div class="alert alert-info">{% trans "No additional variables" %}</div>
+        {% endif %}
+    </section>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'panelist/base.html' %}
+{% load i18n qxsms_tags %}
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem 'panelist:survey-list' %}{% trans "My surveys" %}{% endbreadcrumbitem %}
+{% endblock %}
+{% block title_lead %}{% endblock %}
+{% block content %}
+    <section class="container">
+        {% include 'panelist/utils/survey_list.html' %}
+    </section>
+{% endblock %}

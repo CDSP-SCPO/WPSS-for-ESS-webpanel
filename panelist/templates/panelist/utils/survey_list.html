@@ -1,0 +1,24 @@
+{% load i18n qxsms_tags %}
+{% for link in object_list %}
+    <div class="card tborder-left-{{ link.status_css }}">
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    {% if link.is_distribution_expired or link.is_survey_finished %}
+                        <span class="stretched-link">{{ link.survey_name }}</span>
+                    {% else %}
+                        <a href="{% add_url_params link.url Q_Language=user.profile.language %}" class="stretched-link">{{ link.survey_name }}</a>
+                    {% endif %}
+                </div>
+                <span class="ms-auto badge rounded-pill bg-{{ link.status_css }}">{{ link.status }}</span>
+                {% if link.distribution.is_expired %}
+                    <span class="ms-2 badge rounded-pill bg-danger">{% trans "expired" %}</span>
+                {% else %}
+                    <span class="ms-2 badge rounded-pill bg-secondary">{% blocktrans with expiration_date=link.distribution_expiration_date|timeuntil %}expires in {{ expiration_date }}{% endblocktrans %}</span>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% empty %}
+    <div class="alert alert-info">{% trans "No survey available" %}</div>
+{% endfor %}

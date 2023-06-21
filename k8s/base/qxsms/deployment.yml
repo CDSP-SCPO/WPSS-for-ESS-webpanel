@@ -1,0 +1,80 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: qxsms
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: qxsms
+  template:
+    metadata:
+      labels:
+        component: qxsms
+    spec:
+      imagePullSecrets:
+        - name: gitlab-cdsp-it
+      containers:
+        - name: qxsms
+          image: gitlab.sciences-po.fr:4567/cdspit/qxsms/qxsms:master
+          command: ["./entrypoint.sh"]
+          env:
+            - name: QXSMS_QX_DOMAIN
+              value: 'fra1'
+            - name: POSTGRES_HOST
+              value: db
+            - name: RABBIT_HOST
+              value: rabbit
+            - name: RABBIT_PORT
+              value: '5672'
+            - name: POSTGRES_DB
+              valueFrom:
+                secretKeyRef:
+                  name: postgres
+                  key: db_name
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  name: postgres
+                  key: user_name
+            - name: QXSMS_POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres
+                  key: user_password
+            - name: EMAIL_HOST_USER
+              valueFrom:
+                secretKeyRef:
+                  name: qxsms
+                  key: smtp_user
+            - name: EMAIL_HOST_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: qxsms
+                  key: smtp_password
+            - name: QXSMS_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: qxsms
+                  key: secret_key
+            - name: QXSMS_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: qxsms
+                  key: api_key
+            - name: QXSMS_DIRECTORY_ID
+              valueFrom:
+                secretKeyRef:
+                  name: qxsms
+                  key: directory_id
+            - name: QXSMS_SEND_SURVEY
+              valueFrom:
+                secretKeyRef:
+                  name: qxsms
+                  key: sms_survey
+            - name: QXSMS_LIBRARY_ID
+              valueFrom:
+                secretKeyRef:
+                  name: qxsms
+                  key: library_id
+          imagePullPolicy: Always

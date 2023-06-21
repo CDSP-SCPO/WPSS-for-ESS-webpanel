@@ -1,0 +1,42 @@
+{% extends 'hq/blankslot_value_list.html' %}
+{% load qxsms_tags django_bootstrap5 i18n %}
+{% block breadcrumb %}
+    {{ block.super}}
+    {% breadcrumbitem 'hq:blankslotvalue-update' object.pk %}
+        {% trans 'Edit additional variables' %}
+    {% endbreadcrumbitem %}
+{% endblock %}
+{% block title_lead %}
+    {% blocktrans with panelist_id=object.panelist_id %}Edit additional variables for <strong>{{ panelist_id }}</strong>{% endblocktrans %}
+{% endblock %}
+{% block content %}
+    <section class="container">
+        {% if formset.forms %}
+            {% bootstrap_formset_errors formset %}
+            <div class="row">
+                <div class="col-md-4 text-lg">{% trans Variable %}</div>
+                <div class="col-md-4 text-lg">{% trans Value %}</div>
+            </div>
+            <form method="post">
+                {% csrf_token %}
+                {{ formset.management_form }}
+                {%  for form in formset %}
+                    <div class="form-row">
+                    {% for field in form %}
+                        {% if field is not form.DELETE or form.instance.pk %}
+                            {% bootstrap_field field form_group_class="form-group col-md-4" %}
+                        {% endif %}
+                    {% endfor %}
+                    </div>
+                {% endfor %}
+                <div class="float-md-start">
+                    <button type="submit" class="btn btn-success me-2">{% trans "Save" %}</button>
+                    {% url 'hq:blankslotvalue-list' object.pk as cancel_url %}
+                    {% include 'utils/cancel_button.html' %}
+                </div>
+            </form>
+        {% else %}
+            <div class="alert alert-info">{% trans "No additional variables set up by HQ" %}</div>
+        {% endif %}
+    </section>
+{% endblock %}

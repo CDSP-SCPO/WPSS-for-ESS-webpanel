@@ -1,0 +1,6 @@
+node_modules/
+**/generated/
+.git/
+.idea/
+__pycache__
+k8s/

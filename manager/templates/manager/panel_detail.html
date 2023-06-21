@@ -1,0 +1,68 @@
+{% extends 'manager/panel_list.html' %}
+{% load qxsms_tags i18n django_bootstrap5 %}
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem 'manager:panel-detail' panel.pk %}{{ panel.name }}{% endbreadcrumbitem %}
+{% endblock %}
+{% block title_lead %}{% trans "Panel information" %}{% endblock %}
+{% block content %}
+    <section class="container">
+            <div class="row mt-5">
+                <div class="col-lg-4">
+                    <article class="card text-center">
+                        <div class="card-body">
+                            <h1 class="card-title">{% trans "Panelists" %}</h1>
+                            <div class="card-text fs-3 fw-bold">{{ panelist_count }}{% icon 'person-lines-fill' 'ms-2 text-primary icon-md' %}</div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="{% url 'manager:panel-member-list' object.pk %}" class="stretched-link">View</a>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-lg-4 mt-lg-0 mt-4 mb-4">
+                    <article class="card text-center">
+                        <div class="card-body">
+                            <h1 class="card-title">{% trans "Import history" %}</h1>
+                            <div class="card-text fs-3 fw-bold">{% icon 'filetype-csv' 'text-primary icon-md' %}</div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="{% url 'manager:task-import-list' object.pk %}" class="stretched-link">View</a>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-lg-4 mt-lg-0 mt-4 mb-4">
+                    <article class="card text-center">
+                        <div class="card-body">
+                            <h1 class="card-title">{% trans "Individual Links" %}</h1>
+                            <div class="card-text fs-3 fw-bold">{% icon 'link-45deg' 'text-primary icon-md' %}</div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="{% url 'manager:panel-survey-list' object.pk %}" class="stretched-link">View</a>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-lg-4 mt-lg-0 mt-4">
+                    <article class="card text-center">
+                        <div class="card-body">
+                            <h1 class="card-title">{% trans "Message deliveries" %}</h1>
+                            <div class="card-text fs-3 fw-bold">{% icon 'envelope-open' 'text-primary icon-md' %}</div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="{% url 'manager:msg-distribution-list' panel.pk %}" class="stretched-link">{% trans "View" %}</a>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-lg-4 mt-lg-0 mt-4">
+                    <article class="card text-center">
+                        <div class="card-body">
+                            <h1 class="card-title">{% trans "Settings" %}</h1>
+                            <div class="card-text fs-3 fw-bold">{% icon 'gear' 'text-primary icon-md' %}</div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="{% url 'manager:panel-update' object.pk %}" class="stretched-link">{% trans "View" %}</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,56 @@
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>UID</th>
+        <td><a href="{% url 'hq:msg-distribution-detail' object.pk %}">{{ object.short_uid }}</a></td>
+    </tr>
+    <tr>
+        <th>Type</th><td>{{ object.get_contact_mode_display }}</td>
+    </tr>
+    <tr>
+        <th>Target</th><td>{{ object.get_target_display }}</td>
+    </tr>
+    <tr>
+        <th>Link set</th>
+        <td>
+            <a href="{% url 'hq:link-distribution-detail' object.link_distribution.pk %}">{{ object.link_distribution.description }}</a>
+        </td>
+    </tr>
+    <tr>
+        <th>Description</th>
+        <td>{{ object.description}}</td>
+    </tr>
+    {% if object.subject %}
+        <tr>
+            <th>Subject</th>
+            <td>{{ object.subject.description }}</td>
+        </tr>
+    {% endif %}
+    <tr>
+        <th>Message</th>
+        <td>{{ object.message.description }}</td>
+    </tr>
+    {% if object.get_send_date %}
+        <tr>
+            <th>Send date</th> <td>{{ object.get_send_date|date:'Y-m-d H\hi' }}</td>
+        </tr>
+    {% endif %}
+    {% if object.has_fallback %}
+        <tr>
+            <th>Fallback</th>
+            <td>
+                <a href="{% url 'hq:msg-distribution-detail' object.fallback.pk %}">
+                    ({{ object.fallback.short_uid }}) {{ object.fallback.message.description }}
+                </a>
+            </td>
+        </tr>
+    {% elif object.is_fallback %}
+        <tr>
+            <th>Fallback of</th>
+            <td>
+                <a href="{% url 'hq:msg-distribution-detail' object.fallback_of.pk %}">
+                    ({{ object.fallback_of.short_uid }}) {{ object.fallback_of.message.description }}
+                </a>
+            </td>
+        </tr>
+    {% endif %}
+</table>

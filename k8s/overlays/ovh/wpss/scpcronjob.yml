@@ -1,0 +1,52 @@
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: db-backup-export
+spec:
+  schedule: "0 21 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: db-backup-export
+              image: docker.io/imranawan/sftp-client:latest
+              env:
+                - name: POSTGRES_DB
+                  valueFrom:
+                    secretKeyRef:
+                      name: postgres
+                      key: db_name
+                - name: SCP_HOST
+                  valueFrom:
+                    secretKeyRef:
+                      name: scp
+                      key: scp_host
+                - name: SCP_PORT
+                  valueFrom:
+                    secretKeyRef:
+                      name: scp
+                      key: scp_port
+                - name: SCP_USERNAME
+                  valueFrom:
+                    secretKeyRef:
+                      name: scp
+                      key: scp_username
+                - name: SCP_PASSWORD
+                  valueFrom:
+                    secretKeyRef:
+                      name: scp
+                      key: scp_password
+              args:
+                - /bin/bash
+                - -c
+                - echo "${SCP_PASSWORD}" > /root/.scppass ; chmod 400 /root/.scppass ; mkdir /root/.ssh ; ssh-keyscan -p ${SCP_PORT:-22} $SCP_HOST > /root/.ssh/known_hosts ; echo -e "put /backup/qxsms/dump_${POSTGRES_DB}$(date +%F)_??_??_??.sql.gz /backup/dump_${POSTGRES_DB}-latest.sql.gz\nquit" > /root/script ; sshpass -f /root/.scppass sftp -C -P ${SCP_PORT:-22} -o BatchMode=no -b /root/script ${SCP_USERNAME}@${SCP_HOST};
+              volumeMounts:
+                - name: vol-backup
+                  mountPath: /backup
+          restartPolicy: OnFailure
+          volumes:
+          - name: vol-backup
+            persistentVolumeClaim:
+              claimName: pvc-backup

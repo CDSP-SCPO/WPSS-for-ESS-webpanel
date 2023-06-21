@@ -1,0 +1,24 @@
+<table class="table table-bordered table-hover bg-white">
+    <thead class="table-light">
+        <tr>
+            <th>Links to send</th>
+            {% if schedule %}
+                <th title="{{ object.get_send_date }}">Scheduled ({{ days }} days)</th>
+            {% else %}
+                <th>Sent</th>
+            {% endif %}
+            <th>Failed</th>
+            <th>SMS messages consumed</th>
+            <th>Credits consumed</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td> {{ object.links__count }} </td>
+            <td>{{ stats.sent }}</td>
+            <td>{{ stats.failed }}</td>
+            <td>{{ stats.segments }}</td>
+            <td>{{ stats.credits }}</td>
+        </tr>
+    </tbody>
+</table>

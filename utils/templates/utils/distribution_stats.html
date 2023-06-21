@@ -1,0 +1,27 @@
+{% load qxsms_tags %}
+<div class="table-responsive">
+<table class="table table-bordered bg-white">
+    <thead class="table-light">
+        <tr>
+            <th>Panel</th>
+            <th>Not Started</th>
+            <th>Started</th>
+            <th>Partially Finished</th>
+            <th>Finished</th>
+            <th class="table-success">Total</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for panel, stats in records_stats.items %}
+            <tr {% if panel == "Total" %} class="table-success" {% endif %}>
+                <td>{{ panel }}</td>
+                <td>{{ stats.not_started }}</td>
+                <td>{{ stats.started }}</td>
+                <td>{{ stats.partially_finished }}</td>
+                <td>{{ stats.finished }}</td>
+                <td>{{ stats.total }}</td>
+            </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>

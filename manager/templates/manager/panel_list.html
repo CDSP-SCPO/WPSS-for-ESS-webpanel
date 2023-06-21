@@ -1,0 +1,49 @@
+{% extends 'manager/base.html' %}
+{% load qxsms_tags i18n %}
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem 'manager:panel-list' %}{% trans "Panels" %}{% endbreadcrumbitem %}
+{% endblock %}
+{% block title_lead %}{% blocktrans %}All panels currently managed by {{ request.user.first_name }} {{ request.user.last_name }}{% endblocktrans %}{% endblock %}
+{% block content %}
+    <section class="container">
+        {% for panel in object_list %}
+            <div class="d-flex flex-wrap{% if not forloop.last %} mb-3{% endif %}">
+                <div class="flex-fill card me-2">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="{% url 'manager:panel-detail' panel.pk %}" class="stretched-link">{{ panel.name }}</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card me-2">
+                    <div class="card-body">
+                        <a href="{% url 'manager:panel-member-list' panel.pk %}" class="stretched-link">{% trans "Panelists" %}<span class="ms-2 badge rounded-pill bg-primary">{{ panel.profile_set.count }}</span></a>
+                    </div>
+                </div>
+                <div class="card me-2">
+                    <div class="card-body">
+                        <a href="{% url 'manager:task-import-list' panel.pk %}" class="stretched-link">{% trans "Import history" %}</a>
+                    </div>
+                </div>
+                <div class="card me-2">
+                    <div class="card-body">
+                        <a href="{% url 'manager:panel-survey-list' panel.pk %}" class="stretched-link">{% trans "Individual links" %}</a>
+                    </div>
+                </div>
+                <div class="card me-2">
+                    <div class="card-body">
+                        <a href="{% url 'manager:msg-distribution-list' panel.pk %}" class="stretched-link">{% trans "Message deliveries" %}</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <a href="{% url 'manager:panel-update' panel.pk %}" class="stretched-link">{% trans "Settings" %}</a>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <div class="alert alert-info">{% trans "No panel" %}</div>
+        {% endfor %}
+    </section>
+{% endblock %}

@@ -1,0 +1,44 @@
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: db-backup
+spec:
+  schedule: "0 20 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: db-backup
+              image: postgres:13-alpine
+              env:
+                - name: POSTGRES_HOST
+                  value: db
+                - name: POSTGRES_DB
+                  valueFrom:
+                    secretKeyRef:
+                      name: postgres
+                      key: db_name
+                - name: POSTGRES_USER
+                  valueFrom:
+                    secretKeyRef:
+                      name: postgres
+                      key: user_name
+                - name: POSTGRES_PASSWORD
+                  valueFrom:
+                    secretKeyRef:
+                      name: postgres
+                      key: user_password
+              args:
+                - /bin/bash
+                - -c
+                - echo $POSTGRES_HOST:5432:$POSTGRES_DB:$POSTGRES_USER:$POSTGRES_PASSWORD > /root/.pgpass; chmod 600 /root/.pgpass; mkdir -p /backup/qxsms; find /backup/qxsms -mtime +7 -delete; pg_dump --verbose -h $POSTGRES_HOST -U $POSTGRES_USER -w $POSTGRES_DB -Z 9 -f /backup/qxsms/dump_$POSTGRES_DB$(date +%F_%H_%M_%S).sql.gz;
+              volumeMounts:
+                - name: vol-backup
+                  mountPath: /backup
+          restartPolicy: OnFailure
+          volumes:
+          - name: vol-backup
+            persistentVolumeClaim:
+              claimName: pvc-backup

@@ -1,0 +1,31 @@
+{% extends 'hq/base.html' %}
+{% load qxsms_tags i18n %}
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem 'hq:link-distribution-list' %}{% trans "Link sets" %}{% endbreadcrumbitem %}
+    {% breadcrumbitem 'hq:link-distribution-detail' object.pk %}{% trans "Details" %}{% endbreadcrumbitem %}
+{% endblock %}
+{% block title_lead %}{% trans "Detailed summary of this link set's characteristics" %}{% endblock %}
+{% block content %}
+    <section class="container">
+        {% include 'hq/dist/distribution_details.html' with generated=object.qx_id %}
+        {# The links have been generated on Qualtrics, and we can display some stats #}
+        {% if object.qx_id %}
+        <h1>Detailed stats</h1>
+        {% include 'utils/distribution_stats.html' with records_stats=records_stats %}
+        {# The links are in the process of being generated  #}
+        {% elif object.expiration_date %}
+            {# Loading animation during the creation of the links #}
+            {% include "utils/loading_spinner.html" with spinner_progress_info="Links are being generated." %}
+        {% else %}
+            <p>
+                If this recap corresponds to what you intended, then
+                when you see fit, you can click below to reach a page
+                on which you can specify an expiration date and generate the
+                links.
+            </p>
+            <a href="{% url 'hq:link-distribution-generate' object.pk %}" class="btn btn-success">Generate links</a>
+            <a href="{% url 'hq:link-distribution-delete' object.pk %}"  class="float-end ms-2 btn btn-danger">{% trans "Delete" %}</a>
+        {% endif %}
+    </section>
+{% endblock %}

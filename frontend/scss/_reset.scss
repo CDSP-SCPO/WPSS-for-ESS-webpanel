@@ -1,0 +1,48 @@
+// Fixes
+p:last-child { margin-bottom: 0; }  // Remove space after last p element
+.alert:last-child { margin-bottom: 0; } // Remove space between alert and breadcrumb
+.container + .container { margin-top: $spacer*3; }  // Add space between containers
+.table-responsive {  // Move the margin bottom from .table to .table-responsive
+    & > .table { margin-bottom: 0; }
+    &:not(:last-child) { margin-bottom: $spacer; }
+}
+
+// Changes
+.breadcrumb-item {
+    &:not(:last-child) a {
+        color: $breadcrumb-divider-color;
+        &:hover { color: darken($breadcrumb-divider-color, 15%); }
+    }
+    &:nth-last-child(2):after {
+        display: inline-block;
+        padding-left: $breadcrumb-item-padding-x;
+        color: $breadcrumb-divider-color;
+        content: $breadcrumb-divider;
+    }
+    &:last-child {
+        @extend h1;
+
+        margin-bottom: 0;
+        padding-left: 0;
+        flex-basis: 100%;
+        display: flex;
+        align-items: center;
+
+        &:not(:first-child) { margin-top: $spacer; }
+        &:before { content: none; }
+        a:first-child { color: $body-color !important; }
+    }
+}
+
+// Extensions
+a.card {  // Create clickable card with button settings
+    transition: $btn-transition;
+    &:hover { background-color: $gray-200; }
+    &, &:hover { color: inherit; text-decoration: inherit; }
+}
+
+.bi {  // Copied from bootstrap-icons css
+    display: inline-block;
+    vertical-align: -0.125em;
+    svg { vertical-align: middle; }
+}

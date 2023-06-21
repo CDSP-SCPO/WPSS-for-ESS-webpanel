@@ -1,0 +1,29 @@
+{% extends 'hq/blankslot_list.html' %}
+{% load qxsms_tags i18n %}
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem %}{{ blankslot.name }}{% endbreadcrumbitem %}
+{% endblock %}
+{% block title_lead %}{% trans 'Please confirm' %}{% endblock %}
+{% block content %}
+    <section class="container">
+        <div class="d-flex justify-content-center">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="card-title">
+                        {% blocktrans with name=blankslot.name %}
+                            You are about to permanently delete the variable <strong>{{ name }}</strong>.
+                            Proceed ?
+                        {% endblocktrans %}
+                    </h1>
+                    <form action="{% url 'hq:blankslot-delete' blankslot.pk %}" method="post" class="text-center">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger me-2">{% trans 'Yes' %}</button>
+                        {% url 'hq:blankslot-update' blankslot.pk as cancel_url %}
+                        {% include 'utils/cancel_button.html' %}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

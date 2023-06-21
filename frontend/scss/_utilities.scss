@@ -1,0 +1,9 @@
+.mw-1920 { max-width: 1920px; }
+.font-size-larger { font-size: xx-large !important; }
+.bg-primary-dark { background-color: darken($primary, $darken-percent); }
+
+// Login page bg
+$step-1: 61%;
+$step-2: 85%;
+.bg-sshoc-stripes { background: linear-gradient(200deg, $sshoc-blue $step-1, $sshoc-lightblue $step-1, $sshoc-lightblue $step-2, $sshoc-orange $step-2, $sshoc-orange 100% ); }
+.tborder-left { border-left: solid black thick; } .tborder-left-success { @extend .tborder-left; border-left-color: map-get($theme-colors, 'success'); } .tborder-left-info { @extend .tborder-left; border-left-color: map-get($theme-colors, 'info'); } .tborder-left-secondary { @extend .tborder-left; border-left-color: map-get($theme-colors, 'secondary'); } .tborder-left-warning { @extend .tborder-left; border-left-color: map-get($theme-colors, 'warning'); }

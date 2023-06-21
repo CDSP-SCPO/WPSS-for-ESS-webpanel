@@ -1,0 +1,27 @@
+{% extends "distributions/base.html" %}
+{% block content %}
+    <h1>Message distribution details</h1>
+    {% include 'distributions/msgd/msgd_details.html' %}
+    {% if object.qx_id %}
+        <h2>Stats</h2>
+        {% if object.is_email %}
+            {% include 'distributions/msgd/email_stats.html' %}
+            <a href="{% url 'dist:msgd:history' object.pk %}">Details</a>
+        {% else %}
+            {% include 'distributions/msgd/sms_stats.html' %}
+        {% endif %}
+    {% elif object.send_date %}
+        Sending...
+    {% else %}
+        <h2>Actions</h2>
+        <ul>
+            {% if object.can_add_fallback %}
+                <li><a href="{% url 'dist:msgd:create-fallback' object.pk %}">Add fallback message</a></li>
+            {% endif %}
+            {% if not object.is_fallback %}
+                <li><a href="{% url 'dist:msgd:send' object.pk %}">Send</a></li>
+            {% endif %}
+            <li><a href="">Delete</a></li>
+        </ul>
+    {% endif %}
+{% endblock %}

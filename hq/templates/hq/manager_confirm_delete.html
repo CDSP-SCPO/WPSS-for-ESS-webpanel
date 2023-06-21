@@ -1,0 +1,44 @@
+{% extends 'hq/manager_list.html' %}
+{% load qxsms_tags i18n %}
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem %}
+        {{ object.get_full_name|default:object.get_username }}
+    {% endbreadcrumbitem %}
+{% endblock %}
+{% block title_lead %}{% trans "Confirm account deletion" %}{% endblock %}
+{% block content %}
+    <section class="container">
+        <div class="d-flex justify-content-center">
+            <div class="card">
+                <div class="card-body">
+                    <p>
+                        {% blocktrans with email=object.get_username%}
+                            You are about to permanently delete the national coordinator account
+                            associated to the address <strong>{{ email }}</strong>.
+                        {% endblocktrans %}
+                    </p>
+                {% with user.panel_set.all as panels %}
+                    {% if panels %}
+                        <p class="card-text">
+                            {% trans "The following panels are currently assigned to this national coordinator:" %}
+                        </p>
+                        <ul class="card-text">
+                            {% for panel in object.panel_set.all %}
+                                <li>{{ panel.name }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                {% endwith %}
+                    <p>{% trans "Do you wish to proceed ?" %}</p>
+                    <form action="{% url 'hq:manager-delete' object.pk %}" method="post" class="text-center">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger me-2">{% trans "Yes" %}</button>
+                        {% url 'hq:manager-list' as cancel_url %}
+                        {% include 'utils/cancel_button.html' %}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

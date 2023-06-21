@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load qxsms_tags %}
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem %}{% trans "Not found" %}{% endbreadcrumbitem %}
+{% endblock %}
+{% block content %}
+    <section class="container">
+        <div class="alert alert-warning">{% trans "Did you mispell the URL?" %}</div>
+    </section>
+{% endblock %}

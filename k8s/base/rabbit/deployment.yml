@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rabbit
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: rabbit
+  template:
+    metadata:
+      labels:
+        component: rabbit
+    spec:
+      containers:
+        - name: rabbit
+          image: rabbitmq:3.9-alpine
+          imagePullPolicy: Always

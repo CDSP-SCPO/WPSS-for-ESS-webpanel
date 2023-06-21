@@ -1,0 +1,28 @@
+
+
+{% extends "hq/base.html" %}
+{% load qxsms_tags django_bootstrap5 i18n %}
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem 'hq:msg-distribution-list' %}{% trans "Message deliveries" %}{% endbreadcrumbitem %}
+    {% breadcrumbitem 'hq:msg-distribution-detail' object.pk %}{% trans "Details" %}{% endbreadcrumbitem %}
+    {% breadcrumbitem 'hq:msg-distribution-update' object.pk %}{% trans "Update messages" %}{% endbreadcrumbitem %}
+{% endblock %}
+{% block title_lead %}
+    {% blocktrans %}
+        Edit the description of the message.
+    {% endblocktrans %}
+{% endblock %}
+
+{% block content %}
+<section class="container">
+    {% include 'hq/msgdist/msgdist_details.html' %}
+    <h1>Confirm</h1>
+    <form method="post">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <button type="submit" class="btn btn-success">Update Description</button>
+
+    </form>
+</section>
+{% endblock %}

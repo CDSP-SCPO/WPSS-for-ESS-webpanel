@@ -1,0 +1,70 @@
+{% load static qxsms_tags i18n django_bootstrap5 %}{% spaceless %}
+{% get_current_language as LANGUAGE_CODE %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+    {% include 'meta.html' %}
+    <title>{% block title %}{{ INSTANCE_NAME }}{% endblock %}</title>
+    {% block head %}
+        <link rel="stylesheet" href="{% static 'css/qxsms.css' %}?{{ QXSMS_VERSION }}">
+    {% endblock %}
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <header class="main-header">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="{% url 'login' %}">{% icon 'logo' 'icon-lg' %}</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div id="main-nav" class="collapse navbar-collapse">
+                    <div class="navbar-nav">
+                        {% block menu_links %}{% endblock %}
+                    </div>
+                    {% if request.user.is_authenticated %}
+                        <hr class="d-lg-none">
+                        <div class="navbar-nav ms-md-auto d-flex justify-content-center">
+                            <div class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="user-menu-dropdown" role="button" aria-expanded="false">{% icon 'person-circle' 'me-2' %}{{ request.user }}</a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="user-menu-dropdown">
+                                    <a class="dropdown-item" href="{% block profile_link %}#{% endblock %}">{% trans "Profile" %}</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="{% url 'logout' %}">{% trans "Log out" %}{% icon 'box-arrow-right' 'ms-2' %}</a>
+                                </div>
+                            </div>
+                            <a class="nav-link" href="{% url 'logout' %}">{% trans "Log out" %}{% icon 'box-arrow-right' 'ms-2' %}</a>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </nav>
+        {% block header %}{% endblock %}
+    </header>
+    <main>
+        {% if messages %}
+            <section id="main-messages" class="bg-white">
+                <div class="container">{% bootstrap_messages %}</div>
+            </section>
+        {% endif %}
+        <nav aria-label="breadcrumb" class="bg-white mb-5 py-5 border-bottom">
+            <div class="container">
+                <ol class="breadcrumb p-0 mb-0 bg-transparent">
+                    {% block breadcrumb %}{% endblock %}
+                </ol>
+                <p class="lead">{% block title_lead %}{% endblock %}</p>
+            </div>
+        </nav>
+        {% block content %}{% endblock %}
+    </main>
+    {% include 'footer.html' %}
+    <script src="{% static 'lib/bootstrap.bundle.js' %}"></script>
+    {# Removes link effect on the last breadcrumb item which is the title of the page #}
+    <script>
+        let b = document.querySelector('.breadcrumb-item:last-child a'); if (b) b.removeAttribute('href');
+        let lastBreadcrumb = document.querySelector('.breadcrumb-item:last-child');
+        document.title = lastBreadcrumb.textContent;
+    </script>
+    {% block js %}{% endblock %}
+</body>
+</html>
+{% endspaceless %}

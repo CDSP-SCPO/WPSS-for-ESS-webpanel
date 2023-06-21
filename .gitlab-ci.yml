@@ -1,0 +1,121 @@
+image: docker:stable
+
+stages:
+    - build
+    - test
+    - report
+    - deploy
+
+variables:
+    IMAGE_NAME_TAG: $CI_REGISTRY_IMAGE/qxsms:$CI_COMMIT_REF_SLUG
+    IMAGE_NAME_DEV: $CI_REGISTRY_IMAGE/qxsms:dev-$CI_COMMIT_REF_SLUG
+
+build:
+    stage: build
+    script:
+        - docker build -t $IMAGE_NAME_TAG . --build-arg QXSMS_VERSION=$CI_COMMIT_SHORT_SHA
+        - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+        - docker push $IMAGE_NAME_TAG
+    only:
+        - tags
+        - staging
+        - production
+        - ovh
+    environment:
+        name: $CI_COMMIT_REF_SLUG
+
+build-test:
+    stage: build
+    script:
+        - docker build -t $IMAGE_NAME_DEV . --file Dockerfile.dev --build-arg QXSMS_VERSION=$CI_COMMIT_SHORT_SHA
+        - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+        - docker push $IMAGE_NAME_DEV
+unit-tests:
+    stage: test
+    image: $IMAGE_NAME_DEV
+    services:
+        - name: postgres:13-alpine
+          alias: db
+    variables:
+        POSTGRES_USER: qxsms
+        POSTGRES_PASSWORD: qxsms
+        POSTGRES_DB: qxsms
+        POSTGRES_HOST: db
+        POSTGRES_PORT: 5432
+        QXSMS_DEBUG: 'false'
+        QXSMS_ENV: development
+        QXSMS_SECRET_KEY: QXSMS_TEST_SECRET_KEY
+        QXSMS_POSTGRES_PASSWORD: $POSTGRES_PASSWORD
+    script:
+        - python manage.py check
+        - python manage.py makemigrations --check
+        - coverage run --parallel-mode --concurrency=multiprocessing manage.py test --parallel -v 2
+        - coverage combine
+        - coverage report
+        - coverage xml
+    coverage: /TOTAL.+?(\d+.\d+\%)$/
+    artifacts:
+        reports:
+            coverage_report:
+                coverage_format: cobertura
+                path: coverage.xml
+
+lint:
+    image: $IMAGE_NAME_DEV
+    stage: report
+    script:
+        - flake8 .
+        - isort . --check
+    allow_failure: true
+
+documentation:
+    stage: deploy
+    image: squidfunk/mkdocs-material
+    variables:
+        GITHUB_REMOTE: https://$GITHUB_USER:$GITHUB_TOKEN@github.com/CDSP-SCPO/wpss-doc.git
+    script:
+        - git init
+        - git config user.email "itcdsp-scpolst@sciencespo.fr"
+        - git config user.name "itcdsp"
+        - git remote add github $GITHUB_REMOTE || true
+        - git remote set-url github $GITHUB_REMOTE || true
+        - git pull github gh-pages --allow-unrelated-histories
+        - mkdocs gh-deploy
+    only:
+        changes:
+            - docs/user/**/*
+        refs:
+            - documentation
+
+deploy:
+    image:
+        name: bitnami/kubectl:1.24
+        entrypoint: [ "" ]
+    stage: deploy
+    dependencies:
+        - build
+    before_script:
+        - export KUBECONFIG=$kubeconfig_file
+    script:
+        - bash
+        - STACKS=$(ls "k8s/overlays/$CI_COMMIT_REF_SLUG/")
+        - kubectl config use-context $kubectl_context
+        - >
+            for stack in $STACKS; do
+              echo "Deploying qxsms-$stack overlay...";
+              POSTGRES_SECRETS=${stack}_postgres_secrets;
+              QXSMS_SECRETS=${stack}_qxsms_secrets;
+              SCP_SECRETS=${stack}_scp_secrets;
+              cp ${!POSTGRES_SECRETS} k8s/overlays/$CI_COMMIT_REF_SLUG/$stack/postgres.env;
+              cp ${!QXSMS_SECRETS} k8s/overlays/$CI_COMMIT_REF_SLUG/$stack/qxsms.env;
+              cp ${!SCP_SECRETS} k8s/overlays/$CI_COMMIT_REF_SLUG/$stack/scp.env;
+              kubectl apply -f k8s/overlays/$CI_COMMIT_REF_SLUG/$stack/namespace.yml;
+              kubectl apply -k k8s/overlays/$CI_COMMIT_REF_SLUG/$stack;
+              echo "$stack overlay done.\n";
+            done
+    environment:
+        name: $CI_COMMIT_REF_SLUG
+    only:
+        - staging
+        - production
+        - ovh

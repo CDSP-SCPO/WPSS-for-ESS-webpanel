@@ -1,0 +1,22 @@
+{% extends 'hq/manager_list.html' %}
+{% load qxsms_tags django_bootstrap5 i18n %}
+
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem 'hq:manager-create' %}{% trans "New national coordinator" %}{% endbreadcrumbitem %}
+{% endblock %}
+
+{% block title_lead %}{% endblock %}
+
+{% block content %}
+    <section class="container">
+        <p>{% trans "A login link will be sent by email upon creation of the account." %}</p>
+        <form method="post">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <button type="submit" class="btn btn-success me-2">{% trans "Create" %}</button>
+            {% url 'hq:manager-list' as cancel_url %}
+            {% include 'utils/cancel_button.html' %}
+        </form>
+    </section>
+{% endblock %}

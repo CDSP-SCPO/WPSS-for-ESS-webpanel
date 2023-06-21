@@ -1,0 +1,25 @@
+<ul>
+    <li>UID: {{ object.pk }}</li>
+    <li>Type: {{ object.get_contact_mode_display }} </li>
+    <li>Target: {{ object.get_target_display }}</li>
+    <li>Link set:
+        <a href="{% url 'dist:detail' object.link_distribution.pk %}">{{ object.link_distribution.description }}</a>
+    </li>
+        {% if object.subject %}
+            <li>Subject: {{ object.subject.description }}</li>
+        {% endif %}
+    <li>Message: {{ object.message.description }}</li>
+    {% if object.send_date %}
+        <li>Send date: {{ object.send_date|date }}</li>
+        <li>Recipients: {{ object.recipients__count }}</li>
+    {% endif %}
+    {% if object.has_fallback %}
+        <li>Fallback:
+            <a href="{% url 'dist:msgd:detail' object.fallback.pk %}">({{ object.fallback.short_uid }}) {{ object.fallback.message.description }}</a>
+        </li>
+    {% elif object.is_fallback %}
+        <li>Fallback of:
+            <a href="{% url 'dist:msgd:detail' object.fallback_of.pk %}">({{ object.fallback_of.short_uid }}) {{ object.fallback_of.message.description }}</a>
+        </li>
+    {% endif %}
+</ul>

@@ -1,0 +1,33 @@
+{% extends 'hq/base.html' %}
+{% load qxsms_tags django_bootstrap5 i18n %}
+
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem 'hq:link-distribution-create' %}{% trans "New set of individual links" %}{% endbreadcrumbitem %}
+{% endblock %}
+
+{% block title_lead %}Select a survey and targeted panels, for which individual links will be generated when appropriate{% endblock %}
+
+{% block content %}
+    <section class="container">
+        <p>
+            As a first step, the form below will allow you to select a
+            survey and target panels, a give a short and meaningful
+            description of the intended use of this link
+            set. No links will be generated yet.
+        </p>
+
+        <p>
+            Generating the links will come as a separate step,
+            at which point you will be asked to specify the
+            link's expiry date. This can be done from the links set's detail page.
+        </p>
+        <form method="post">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <button type="submit" class="btn btn-success me-2">{% trans "Create" %}</button>
+            {% url 'hq:link-distribution-list' as cancel_url %}
+            {% include 'utils/cancel_button.html' %}
+        </form>
+    </section>
+{% endblock %}

@@ -1,0 +1,38 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: qxsms
+
+namePrefix: qxsms-
+
+bases:
+  - ../../base/
+
+resources:
+  - ingress.yml
+
+patchesStrategicMerge:
+- env.yml
+
+commonLabels:
+  stage: development
+
+secretGenerator:
+- name: postgres
+  literals:
+    - db_name=qxsms
+    - user_name=qxsms
+    - user_password=qxsms
+
+- name: qxsms
+  literals:
+    - api_key=my_api_key
+    - secret_key=my_secret_key
+
+images:
+  - name: postgres
+    newTag: '13-alpine'
+  - name: rabbitmq
+    newTag: '3.9-alpine'
+  - name: gitlab.sciences-po.fr:4567/cdspit/qxsms/qxsms
+    newTag: 'master'

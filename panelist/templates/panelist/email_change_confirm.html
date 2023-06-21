@@ -1,0 +1,23 @@
+{% extends 'panelist/base.html' %}
+{% load qxsms_tags %}
+{% load i18n %}
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem 'panelist:profile-update' %}{% trans "Confirm your email" %}{% endbreadcrumbitem %}
+{% endblock %}
+{% block content %}
+    <section class="container">
+        {% if validlink %}
+            {% blocktrans with email=user.email  temp_email=user.profile.temp_email trimmed %}
+                <p>Are you sure you want to change your email {{ email }} by {{ temp_email }}?</p>
+            {% endblocktrans %}
+            <br>
+            <form method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-success me-2">{% trans "Confirm request" %}</button>
+            </form>
+        {% else %}
+            <p>{% trans "This link is invalid, possibly because it has already been used. Please request a new link to change your email." %}</p>
+        {% endif %}
+    </section>
+{% endblock %}

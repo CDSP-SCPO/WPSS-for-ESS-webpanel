@@ -1,0 +1,13 @@
+{% load i18n %}{% spaceless %}{% with cssclass="badge rounded-pill" %}
+    {% if object.is_sent %}
+        <span class="{{ cssclass }} bg-success" title="Sent on {{ object.publication_date|date:'d/m/Y H:i:s' }}">
+            {% trans "Sent" %}
+        </span>
+    {% elif object.is_sending %}
+        <span class="{{ cssclass }} bg-warning" title="Sent on {{ object.publication_date|date:'d/m/Y H:i:s' }}">
+            {% trans "Sending" %}
+        </span>
+    {% else %}
+        <span class="{{ cssclass }} bg-danger">{% trans "Not sent" %}</span>
+    {% endif %}
+{% endwith %}{% endspaceless %}

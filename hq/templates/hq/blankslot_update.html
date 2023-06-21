@@ -1,0 +1,19 @@
+{% extends 'hq/blankslot_list.html' %}
+{% load qxsms_tags django_bootstrap5 i18n %}
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem %}{{ blankslot.name }}{% endbreadcrumbitem %}
+{% endblock %}
+{% block title_lead %}{% trans 'Additional variable edition' %}{% endblock %}
+{% block content %}
+    <section class="container">
+        <form method="post" action="{% url 'hq:blankslot-update' object.pk %}">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <button type="submit" class="btn btn-success me-2">{% trans 'Save' %}</button>
+            {% url 'hq:blankslot-list' as cancel_url %}
+            {% include 'utils/cancel_button.html' %}
+            <a href="{% url 'hq:blankslot-delete' blankslot.pk %}" class="float-end ms-2 btn btn-danger">{% trans 'Delete' %}</a>
+        </form>
+    </section>
+{% endblock %}

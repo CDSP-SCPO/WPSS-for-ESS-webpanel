@@ -1,0 +1,817 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-06 09:06+0000\n"
+"PO-Revision-Date: 2021-02-20 14:41+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.4.2\n"
+
+#. Translators: ignore
+#: panelist/forms.py:194
+msgid "Cannot assign multiple values to the same variable"
+msgstr ""
+
+#. Translators: ignore
+#: panelist/models.py:32
+msgid "Must be between 1 and 99."
+msgstr ""
+
+#. Translators: ignore
+#: panelist/models.py:38
+msgid "Must be between 1 and 31, or 77, 88, 99."
+msgstr ""
+
+#. Translators: ignore
+#: panelist/models.py:44
+msgid "Must be between 1 and 12, or 77, 88, 99."
+msgstr ""
+
+#. Translators: ignore
+#: panelist/models.py:50
+msgid "Must be between 1900 and 2005, or 7777, 8888, 9999."
+msgstr ""
+
+#: panelist/models.py:144
+msgid "Austria"
+msgstr "Ausztria"
+
+#: panelist/models.py:145
+msgid "Belgium"
+msgstr "Belgium"
+
+#: panelist/models.py:146
+msgid "Bulgaria"
+msgstr "Bulgária"
+
+#: panelist/models.py:147
+msgid "Czechia"
+msgstr "Csehország"
+
+#: panelist/models.py:148
+msgid "Croatia"
+msgstr "Horvátország"
+
+#: panelist/models.py:149
+msgid "Cyprus"
+msgstr "Ciprus"
+
+#: panelist/models.py:150
+msgid "Estonia"
+msgstr "Észtország"
+
+#: panelist/models.py:151
+msgid "Finland"
+msgstr "Finnország"
+
+#: panelist/models.py:152
+msgid "France"
+msgstr "Franciaország"
+
+#: panelist/models.py:153
+msgid "Germany"
+msgstr "Németország"
+
+#: panelist/models.py:154
+msgid "Hungary"
+msgstr "Magyarország"
+
+#: panelist/models.py:155
+msgid "Iceland"
+msgstr "Izland"
+
+#: panelist/models.py:156
+msgid "Ireland"
+msgstr "Írország"
+
+#: panelist/models.py:157
+msgid "Italy"
+msgstr "Olaszország"
+
+#: panelist/models.py:158
+msgid "Latvia"
+msgstr "Lettország"
+
+#: panelist/models.py:159
+msgid "Lithuania"
+msgstr "Litvánia"
+
+#: panelist/models.py:160
+msgid "The Netherlands"
+msgstr "Hollandia"
+
+#: panelist/models.py:161
+msgid "Norway"
+msgstr "Norvégia"
+
+#: panelist/models.py:162
+msgid "Poland"
+msgstr "Lengyelország"
+
+#: panelist/models.py:163
+msgid "Portugal"
+msgstr "Portugália"
+
+#: panelist/models.py:164
+msgid "Slovakia"
+msgstr "Szlovákia"
+
+#: panelist/models.py:165
+msgid "Slovenia"
+msgstr "Szlovénia"
+
+#: panelist/models.py:166
+msgid "Sweden"
+msgstr "Svédország"
+
+#: panelist/models.py:167
+msgid "United Kingdom"
+msgstr "Egyesült Királyság"
+
+#: panelist/models.py:168
+msgid "Switzerland"
+msgstr "Svájc"
+
+#: panelist/models.py:169
+msgid "Albania"
+msgstr "Albánia"
+
+#: panelist/models.py:170
+msgid "Denmark"
+msgstr "Dánia"
+
+#: panelist/models.py:171
+msgid "Israel"
+msgstr "Izrael"
+
+#: panelist/models.py:172
+msgid "Montenegro"
+msgstr "Montenegró"
+
+#: panelist/models.py:173
+msgid "Serbia"
+msgstr "Szerbia"
+
+#: panelist/models.py:174
+msgid "Spain"
+msgstr "Spanyolország"
+
+#: panelist/models.py:175
+msgid "Greece"
+msgstr "Görögország"
+
+#: panelist/models.py:176
+msgid "Kosovo"
+msgstr "Koszovó"
+
+#: panelist/models.py:177
+msgid "Luxembourg"
+msgstr "Luxemburg"
+
+#: panelist/models.py:178
+msgid "Romania"
+msgstr "Románia"
+
+#: panelist/models.py:179
+msgid "Russia"
+msgstr "Oroszország"
+
+#: panelist/models.py:180
+msgid "Turkey"
+msgstr "Törökország"
+
+#: panelist/models.py:181
+msgid "Ukraine"
+msgstr "Ukrajna"
+
+#. Translators: ignore
+#: panelist/models.py:190
+msgid "Never logged in"
+msgstr ""
+
+#. Translators: ignore
+#: panelist/models.py:192
+msgid "Has logged in"
+msgstr ""
+
+#. Translators: ignore
+#: panelist/models.py:194
+msgid "Deactivated"
+msgstr ""
+
+#: panelist/models.py:202
+msgid "first name"
+msgstr "keresztnév"
+
+#: panelist/models.py:203
+msgid "last name"
+msgstr "vezetéknév"
+
+#: panelist/models.py:205 qxauth/forms.py:43
+msgid "email address"
+msgstr "email cím"
+
+#: panelist/models.py:210 qxauth/forms.py:66
+msgid "A user with that email address already exists."
+msgstr "Ezzel az email címmel már van regisztrált felhasználó"
+
+#: panelist/models.py:223 qxauth/forms.py:49
+msgid "phone number"
+msgstr "telefonszám"
+
+#: panelist/models.py:228
+msgid "A user with that phone number already exists."
+msgstr "Ezzel a telefonszámmal már van regisztrált felhasználó"
+
+#: panelist/models.py:233
+msgid "language"
+msgstr "nyelv"
+
+#: panelist/models.py:235
+msgid "name of property"
+msgstr "az ingatlan neve"
+
+#: panelist/models.py:236
+msgid "number"
+msgstr "szám"
+
+#: panelist/models.py:237
+msgid "address line 1"
+msgstr "cím (sor 1)"
+
+#: panelist/models.py:238
+msgid "address line 2"
+msgstr "cím (sor 2)"
+
+#: panelist/models.py:239
+msgid "city"
+msgstr "város"
+
+#: panelist/models.py:240
+msgid "county"
+msgstr "megye"
+
+#: panelist/models.py:241
+msgid "postcode"
+msgstr "irányítószám"
+
+#: panelist/models.py:242
+msgid "country"
+msgstr "ország"
+
+#: panelist/models.py:244
+msgid "day of birth"
+msgstr "születési idő - nap"
+
+#: panelist/models.py:245
+msgid "month of birth"
+msgstr "születési idő - hónap"
+
+#: panelist/models.py:246
+msgid "year of birth"
+msgstr "születési idő - év"
+
+#: panelist/models.py:347
+msgid "Male"
+msgstr "Férfi"
+
+#: panelist/models.py:348
+msgid "Female"
+msgstr "Nő"
+
+#: panelist/models.py:349
+msgid "Other"
+msgstr "Egyéb"
+
+#: panelist/models.py:350 panelist/models.py:361
+msgid "Refusal"
+msgstr "Nem válaszolok"
+
+#: panelist/models.py:351 panelist/models.py:362
+msgid "Don't know"
+msgstr "Nem tudom"
+
+#: panelist/models.py:352 panelist/models.py:363
+msgid "No answer"
+msgstr "Nincs válasz"
+
+#: panelist/models.py:356
+msgid "Never"
+msgstr "Soha"
+
+#: panelist/models.py:357
+msgid "Only occasionally"
+msgstr "Csak elvétve"
+
+#: panelist/models.py:358
+msgid "A few times a week"
+msgstr "Heti néhány alkalommal"
+
+#: panelist/models.py:359
+msgid "Most days"
+msgstr "Szinte minden nap"
+
+#: panelist/models.py:360
+msgid "Every day"
+msgstr "Minden nap"
+
+#: panelist/models.py:374
+msgid "Not available"
+msgstr "Nem elérhető"
+
+#: panelist/models.py:377
+msgid "sex"
+msgstr "nem"
+
+#: panelist/models.py:378
+msgid "internet use"
+msgstr "internethasználat"
+
+#: panelist/models.py:380
+msgid "years of education"
+msgstr "tanulással töltött évek"
+
+#. Translators: ignore
+#: panelist/models.py:443 panelist/models.py:445
+msgid "Email or phone number required."
+msgstr ""
+
+#. Translators: ignore
+#: panelist/models.py:449
+msgid "The panelist should be opt out if a date or reason is filled."
+msgstr ""
+
+#. Translators: ignore
+#: panelist/models.py:482
+msgid "{attr.capitalize()} belongs to another user."
+msgstr ""
+
+#. Translators: ignore
+#: panelist/models.py:514
+msgid "The distributionId generated on qualtrics when this link was created"
+msgstr ""
+
+
+#: panelist/models.py:589
+msgid "Finished"
+msgstr "Befejezve"
+
+#: panelist/models.py:591
+msgid "Started"
+msgstr "Elkezdve"
+
+#: panelist/models.py:593
+msgid "Not started"
+msgstr "Nincs elkezdve"
+
+#: panelist/templates/panelist/base.html:9
+#: panelist/templates/panelist/survey_list.html:5
+msgid "My surveys"
+msgstr "Kérdőíveim"
+
+#: panelist/templates/panelist/base.html:10
+#: panelist/templates/panelist/help.html:5
+#: panelist/templates/panelist/index.html:29
+msgid "Help"
+msgstr "Segítség"
+
+#: panelist/templates/panelist/email_change.html:6
+#: panelist/templates/panelist/profile_update.html:22
+msgid "Change your email"
+msgstr "Email cím megváltoztatása"
+
+#: panelist/templates/panelist/email_change.html:11
+msgid ""
+"<p>This page allows you to change the email address linked to your account. "
+"We need to ensure that the new address is valid as it is used as a login "
+"identifier and as a primary means of communication,</p> <p>Once you have "
+"changed the email address, you will receive a link to validate the new email "
+"address. The change will be effective only after the link is clicked. In the "
+"meantime, your old email address will still be used for login and "
+"communication.</p>"
+msgstr ""
+"<p>Ezen az oldalon lehetősége van a felhasználói fiókjához tartozó email cím "
+"megváltoztatására. Meg kell győződnünk arról, hogy az új email cím érvényes, "
+"mivel ez szükséges a bejelentkezéshez és elsődlegesen ezen keresztül tartjuk "
+"a kapcsolatot Önnel. </p> <p> Az email cím megváltoztatását követően "
+"elküldünk Önnek egy linket. A változtatást erre a linkre való rákattintással "
+"tudja véglegesíteni. Ameddig ezt megtörténik, a régi email címét továbbra is "
+"használhatja bejelentkezéshez és kapcsolattartáshoz.  </p>"
+
+#: panelist/templates/panelist/email_change.html:18
+msgid "Send request"
+msgstr "Kérés elküldése"
+
+#: panelist/templates/panelist/email_change_confirm.html:6
+#: panelist/templates/panelist/email_change_subject.txt:1
+msgid "Confirm your email"
+msgstr "Email cím megerősítése"
+
+#: panelist/templates/panelist/email_change_confirm.html:11
+#, python-format
+msgid ""
+"<p>Are you sure you want to change your email %(email)s by %(temp_email)s?</"
+"p>"
+msgstr ""
+"<p>Biztos abban, hogy meg akarja változtatni az email címét, %(email)s by "
+"%(temp_email)s?</p>"
+
+#: panelist/templates/panelist/email_change_confirm.html:17
+msgid "Confirm request"
+msgstr "Kérés megerősítése"
+
+#: panelist/templates/panelist/email_change_confirm.html:20
+msgid ""
+"This link is invalid, possibly because it has already been used. Please "
+"request a new link to change your email."
+msgstr ""
+"Ez egy érvénytelen link, amelyet már korábban felhasználtak. Kérjen egy új "
+"linket az email címe megváltoztatásához. "
+
+#: panelist/templates/panelist/email_change_email.html:2
+#, python-format
+msgid ""
+"\n"
+"We have sent you this email because you requested to change the email "
+"address linked to your account on %(site_name)s.\n"
+"Please visit the link below to confirm the new email address:\n"
+msgstr ""
+"\n"
+"Ezt az emailt azért kapja, mert a felhasználói fiókjához  tartozó email "
+"címének megváltoztatását kérte a  %(site_name)s oldalon.\n"
+"Kérjük kattintson az alábbi linkre az új email cím megerősítéséhez. \n"
+
+#: panelist/templates/panelist/help.html:11
+#, python-format
+msgid ""
+"<p><b>The %(INSTANCE_NAME)s</b> is a study of carefully selected people who "
+"are asked to give their views on a wide range of topical social issues, such "
+"as family life, work, health, the media and politics. The information "
+"collected will provide researchers and policy makers (amongst others) with "
+"valuable insights regarding the most important topics in our society today.</"
+"p> <p>A new survey will be issued every 1-2 months and you will receive a "
+"‘thank you’ gift of <b>%(incentive_amount)s</b> with each survey invitation."
+"</p> <p>Only you can complete the survey so please do not share your details "
+"with anyone else.</p> <p>No special knowledge is needed to answer the "
+"surveys  there are no wrong answers, we just want to know your opinions and "
+"experiences.</p> <p>Your data will be handled in the strictest confidence "
+"and in accordance with the General Data Protection Regulation (GDPR).</p>"
+msgstr ""
+"<p><b>A%(INSTANCE_NAME)s</b>kutatásban előzetesen kiválasztott emberek "
+"vesznek részt, akiknek az élet különböző területeivel - pl. család, munka, "
+"egészség, média és politika - kapcsolatban szeretnénk megismerni a "
+"véleményét. A Önök válaszai értékes információkkal szolgálnak napjaink "
+"társadalmáról a kutatók és szakpolitikusok számára. </p> <p> Két-három "
+"havonta lesznek új kutatások, amelyekben való részvételért <b>"
+"%(incentive_amount)s</b> értékben ajándékot küldünk Önnek. </p> <p>A "
+"kérdőívet csak Ön tölthet ki, így arra kérjük, hogy ezt az információt ne "
+"ossza meg másokkal. </p> <p> A kérdések megválaszolásához semmilyen "
+"speciális tudásra nincsen szükség, tehát nincsenek rossz válaszok. Mi csak "
+"az Ön véleményére és tapasztalataira vagyunk kíváncsiak. </p> <p>Az adatait "
+"szigorúan bizalmasan kezeljük az általános adatvédelmi előírásoknak (GDPR) "
+"megfelelően. </p>"
+
+#: panelist/templates/panelist/help.html:18
+msgid "Contact us"
+msgstr "Lépjen kapcsolatba velünk"
+
+#: panelist/templates/panelist/help.html:22
+#, python-format
+msgid ""
+"<p>If you need to get in touch, please contact <b>%(manager.first_name)s "
+"%(manager.last_name)s (<a href=\"mailto:%(manager.email)s\">"
+"%(manager.email)s</a> / <a href=\"tel:%(manager.email)s\">%(manager.email)s</"
+"a>)</b>.</p>"
+msgstr ""
+"<p>Amennyiben kapcsolatba kíván lépni velük, keresse munkatársunkat<b>"
+"%(manager.first_name)s %(manager.last_name)s (<a href=\"mailto:"
+"%(manager.email)s\">%(manager.email)s</a> / <a href=\"tel:%(manager.email)s"
+"\">%(manager.email)s</a>)</b>.</p>"
+
+#: panelist/templates/panelist/index.html:6
+#, python-format
+msgid "Welcome %(panelist_first_name)s"
+msgstr "Üdvözöljük %(panelist_first_name)s"
+
+#: panelist/templates/panelist/index.html:10
+msgid "Latest surveys"
+msgstr "Legutolsó kérdőív"
+
+#: panelist/templates/panelist/index.html:13
+msgid "See more"
+msgstr "Több"
+
+#: panelist/templates/panelist/index.html:17
+msgid "Other actions"
+msgstr "Egyéb"
+
+#: panelist/templates/panelist/index.html:22
+#: panelist/templates/panelist/profile_update.html:9
+msgid "Change your contact details"
+msgstr "Elérhetőségek megváltoztatása"
+
+#: panelist/templates/panelist/password_change.html:6
+#, fuzzy
+#| msgid "Password updated!"
+msgid "Password change"
+msgstr "Jelszó frissítve!"
+
+#: panelist/templates/panelist/profile_update.html:6 templates/base.html:33
+msgid "Profile"
+msgstr "Profil"
+
+#: panelist/templates/panelist/profile_update.html:20
+#: templates/password_change_form.html:6
+msgid "Save"
+msgstr "Mentés"
+
+#: panelist/templates/panelist/profile_update.html:21
+msgid "Change your password"
+msgstr "Jelszó megváltoztatása"
+
+#: panelist/templates/panelist/utils/survey_list.html:15
+msgid "No survey available"
+msgstr "Nincs elérhető kérdőív"
+
+#: panelist/views.py:71
+#, fuzzy
+#| msgid "Your personal information have been updated"
+msgid "Your personal information has been updated"
+msgstr "A személyes információk frissítésre kerültek"
+
+#: panelist/views.py:100
+msgid "Request email change"
+msgstr "Email cím megváltoztatása"
+
+#: panelist/views.py:101
+#, fuzzy, python-format
+#| msgid "Email sent to <b>%(email)s</b>, with a link to validate the address"
+msgid "Email sent to %(email)s, with a link to validate the address"
+msgstr "A cím jóváhagyására üzenetet küldtünk a(z) <b>%(email)s</b> címre."
+
+#: panelist/views.py:117
+#, fuzzy
+#| msgid "ESS Web Study: confirm email change"
+msgid "Confirm email change"
+msgstr "ESS Web kutatás: erősítse meg az email cím megváltoztatását"
+
+#: qxauth/forms.py:27
+#, python-brace-format
+msgid ""
+"Follow this link to reset your password on {site_name} : {protocol}://"
+"{domain}{url}"
+msgstr ""
+"A jelszó megváltoztatásához kattintson a linkre {site_name} : {protocol}://"
+"{domain}{url}"
+
+#: qxauth/forms.py:44
+msgid "Email"
+msgstr "Email"
+
+#: qxauth/forms.py:50 qxauth/forms.py:120
+msgid "Phone number"
+msgstr "Telefonszám"
+
+#: qxauth/forms.py:65
+msgid "The two email address didn't match."
+msgstr "A két email cím nem azonos"
+
+#: qxauth/forms.py:73
+msgid "New email"
+msgstr "Új email"
+
+#: qxauth/forms.py:76
+msgid "New email confirmation"
+msgstr "Új email jóváhagyása"
+
+#: qxauth/views.py:83
+msgid "An email with a password reset link has been sent."
+msgstr "A jelszó visszaállításához a linket elküldtük Önnek email-ben. "
+
+#: qxauth/views.py:90
+msgid "An sms with a password reset link has been sent."
+msgstr "A jelszó visszaállításához a linket elküldtük Önnek SMS-ben. "
+
+#: qxauth/views.py:97
+msgid "Password updated!"
+msgstr "Jelszó frissítve!"
+
+#: qxsms/settings.py:159
+msgid "Czech"
+msgstr "cseh"
+
+#: qxsms/settings.py:160
+msgid "German"
+msgstr "német"
+
+#: qxsms/settings.py:161
+msgid "English"
+msgstr "angol"
+
+#: qxsms/settings.py:162
+msgid "Finnish"
+msgstr "finn"
+
+#: qxsms/settings.py:163
+msgid "French"
+msgstr "francia"
+
+#: qxsms/settings.py:164
+msgid "Hungarian"
+msgstr "magyar"
+
+#: qxsms/settings.py:165
+msgid "Icelandic"
+msgstr "izlandi"
+
+#: qxsms/settings.py:166
+msgid "Italian"
+msgstr "olasz"
+
+#: qxsms/settings.py:167
+msgid "Dutch"
+msgstr "holland"
+
+#: qxsms/settings.py:168
+msgid "Portuguese"
+msgstr "portugál"
+
+#: qxsms/settings.py:169
+msgid "Slovenian"
+msgstr "szlovén"
+
+#: qxsms/settings.py:170
+msgid "Swedish"
+msgstr "svéd"
+
+#: templates/403.html:6
+msgid "Permission denied"
+msgstr "A jóváhagyás megtagadva"
+
+#: templates/403.html:10
+msgid "You do not have access to this part of the application"
+msgstr "Az alkalmazásnak ehhez a funkciójához Önnek nincsen jogosultsága"
+
+#: templates/404.html:6
+msgid "Not found"
+msgstr "Nem található"
+
+#: templates/404.html:10
+msgid "Did you mispell the URL?"
+msgstr "Biztos, hogy jó címet adott meg?"
+
+#: templates/base.html:35 templates/base.html:38
+msgid "Log out"
+msgstr "Kijelentkezés"
+
+#: templates/login.html:26 templates/login.html:34
+msgid "Log in"
+msgstr "Bejelentkezés"
+
+#: templates/login.html:28
+#, fuzzy
+#| msgid "Log in"
+msgid "First Log in"
+msgstr "Bejelentkezés"
+
+#: templates/login.html:36 templates/password_reset.html:25
+msgid "Use email"
+msgstr "Email használata"
+
+#: templates/login.html:38 templates/password_reset.html:27
+msgid "Use phone number"
+msgstr "Telefonszám használata"
+
+#: templates/login.html:44
+#, fuzzy
+#| msgid "Confirm password"
+msgid "Forgot password ?"
+msgstr "Jelszó jóváhagyása"
+
+#: templates/password_reset.html:5
+msgid "Reset password"
+msgstr "Jelszó visszaállítása"
+
+#: templates/password_reset.html:10
+msgid "Enter your phone number to receive a link to reset your password."
+msgstr ""
+"Adja meg a telefonszámot amelyre elküldhetjük a jelszó visszaállításához "
+"szükséges linket. "
+
+#: templates/password_reset.html:12
+msgid "Enter your email address to receive a link to reset your password."
+msgstr ""
+"Adja meg az email címet amelyre elküldhetjük a jelszó visszaállításához "
+"szükséges linket. "
+
+#: templates/password_reset.html:21
+msgid "Send"
+msgstr "Küldés"
+
+#: templates/password_reset_confirm.html:6
+msgid "Choose a new password"
+msgstr "Új jelszó"
+
+#: templates/password_reset_confirm.html:15
+msgid "Confirm password"
+msgstr "Jelszó jóváhagyása"
+
+#: templates/password_reset_confirm.html:21
+#, python-format
+msgid ""
+"This link is invalid, possibly because it has already been used or expired. "
+"Please <a href=\"%(password_reset_url)s\">request a new link</a> to reset "
+"your password."
+msgstr ""
+"Érvénytelen link. Ennek oka valószínűleg az, hogy már korábban használták "
+"vagy lejárt. Kérjen a href=\"%(password_reset_url)s\"> kattintson ide </a> a "
+"jelszava visszaállításához. "
+
+#: templates/password_reset_email.html:2
+msgid ""
+"We have sent you this email because you requested to change the password of "
+"your account"
+msgstr ""
+"Ezt az emailt azért küldtük Önnek, mert a felhasználói fiókjához tartozó "
+"jelszó visszaállítását kérte.  "
+
+#: templates/password_reset_email.html:4
+msgid "Please go to the following page and choose a new password:"
+msgstr "Kérjük látogasson el a következő oldalra és állítson be egy új jelszót"
+
+#: utils/context_processors.py:46
+msgid "Opinion Study"
+msgstr "Véleménykutatás"
+
+#: utils/context_processors.py:49
+#, python-format
+msgid "Opinion Study for %(country)s"
+msgstr "Véleménykutatás - %(country)s"
+
+#: utils/signals.py:13
+#, python-brace-format
+msgid "{user} has been Logged out"
+msgstr "{user} kijelentkeztetve"
+
+#: utils/templates/utils/cancel_button.html:2
+msgid "Cancel"
+msgstr "Mégse"
+
+#: utils/templates/utils/distribution_status.html:4
+msgid "Sent"
+msgstr "Elküldve"
+
+#: utils/templates/utils/distribution_status.html:8
+msgid "Sending"
+msgstr "Küldés"
+
+#: utils/templates/utils/distribution_status.html:11
+msgid "Not sent"
+msgstr "Nincs elküldve"
+
+#~ msgid "Wrong message for primary contact"
+#~ msgstr "Téves üzenet az elsődleges kapcsolatnak"
+
+#~ msgid "Wrong message for fallback contact"
+#~ msgstr "Téves üzenet a tartalék kapcsolatnak"
+
+#~ msgid "SMS"
+#~ msgstr "SMS"
+
+#~ msgid "N/A"
+#~ msgstr "N/A"
+
+#~ msgid "All"
+#~ msgstr "Mind"
+
+#~ msgid "Survey completed"
+#~ msgstr "A kérdőív be van fejezve"
+
+#~ msgid "Survey not completed"
+#~ msgstr "A kérdőív nincs befejezve"
+
+#~ msgid "First log in / Reset password"
+#~ msgstr "Első bejelentkezés / jelszó visszaállítása"
+
+#~ msgid "Update password"
+#~ msgstr "Jelszó frissítése"
+
+#~ msgid "Your username, in case you’ve forgotten:"
+#~ msgstr "Ha esetleg nem emlékezne rá, a felhasználóneve: "
+
+#~ msgid "Thanks for using our site!"
+#~ msgstr "Köszönjük, hogy ellátogatott az oldalunkra. "
+
+#~ msgid "Successfully logged out <strong>{user}</strong>"
+#~ msgstr "Sikeresen kijelentkezett <strong>{user}</strong>"

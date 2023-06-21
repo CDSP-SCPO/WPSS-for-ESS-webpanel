@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load qxsms_tags %}
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem %}{% trans "Permission denied" %}{% endbreadcrumbitem %}
+{% endblock %}
+{% block content %}
+    <section class="container">
+        <div class="alert alert-danger">{% trans "You do not have access to this part of the application" %}</div>
+    </section>
+{% endblock %}

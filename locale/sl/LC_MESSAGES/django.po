@@ -1,0 +1,812 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-06 09:06+0000\n"
+"PO-Revision-Date: 2021-08-12 13:01+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3);\n"
+"X-Generator: Poedit 2.4.2\n"
+
+#. Translators: ignore
+#: panelist/forms.py:194
+msgid "Cannot assign multiple values to the same variable"
+msgstr "Isti spremenljivki ni mogoče dodeliti več različnih vrednosti"
+
+#. Translators: ignore
+#: panelist/models.py:32
+msgid "Must be between 1 and 99."
+msgstr "Odgovor mora biti med 1 in 99."
+
+#. Translators: ignore
+#: panelist/models.py:38
+msgid "Must be between 1 and 31, or 77, 88, 99."
+msgstr "Odgovor mora biti med 1 in 31 ali 77, 88, 99."
+
+#. Translators: ignore
+#: panelist/models.py:44
+msgid "Must be between 1 and 12, or 77, 88, 99."
+msgstr "Odgovor mora biti med 1 in 12 ali 77, 88, 99."
+
+#. Translators: ignore
+#: panelist/models.py:50
+msgid "Must be between 1900 and 2005, or 7777, 8888, 9999."
+msgstr "Odgovor mora biti med 1900 in 2005 ali 7777, 8888, 9999."
+
+#: panelist/models.py:144
+msgid "Austria"
+msgstr "Avstrija"
+
+#: panelist/models.py:145
+msgid "Belgium"
+msgstr "Belgija"
+
+#: panelist/models.py:146
+msgid "Bulgaria"
+msgstr "Bolgarija"
+
+#: panelist/models.py:147
+msgid "Czechia"
+msgstr "Češka"
+
+#: panelist/models.py:148
+msgid "Croatia"
+msgstr "Hrvaška"
+
+#: panelist/models.py:149
+msgid "Cyprus"
+msgstr "Ciper"
+
+#: panelist/models.py:150
+msgid "Estonia"
+msgstr "Estonija"
+
+#: panelist/models.py:151
+msgid "Finland"
+msgstr "Finska"
+
+#: panelist/models.py:152
+msgid "France"
+msgstr "Francija"
+
+#: panelist/models.py:153
+msgid "Germany"
+msgstr "Nemčija"
+
+#: panelist/models.py:154
+msgid "Hungary"
+msgstr "Madžarska"
+
+#: panelist/models.py:155
+msgid "Iceland"
+msgstr "Islandija"
+
+#: panelist/models.py:156
+msgid "Ireland"
+msgstr "Irska"
+
+#: panelist/models.py:157
+msgid "Italy"
+msgstr "Italija"
+
+#: panelist/models.py:158
+msgid "Latvia"
+msgstr "Latvija"
+
+#: panelist/models.py:159
+msgid "Lithuania"
+msgstr "Litva"
+
+#: panelist/models.py:160
+msgid "The Netherlands"
+msgstr "Nizozemska"
+
+#: panelist/models.py:161
+msgid "Norway"
+msgstr "Norveška"
+
+#: panelist/models.py:162
+msgid "Poland"
+msgstr "Poljska"
+
+#: panelist/models.py:163
+msgid "Portugal"
+msgstr "Portugalska"
+
+#: panelist/models.py:164
+msgid "Slovakia"
+msgstr "Slovaška"
+
+#: panelist/models.py:165
+msgid "Slovenia"
+msgstr "Slovenija"
+
+#: panelist/models.py:166
+msgid "Sweden"
+msgstr "Švedska"
+
+#: panelist/models.py:167
+msgid "United Kingdom"
+msgstr "Združeno kraljestvo"
+
+#: panelist/models.py:168
+msgid "Switzerland"
+msgstr "Švica"
+
+#: panelist/models.py:169
+msgid "Albania"
+msgstr "Albanija"
+
+#: panelist/models.py:170
+msgid "Denmark"
+msgstr "Danska"
+
+#: panelist/models.py:171
+msgid "Israel"
+msgstr "Izrael"
+
+#: panelist/models.py:172
+msgid "Montenegro"
+msgstr "Črna gora"
+
+#: panelist/models.py:173
+msgid "Serbia"
+msgstr "Srbija"
+
+#: panelist/models.py:174
+msgid "Spain"
+msgstr "Španija"
+
+#: panelist/models.py:175
+msgid "Greece"
+msgstr "Grčija"
+
+#: panelist/models.py:176
+msgid "Kosovo"
+msgstr "Kosovo"
+
+#: panelist/models.py:177
+msgid "Luxembourg"
+msgstr "Luksemburg"
+
+#: panelist/models.py:178
+msgid "Romania"
+msgstr "Romunija"
+
+#: panelist/models.py:179
+msgid "Russia"
+msgstr "Rusija"
+
+#: panelist/models.py:180
+msgid "Turkey"
+msgstr "Turčija"
+
+#: panelist/models.py:181
+msgid "Ukraine"
+msgstr "Ukrajina"
+
+#. Translators: ignore
+#: panelist/models.py:190
+msgid "Never logged in"
+msgstr "Nikoli prijavljen"
+
+#. Translators: ignore
+#: panelist/models.py:192
+msgid "Has logged in"
+msgstr "Prijavljen"
+
+#. Translators: ignore
+#: panelist/models.py:194
+msgid "Deactivated"
+msgstr "Deaktiviran"
+
+#: panelist/models.py:202
+msgid "first name"
+msgstr "ime"
+
+#: panelist/models.py:203
+msgid "last name"
+msgstr "priimek"
+
+#: panelist/models.py:205 qxauth/forms.py:43
+msgid "email address"
+msgstr "elektronski naslov"
+
+#: panelist/models.py:210 qxauth/forms.py:66
+msgid "A user with that email address already exists."
+msgstr "Uporabnik s tem elektronskim naslovom že obstaja."
+
+#: panelist/models.py:223 qxauth/forms.py:49
+msgid "phone number"
+msgstr "telefonska številka"
+
+#: panelist/models.py:228
+msgid "A user with that phone number already exists."
+msgstr "Uporabnik s to telefonsko številko že obstaja."
+
+#: panelist/models.py:233
+msgid "language"
+msgstr "jezik"
+
+#: panelist/models.py:235
+msgid "name of property"
+msgstr "ime stavbe"
+
+#: panelist/models.py:236
+msgid "number"
+msgstr "številka"
+
+#: panelist/models.py:237
+msgid "address line 1"
+msgstr "naslov"
+
+#: panelist/models.py:238
+msgid "address line 2"
+msgstr "naslov"
+
+#: panelist/models.py:239
+msgid "city"
+msgstr "kraj, mesto"
+
+#: panelist/models.py:240
+msgid "county"
+msgstr "država"
+
+#: panelist/models.py:241
+msgid "postcode"
+msgstr "poštna številka"
+
+#: panelist/models.py:242
+msgid "country"
+msgstr "država"
+
+#: panelist/models.py:244
+msgid "day of birth"
+msgstr "dan rojstva"
+
+#: panelist/models.py:245
+msgid "month of birth"
+msgstr "mesec rojstva"
+
+#: panelist/models.py:246
+msgid "year of birth"
+msgstr "leto rojstva"
+
+#: panelist/models.py:347
+msgid "Male"
+msgstr "Moški"
+
+#: panelist/models.py:348
+msgid "Female"
+msgstr "Ženski"
+
+#: panelist/models.py:349
+msgid "Other"
+msgstr "Drugo"
+
+#: panelist/models.py:350 panelist/models.py:361
+msgid "Refusal"
+msgstr "Zavrnil"
+
+#: panelist/models.py:351 panelist/models.py:362
+msgid "Don't know"
+msgstr "Ne vem"
+
+#: panelist/models.py:352 panelist/models.py:363
+msgid "No answer"
+msgstr "Brez odgovora"
+
+#: panelist/models.py:356
+msgid "Never"
+msgstr "Nikoli"
+
+#: panelist/models.py:357
+msgid "Only occasionally"
+msgstr "Občasno"
+
+#: panelist/models.py:358
+msgid "A few times a week"
+msgstr "Nekajkrat tedensko"
+
+#: panelist/models.py:359
+msgid "Most days"
+msgstr "Večino dni"
+
+#: panelist/models.py:360
+msgid "Every day"
+msgstr "Vsak dan"
+
+#: panelist/models.py:374
+msgid "Not available"
+msgstr "Se ne nanaša"
+
+#: panelist/models.py:377
+msgid "sex"
+msgstr "spol"
+
+#: panelist/models.py:378
+msgid "internet use"
+msgstr "uporaba interneta"
+
+#: panelist/models.py:380
+msgid "years of education"
+msgstr "leta šolanja"
+
+#. Translators: ignore
+#: panelist/models.py:443 panelist/models.py:445
+msgid "Email or phone number required."
+msgstr "Zahtevan je elektronski naslov ali telefonska številka."
+
+#. Translators: ignore
+#: panelist/models.py:449
+msgid "The panelist should be opt out if a date or reason is filled."
+msgstr "Panelist bi moral biti izločen, če je vnesen datum ali razlog."
+
+#. Translators: ignore
+#: panelist/models.py:482
+msgid "{attr.capitalize()} belongs to another user."
+msgstr "{attr.capitalize()} pripada drugemu uporabniku."
+
+# I don't understand the meaning of this - can you please explain in which situation will apear.
+# Is "distributionld" a typo or is ld part of a code?
+#. Translators: ignore
+#: panelist/models.py:514
+msgid "The distributionId generated on qualtrics when this link was created"
+msgstr ""
+
+#: panelist/models.py:589
+msgid "Finished"
+msgstr "Konec"
+
+#: panelist/models.py:591
+msgid "Started"
+msgstr "Začetek"
+
+#: panelist/models.py:593
+msgid "Not started"
+msgstr "Ni se še začelo"
+
+#: panelist/templates/panelist/base.html:9
+#: panelist/templates/panelist/survey_list.html:5
+msgid "My surveys"
+msgstr "Moje ankete"
+
+#: panelist/templates/panelist/base.html:10
+#: panelist/templates/panelist/help.html:5
+#: panelist/templates/panelist/index.html:29
+msgid "Help"
+msgstr "Pomoč"
+
+#: panelist/templates/panelist/email_change.html:6
+#: panelist/templates/panelist/profile_update.html:22
+msgid "Change your email"
+msgstr "Spremeni elektronski naslov"
+
+#: panelist/templates/panelist/email_change.html:11
+msgid ""
+"<p>This page allows you to change the email address linked to your account. "
+"We need to ensure that the new address is valid as it is used as a login "
+"identifier and as a primary means of communication,</p> <p>Once you have "
+"changed the email address, you will receive a link to validate the new email "
+"address. The change will be effective only after the link is clicked. In the "
+"meantime, your old email address will still be used for login and "
+"communication.</p>"
+msgstr ""
+"<p>Stran dovoljuje spremembo elektronskega naslova, ki je povezan z vašim "
+"računom. Zagotoviti moramo, da je vaš nov naslov veljaven, ker se uporablja "
+"pri vpisu v račun in kot glavni kanal za komunikacijo. </p> <p>Ko boste "
+"spremenili elektronski naslov, boste prejeli povezavo za potrditev novega "
+"naslova. Sprememba bo aktivna šele, ko boste kliknili na povezavo. Dokler "
+"tega ne storite, bo za vpis in komunikacijo veljal vaš star elektronski "
+"naslov. </p>"
+
+#: panelist/templates/panelist/email_change.html:18
+msgid "Send request"
+msgstr "Pošlji prošnjo"
+
+#: panelist/templates/panelist/email_change_confirm.html:6
+#: panelist/templates/panelist/email_change_subject.txt:1
+msgid "Confirm your email"
+msgstr "Potrdi elektronski naslov"
+
+#: panelist/templates/panelist/email_change_confirm.html:11
+#, python-format
+msgid ""
+"<p>Are you sure you want to change your email %(email)s by %(temp_email)s?</"
+"p>"
+msgstr ""
+"<p>Ali ste prepričani, da želite spremeniti vaš elektronski naslov %(email)s "
+"by %(temp_email)s?</p>"
+
+#: panelist/templates/panelist/email_change_confirm.html:17
+msgid "Confirm request"
+msgstr "Potrdi zahtevo"
+
+#: panelist/templates/panelist/email_change_confirm.html:20
+msgid ""
+"This link is invalid, possibly because it has already been used. Please "
+"request a new link to change your email."
+msgstr ""
+"Povezava ni veljavna, po vsej verjetnosti je bila že uporabljena. Prosimo, "
+"zaprosite za novo povezavo za spremembo elektronskega naslova."
+
+#: panelist/templates/panelist/email_change_email.html:2
+#, python-format
+msgid ""
+"\n"
+"We have sent you this email because you requested to change the email "
+"address linked to your account on %(site_name)s.\n"
+"Please visit the link below to confirm the new email address:\n"
+msgstr ""
+"\n"
+"To elektronsko sporočilo ste prejeli, ker ste zaprosili za spremembo "
+"elektronskega naslova povezanega z vašim računom na %(site_name)s.\n"
+"Za potrditev novega elektronskega naslova prosimo, pojdite na spodnjo "
+"povezavo:\n"
+
+#: panelist/templates/panelist/help.html:11
+#, python-format
+msgid ""
+"<p><b>The %(INSTANCE_NAME)s</b> is a study of carefully selected people who "
+"are asked to give their views on a wide range of topical social issues, such "
+"as family life, work, health, the media and politics. The information "
+"collected will provide researchers and policy makers (amongst others) with "
+"valuable insights regarding the most important topics in our society today.</"
+"p> <p>A new survey will be issued every 1-2 months and you will receive a "
+"‘thank you’ gift of <b>%(incentive_amount)s</b> with each survey invitation."
+"</p> <p>Only you can complete the survey so please do not share your details "
+"with anyone else.</p> <p>No special knowledge is needed to answer the "
+"surveys  there are no wrong answers, we just want to know your opinions and "
+"experiences.</p> <p>Your data will be handled in the strictest confidence "
+"and in accordance with the General Data Protection Regulation (GDPR).</p>"
+msgstr ""
+"<p><b>The %(INSTANCE_NAME)s</b> je raziskava, za katero smo skrbno izbrali "
+"ljudi, ki jih prosimo, da podajo svoje poglede na široko paleto aktualnih "
+"družbenih vprašanj, kot so družinsko življenje, delo, zdravje, mediji in "
+"politika. Zbrane informacije bodo raziskovalcem in oblikovalcem politik (med "
+"drugim) omogočile dragocen vpogled v trenutne najpomembnejše družbene "
+"tematike.</p> <p>Nova anketa bo objavljena vsaka 2-3 meseca in v zahvalo "
+"boste prejeli darilno kartico v vrednosti <b>%(incentive_amount)s</b>ob "
+"vsakem vabilu.</p> <p>Anketo lahko izpolnite samo vi, zato vas prosimo, da "
+"svojih podatkov ne delite z nikomer drugim.</p> <p>Ne potrebujete nobenega "
+"posebnega znanja, prav tako ni napačnih odgovorov. Zanima nas zgolj vaše "
+"mnenje in vaše izkušnje. </p> <p>Z vašimi podatki bomo ravnali strogo zaupno "
+"in v skladu s Splošno uredbo EU o varstvu podatkov (GDPR).</p>"
+
+#: panelist/templates/panelist/help.html:18
+msgid "Contact us"
+msgstr "Kontaktirajte nas"
+
+#: panelist/templates/panelist/help.html:22
+#, python-format
+msgid ""
+"<p>If you need to get in touch, please contact <b>%(manager.first_name)s "
+"%(manager.last_name)s (<a href=\"mailto:%(manager.email)s\">"
+"%(manager.email)s</a> / <a href=\"tel:%(manager.email)s\">%(manager.email)s</"
+"a>)</b>.</p>"
+msgstr ""
+"<p>Če želite stopiti v stik z nami, prosimo kontaktirajte <b>"
+"%(manager.first_name)s %(manager.last_name)s (<a href=\"mailto:"
+"%(manager.email)s\">%(manager.email)s</a> / <a href=\"tel:%(manager.email)s"
+"\">%(manager.email)s</a>)</b>.</p>"
+
+#: panelist/templates/panelist/index.html:6
+#, python-format
+msgid "Welcome %(panelist_first_name)s"
+msgstr "Dobrodošli %(panelist_first_name)s"
+
+#: panelist/templates/panelist/index.html:10
+msgid "Latest surveys"
+msgstr "Zadnje ankete"
+
+#: panelist/templates/panelist/index.html:13
+msgid "See more"
+msgstr "Več"
+
+#: panelist/templates/panelist/index.html:17
+msgid "Other actions"
+msgstr "Druga dejanja"
+
+#: panelist/templates/panelist/index.html:22
+#: panelist/templates/panelist/profile_update.html:9
+msgid "Change your contact details"
+msgstr "Spremenite vaše kontaktne podatke"
+
+#: panelist/templates/panelist/password_change.html:6
+msgid "Password change"
+msgstr "Sprememba gesla"
+
+#: panelist/templates/panelist/profile_update.html:6 templates/base.html:33
+msgid "Profile"
+msgstr "Profil"
+
+#: panelist/templates/panelist/profile_update.html:20
+#: templates/password_change_form.html:6
+msgid "Save"
+msgstr "Shrani"
+
+#: panelist/templates/panelist/profile_update.html:21
+msgid "Change your password"
+msgstr "Spremeni geslo"
+
+#: panelist/templates/panelist/utils/survey_list.html:15
+msgid "No survey available"
+msgstr "Ni aktivne ankete"
+
+#: panelist/views.py:71
+msgid "Your personal information has been updated"
+msgstr "Vaši osebni podatki so bili posodobljeni"
+
+#: panelist/views.py:100
+msgid "Request email change"
+msgstr "Zahteva za spremembo elektronskega naslova"
+
+#: panelist/views.py:101
+#, python-format
+msgid "Email sent to %(email)s, with a link to validate the address"
+msgstr ""
+"Elektronsko sporočilo s povezavo za potrditev naslova je bilo poslano na "
+"%(email)s"
+
+#: panelist/views.py:117
+msgid "Confirm email change"
+msgstr "Potrditev spremembe elektronskega naslova"
+
+#: qxauth/forms.py:27
+#, python-brace-format
+msgid ""
+"Follow this link to reset your password on {site_name} : {protocol}://"
+"{domain}{url}"
+msgstr ""
+"Za ponastavitev gesla sledite povezavi na {site_name} : {protocol}://{domain}"
+"{url}"
+
+#: qxauth/forms.py:44
+msgid "Email"
+msgstr "Elektronski naslov"
+
+#: qxauth/forms.py:50 qxauth/forms.py:120
+msgid "Phone number"
+msgstr "Telefonska številka"
+
+#: qxauth/forms.py:65
+msgid "The two email address didn't match."
+msgstr "Elektronska naslova se ne  ujemata."
+
+#: qxauth/forms.py:73
+msgid "New email"
+msgstr "Nov elektronski naslov"
+
+#: qxauth/forms.py:76
+msgid "New email confirmation"
+msgstr "Potrditev novega elektronskega naslova"
+
+#: qxauth/views.py:83
+msgid "An email with a password reset link has been sent."
+msgstr ""
+"Elektronsko sporočilo (email) s povezavo za ponastavitev gesla je bilo "
+"poslano."
+
+#: qxauth/views.py:90
+msgid "An sms with a password reset link has been sent."
+msgstr "Sporočilo (SMS) s povezavo za ponastavitev gesla je bilo poslano."
+
+#: qxauth/views.py:97
+msgid "Password updated!"
+msgstr "Geslo posodobljeno!"
+
+#: qxsms/settings.py:159
+msgid "Czech"
+msgstr "Češko"
+
+#: qxsms/settings.py:160
+msgid "German"
+msgstr "Nemško"
+
+#: qxsms/settings.py:161
+msgid "English"
+msgstr "Angleško"
+
+#: qxsms/settings.py:162
+msgid "Finnish"
+msgstr "Finsko"
+
+#: qxsms/settings.py:163
+msgid "French"
+msgstr "Francosko"
+
+#: qxsms/settings.py:164
+msgid "Hungarian"
+msgstr "Madžarsko"
+
+#: qxsms/settings.py:165
+msgid "Icelandic"
+msgstr "Islandsko"
+
+#: qxsms/settings.py:166
+msgid "Italian"
+msgstr "Italijansko"
+
+#: qxsms/settings.py:167
+msgid "Dutch"
+msgstr "Nizozemsko"
+
+#: qxsms/settings.py:168
+msgid "Portuguese"
+msgstr "Portugalsko"
+
+#: qxsms/settings.py:169
+msgid "Slovenian"
+msgstr "Slovensko"
+
+#: qxsms/settings.py:170
+msgid "Swedish"
+msgstr "Švedsko"
+
+#: templates/403.html:6
+msgid "Permission denied"
+msgstr "Zavrnjen dostop"
+
+#: templates/403.html:10
+msgid "You do not have access to this part of the application"
+msgstr "Nimate dostopa do tega dela aplikacije"
+
+#: templates/404.html:6
+msgid "Not found"
+msgstr "Ni zadetkov"
+
+#: templates/404.html:10
+msgid "Did you mispell the URL?"
+msgstr "Ali ste napačno napisali URL?"
+
+#: templates/base.html:35 templates/base.html:38
+msgid "Log out"
+msgstr "Odjava"
+
+#: templates/login.html:26 templates/login.html:34
+msgid "Log in"
+msgstr "Prijava"
+
+#: templates/login.html:28
+msgid "First Log in"
+msgstr "Prva prijava"
+
+#: templates/login.html:36 templates/password_reset.html:25
+msgid "Use email"
+msgstr "Uporabi elektronski naslov"
+
+#: templates/login.html:38 templates/password_reset.html:27
+msgid "Use phone number"
+msgstr "Uporabi telefonsko številko"
+
+#: templates/login.html:44
+msgid "Forgot password ?"
+msgstr "Pozabljeno geslo?"
+
+#: templates/password_reset.html:5
+msgid "Reset password"
+msgstr "Ponastavi geslo"
+
+#: templates/password_reset.html:10
+msgid "Enter your phone number to receive a link to reset your password."
+msgstr ""
+"Vpišite telefonsko številko, na katero boste prejeli povezavo za "
+"ponastavitev gesla."
+
+#: templates/password_reset.html:12
+msgid "Enter your email address to receive a link to reset your password."
+msgstr ""
+"Vpišite elektronski naslov, na katerega boste prejeli povezavo za "
+"ponastavitev gesla."
+
+#: templates/password_reset.html:21
+msgid "Send"
+msgstr "Pošlji"
+
+#: templates/password_reset_confirm.html:6
+msgid "Choose a new password"
+msgstr "Izberi novo geslo"
+
+#: templates/password_reset_confirm.html:15
+msgid "Confirm password"
+msgstr "Potrdi geslo"
+
+#: templates/password_reset_confirm.html:21
+#, python-format
+msgid ""
+"This link is invalid, possibly because it has already been used or expired. "
+"Please <a href=\"%(password_reset_url)s\">request a new link</a> to reset "
+"your password."
+msgstr ""
+"Ta povezava je neveljavna. Verjetno je bila že uporabljena ali pa je "
+"potekla. Prosimo, <a href=\"%(password_reset_url)s\">zaprosite za novo "
+"povezavo </a>za ponastavitev vašega gesla."
+
+#: templates/password_reset_email.html:2
+msgid ""
+"We have sent you this email because you requested to change the password of "
+"your account"
+msgstr ""
+"To sporočilo smo vam poslali, ker ste zahtevali spremembo gesla za vaš račun"
+
+#: templates/password_reset_email.html:4
+msgid "Please go to the following page and choose a new password:"
+msgstr "Prosimo, pojdite na naslednjo stran in izberite novo geslo:"
+
+#: utils/context_processors.py:46
+msgid "Opinion Study"
+msgstr "Mnenjska anketa"
+
+# In Slovenian language translation with (country)s does not work... Need to be written "Slovenska mnenjska študija"
+#: utils/context_processors.py:49
+#, python-format
+msgid "Opinion Study for %(country)s"
+msgstr "Slovenska mnenjska študija"
+
+#: utils/signals.py:13
+#, python-brace-format
+msgid "{user} has been Logged out"
+msgstr "{user} odjavljen"
+
+#: utils/templates/utils/cancel_button.html:2
+msgid "Cancel"
+msgstr "Prekliči"
+
+#: utils/templates/utils/distribution_status.html:4
+msgid "Sent"
+msgstr "Poslano"
+
+#: utils/templates/utils/distribution_status.html:8
+msgid "Sending"
+msgstr "Pošiljanje"
+
+#: utils/templates/utils/distribution_status.html:11
+msgid "Not sent"
+msgstr "Ni poslano"
+
+#~ msgid "Wrong message for primary contact"
+#~ msgstr "Napačno sporočilo za prvi stik"
+
+#~ msgid "Wrong message for fallback contact"
+#~ msgstr "Napačno sporočilo za naslednji stik"
+
+#~ msgid "SMS"
+#~ msgstr "SMS"
+
+#~ msgid "N/A"
+#~ msgstr "Se ne nanaša"
+
+#~ msgid "All"
+#~ msgstr "Vsi"
+
+#~ msgid "Survey completed"
+#~ msgstr "Izpolnjena anketa"
+
+#~ msgid "Survey not completed"
+#~ msgstr "Anketa ni izpolnjena"
+
+#~ msgid "First log in / Reset password"
+#~ msgstr "Prva prijava / Ponastavi geslo"
+
+#~ msgid "Update password"
+#~ msgstr "Obnovi geslo"
+
+#~ msgid "Your username, in case you’ve forgotten:"
+#~ msgstr "Vaše uporabniško ime, v primeru, da ste ga pozabili:"
+
+#~ msgid "Thanks for using our site!"
+#~ msgstr "Hvala, da ste uporabili našo stran!"
+
+#~ msgid "Successfully logged out <strong>{user}</strong>"
+#~ msgstr "Uspešno ste se odjavili <strong>{user}</strong>"

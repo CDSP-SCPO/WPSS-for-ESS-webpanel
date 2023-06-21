@@ -1,0 +1,12 @@
+// Colors
+$turquoise: hsl(171, 100%, 41%);
+
+$sshoc-orange: #ff8900;
+$sshoc-lightblue: #0193df;
+$sshoc-blue: #005f92;
+
+$darken-percent: 5%;
+$qxsms-primary: darken($sshoc-lightblue, $darken-percent);
+$hq-primary: darken($sshoc-orange, $darken-percent);
+$manager-primary: $qxsms-primary;
+$panelist-primary: darken($turquoise, $darken-percent);

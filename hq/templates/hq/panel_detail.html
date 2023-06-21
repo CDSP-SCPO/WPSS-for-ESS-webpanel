@@ -1,0 +1,102 @@
+{% extends 'hq/base.html' %}
+{% load qxsms_tags static django_bootstrap5 i18n %}
+
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem 'hq:panel-list' %}{% trans "Panels" %}{% endbreadcrumbitem %}
+    {% breadcrumbitem 'hq:panel-detail' panel.pk %}{{ object.name }}{% endbreadcrumbitem %}
+{% endblock %}
+
+{% block title_lead %}{% trans "Assigned national coordinators and distributed surveys" %}{% endblock %}
+
+{% block content %}
+    <section class="container">
+        <div class="d-flex align-items-center mb-3">
+            <a href="{% url 'hq:panel-update' object.pk %}" class="btn btn-info me-2">{% icon 'pen' 'me-2' %}{% trans "Update panel" %}</a>
+            <strong>{% trans "Panel members" %}</strong>: {{ panel.member_count }}
+        </div>
+        <div class="row">
+            <div class="col-md mb-md-0 mb-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h1 class="card-title">{% trans "Assign national coordinator" %}</h1>
+                        <form method="post" action="{% url 'hq:panel-assign' object.pk %}">
+                            {% csrf_token %}
+                            {% bootstrap_form assignment_form %}
+                            <button type="submit" class="btn btn-success">{% trans "Assign" %}</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container">
+        <h1>{% trans "Assigned national coordinators" %} <span class="badge rounded-pill bg-secondary">{{ panel.manager_count }}</span></h1>
+        {% if object.managers.all %}
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover bg-white">
+                    <thead class="table-light">
+                        <tr>
+                            <th>{% trans "Email" %}</th>
+                            <th>{% trans "Last name" %}</th>
+                            <th>{% trans "First name" %}</th>
+                            <th>{% trans "Action" %}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for user in object.managers.all %}
+                            <tr>
+                                <td>{{ user.email }}</td>
+                                <td>{{ user.last_name }}</td>
+                                <td>{{ user.first_name }}</td>
+                                <td>
+                                    <form method="post" action="{% url 'hq:panel-unassign' object.pk %}">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="manager" value="{{ user.pk }}">
+                                        <button type="submit" class="btn btn-danger btn-sm">{% icon 'x-lg' 'me-2' %}{% trans "Unassign" %}</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <div class="alert alert-info">{% trans "No assigned national coordinator" %}</div>
+        {% endif %}
+    </section>
+    <section class="container">
+        <h1>{% trans "Individual link sets including this panel" %}</h1>
+        {% with object.distributions.all as distributions %}
+            {% if distributions %}
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover bg-white">
+                        <thead class="table-light">
+                            <tr>
+                                <th>{% trans "Description" %}</th>
+                                <th>{% trans "Survey" %}</th>
+                                <th>{% trans "Links generated" %}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for dist in distributions %}
+                                <tr>
+                                    <td><a href="{% url 'hq:link-distribution-detail' dist.pk %}">{{ dist.description }}</a></td>
+                                    <td>{{ dist.survey }}</td>
+                                    {% if dist.qx_id %}
+                                        <td class="table-success"></td>
+                                    {% else %}
+                                        <td class="table-danger"></td>
+                                    {% endif %}
+                                </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            {% else %}
+                <div class="alert alert-info">{% trans "No link sets involve this panel" %}</div>
+            {% endif %}
+        {% endwith %}
+    </section>
+{% endblock %}

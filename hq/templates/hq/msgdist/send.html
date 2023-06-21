@@ -1,0 +1,52 @@
+{% extends "hq/base.html" %}
+{% load qxsms_tags django_bootstrap5 i18n %}
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem 'hq:msg-distribution-list' %}{% trans "Message deliveries" %}{% endbreadcrumbitem %}
+    {% breadcrumbitem 'hq:msg-distribution-detail' object.pk %}{% trans "Details" %}{% endbreadcrumbitem %}
+    {% breadcrumbitem 'hq:msg-distribution-send' object.pk %}{% trans "Send messages" %}{% endbreadcrumbitem %}
+{% endblock %}
+{% block title_lead %}
+    {% blocktrans %}
+        Schedule sending of the message delivery. Specifying the
+        current date will trigger sending at once. Specifying a date
+        in the future will send the messages at this point in time.
+    {% endblocktrans %}
+{% endblock %}
+{% block content %}
+    <section class="container">
+        {% include 'hq/msgdist/msgdist_details.html' %}
+        <h1>Eligible recipients stats</h1>
+        <table class="table table-bordered table-striped bg-white">
+            <tr>
+                <th>Reachable with  {{ object.contact_label }}</th>
+                <td>{{ candidates_stat.contact_mode }}</td>
+            </tr>
+            <tr>
+                <th>Reachable with {{ object.fallback_label }} ONLY</th>
+                <td>{{ candidates_stat.fallback_mode }}</td>
+            </tr>
+            <tr>
+                <th>Total reachable</th>
+                <td>{{ candidates_stat.total }}</td>
+            </tr>
+            <tr>
+                <th>Unreachable</th>
+                <td>{{ candidates_stat.unreachable }}</td>
+            </tr>
+        </table>
+        <h1>Confirm</h1>
+        <form method="post">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            {% if not candidates_stat.contact_mode or object.has_fallback and not candidates_stat.fallback_mode %}
+                <div class="d-inline-flex align-items-center">
+                    <button disabled="disabled" type="submit" class="btn btn-success">Send</button>
+                    {% icon "info-circle-fill" "ms-2 icon-lg text-warning" title="No messages to send: no valid recipients for either the main or the fallback mode" %}
+                </div>
+            {% else %}
+                <button type="submit" class="btn btn-success">Send</button>
+            {% endif %}
+        </form>
+    </section>
+{% endblock %}

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Import SMS Stats results</title>
+</head>
+<body>
+{% for key, val in import_stats %}
+    <b>{{key}}</b> : {{val}}<br>
+{% endfor %}
+</body>
+</html>

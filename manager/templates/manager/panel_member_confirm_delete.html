@@ -1,0 +1,27 @@
+{% extends 'manager/panel_member_update.html' %}
+{% load qxsms_tags i18n %}
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem %}{% trans "Please confirm deletion" %}{% endbreadcrumbitem %}
+{% endblock %}
+{% block content %}
+    <section class="container">
+    <div class="d-flex justify-content-center">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="card-title">
+                    {% blocktrans with first_name=object.first_name last_name=object.last_name|upper %}
+                        Proceed to permanently delete panelist {{ first_name }} {{ last_name }} ?
+                    {% endblocktrans %}
+                </h1>
+                <form method="post" class="text-center">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger me-2">{% trans "Yes"%}</button>
+                    {% url 'manager:panel-member-update' object.pk as cancel_url %}
+                    {% include 'utils/cancel_button.html' %}
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

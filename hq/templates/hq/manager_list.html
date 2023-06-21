@@ -1,0 +1,53 @@
+{% extends 'hq/base.html' %}
+{% load qxsms_tags i18n %}
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem 'hq:manager-list' %}{% trans "National coordinators" %}{% endbreadcrumbitem %}
+{% endblock %}
+{% block title_lead %}{% trans "All national coordinators registered in the application" %}{% endblock %}
+{% block content %}
+    <section class="container">
+        <a href="{% url 'hq:manager-create' %}" class="btn btn-success mb-3">{% icon 'plus-lg' 'me-2' %}{% trans "New national coordinator" %}</a>
+        {% if object_list %}
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover bg-white">
+                    <thead class="table-light">
+                    <tr>
+                        <th>{% trans "Email" %}</th>
+                        <th>{% trans "Last name" %}</th>
+                        <th>{% trans "First name" %}</th>
+                        <th>{% trans "Phone" %}</th>
+                        <th>{% trans "Panels" %}</th>
+                        <th>{% trans "State" %}</th>
+                        <th>{% trans "Action" %}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for user in object_list %}
+                        <tr>
+                            <td>{{ user.email }}</td>
+                            <td>{{ user.last_name }}</td>
+                            <td>{{ user.first_name }}</td>
+                            <td>{{ user.phone }}</td>
+                            <td><span class="badge rounded-pill bg-secondary">{{ user.panel_count }}</span></td>
+                            <td>
+                                {% if user.is_active %}
+                                    <span class="badge rounded-pill bg-success">{% trans "Active" %}</span>
+                                {% else %}
+                                    <span class="badge rounded-pill bg-danger">{% trans "Inactive" %}</span>
+                                {% endif %}
+                            </td>
+                            <td>
+                                <a href="{% url 'hq:manager-update' user.pk %}" class="btn btn-sm btn-info me-2">{% icon 'pen' 'me-2' %}{% trans "Edit" %}</a>
+                                <a href="{% url 'hq:manager-delete' user.pk %}" class="btn btn-sm btn-danger">{% icon 'x-lg' 'me-2' %}{% trans "Delete" %}</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <div class="alert alert-info">{% trans "No national coordinator" %}</div>
+        {% endif %}
+    </section>
+{% endblock %}

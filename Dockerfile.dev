@@ -1,0 +1,34 @@
+##########
+# NODE BUILDER
+
+FROM node:16-alpine AS nbuilder
+WORKDIR /frontend/
+RUN mkdir /frontend/static/ && mkdir /frontend/static/lib
+
+COPY package*.json /frontend/
+RUN npm install
+
+RUN cp /frontend/node_modules/bootstrap/dist/js/bootstrap.bundle.js /frontend/static/lib/
+RUN cp -r /frontend/node_modules/bootstrap-icons/icons/ /frontend/static/icons/
+COPY frontend/scss/ /frontend/scss/
+RUN npm run build
+
+
+##########
+# PYTHON IMAGE
+
+FROM python:3.10-slim
+
+WORKDIR /qxsms/
+
+RUN apt-get update && apt-get install -y --no-install-recommends gettext
+
+# Get generated css and bootstrap stuff
+COPY --from=nbuilder /frontend/static/ /static/
+
+COPY requirements*.txt /qxsms/
+RUN pip install --no-cache-dir -r /qxsms/requirements.txt -r /qxsms/requirements.dev.txt
+
+# Env variable created at build time to be able to get the version without .git
+ARG QXSMS_VERSION
+ENV QXSMS_VERSION=$QXSMS_VERSION

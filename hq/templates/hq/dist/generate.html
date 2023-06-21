@@ -1,0 +1,30 @@
+{% extends 'hq/base.html' %}
+{% load qxsms_tags django_bootstrap5 i18n %}
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem 'hq:link-distribution-list' %}{% trans "Link sets" %}{% endbreadcrumbitem %}
+    {% breadcrumbitem 'hq:link-distribution-detail' object.pk %}{% trans "Detail" %} {% endbreadcrumbitem %}
+    {% breadcrumbitem 'hq:link-distribution-generate' object.pk %}{% trans "Generate links" %}{% endbreadcrumbitem %}
+{% endblock %}
+{% block content %}
+    <section class="container">
+        {% include 'hq/dist/distribution_details.html' %}
+        <form class="form" method="post">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            {% if object.count_candidates %}
+                <button type="submit" class="btn btn-success me-2">Generate</button>
+            {% else %}
+                <div class="d-inline-flex align-items-center">
+                    <button disabled="disabled" type="submit" class="btn btn-success mr-2">Generate</button>
+                    {% icon "info-circle-fill" "ms-2 icon-lg text-warning" title="All panels are empty, no links to generate!" %}
+                </div>
+            {% endif %}
+
+            {% url 'hq:link-distribution-detail' object.pk as cancel_url %}
+            <span class="float-end">
+                {% include 'utils/cancel_button.html' %}
+            </span>
+        </form>
+    </section>
+{% endblock %}

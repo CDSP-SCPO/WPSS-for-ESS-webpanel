@@ -1,0 +1,8 @@
+{% extends "distributions/base.html" %}
+{% block content %}
+    <h1>Delete message distribution ?</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">"Yes</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "distributions/base.html" %}
+{% block content %}
+    <h1>Send message distribution</h1>
+    {% include 'distributions/msgd/msgd_details.html' %}
+    <h2>Eligible recipients stats</h2>
+        <table>
+            <tr>
+                <th>Reachable with {{ object.contact_label }}</th>
+                <td>{{ candidates_stat.contact_mode }}</td>
+            </tr>
+            <tr>
+                <th>Reachable with {{ object.fallback_label }} ONLY</th>
+                <td>{{ candidates_stat.fallback_mode }}</td>
+            </tr>
+            <tr>
+                <th>Total reachable</th>
+                <td>{{ candidates_stat.total }}</td>
+            </tr>
+            <tr>
+                <th>Unreachable</th>
+                <td>{{ candidates_stat.unreachable }}</td>
+            </tr>
+        </table>
+    <h2>Confirm</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+    <input type="submit" value="Send"/>
+    </form>
+{% endblock %}

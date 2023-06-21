@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static qxsms_tags i18n %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/manager.css' %}?{{ QXSMS_VERSION }}">
+{% endblock %}
+{% block menu_links %}
+    {% if request.user.is_authenticated %}
+        <a class="nav-item nav-link" href="https://cdsp-scpo.github.io/wpss-doc/nc/" rel="noopener">Help</a>
+    {% endif %}
+{% endblock %}
+{% block profile_link %}{% url 'manager:profile-update' %}{% endblock %}
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem 'manager:home' %}{% trans "National coordinators" %}{% endbreadcrumbitem %}
+{% endblock %}

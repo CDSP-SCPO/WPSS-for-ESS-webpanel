@@ -1,0 +1,10 @@
+{% extends 'distributions/base.html' %}
+{% block content %}
+    <h1>Generate distribution links</h1>
+    {% include 'distributions/distribution_details.html' %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Generate"/>
+    </form>
+{% endblock %}

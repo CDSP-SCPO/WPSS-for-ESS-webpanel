@@ -1,0 +1,23 @@
+{% extends 'panelist/base.html' %}
+{% load i18n qxsms_tags django_bootstrap5 %}
+
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem 'panelist:profile-update' %}{% trans "Change your phone number" %}{% endbreadcrumbitem %}
+{% endblock %}
+
+{% block content %}
+    <section class="container">
+        {% blocktrans trimmed %}
+            <p>This page allows you to change the phone number linked to your account. We need to ensure that the new number is valid as it is used as a login identifier and as a primary means of communication,</p>
+            <p>Once you have changed the phone number, you will receive a text message with a link to validate the new number. The change will be effective only after the link is visited. In the meantime, your old phone number will still be used for login and communication.</p>
+        {% endblocktrans %}
+        <form method="post">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <button type="submit" class="btn btn-success me-2">{% trans "Send request" %}</button>
+            {% url 'panelist:profile-update' as cancel_url %}
+            {% include 'utils/cancel_button.html' %}
+        </form>
+    </section>
+{% endblock %}

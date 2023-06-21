@@ -1,0 +1,42 @@
+{% extends 'manager/panel_detail.html' %}
+{% load qxsms_tags i18n django_bootstrap5 %}
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem 'manager:task-import-list' panel.pk %}{% trans "Imports list" %}{% endbreadcrumbitem %}
+{% endblock %}
+{% block title_lead %}{% blocktrans %}Import history of {{ panel }}{% endblocktrans %}{% endblock %}
+
+{% block content %}
+    <section class="container">
+        {% if object_list %}
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover bg-white">
+                    <thead class="table-light">
+                    <tr>
+                        <th>{% trans "File Name" %}</th>
+                        <th>
+                            <div class="d-flex justify-content-between align-items-end">
+                                {% trans "Date" %}{% include 'utils/table_header_column_sort.html' with order_by='upload_date' %}
+                            </div>
+                        </th>
+                        <th>{% trans "Success" %}</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for group_import in object_list %}
+                        <tr>
+                            <td><a href="{% url 'manager:task-import-detail' pk=panel.pk task_pk=group_import.id %}">{{ group_import.file_name }}</a></td>
+                            <td><span class="badge rounded-pill bg-secondary">{{ group_import.upload_date }}</span></td>
+                            <td>{% include "hq/utils/member_list_boolean.html" with panelist_attribute=group_import.success %}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% bootstrap_pagination page=page_obj url=request.get_full_path %}
+        {% else %}
+            <div class="alert alert-info">{% trans "No tasks" %}</div>
+        {% endif %}
+    </section>
+{% endblock %}

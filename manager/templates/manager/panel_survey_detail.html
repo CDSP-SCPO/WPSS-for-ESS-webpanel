@@ -1,0 +1,71 @@
+{% extends 'manager/panel_survey_list.html' %}
+{% load qxsms_tags i18n django_bootstrap5 %}
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem 'manager:panel-survey-detail' panel.pk object.pk %}{{ object }}{% endbreadcrumbitem %}
+{% endblock %}
+{% block title_lead %}{% trans "Detailed responses statuses" %}{% endblock %}
+{% block content %}
+    <section class="container">
+        {% include 'utils/table_filter.html' with form=filter.form counts=counts %}
+        {% if object_list %}
+            {% include 'utils/distribution_stats.html' with records_stats=records_stats %}
+            <div class="table-responsive">
+                <table class="table table-bordered bg-white mb-3">
+                    <thead class="table-light">
+                    <tr>
+                        <th>
+                            <div class="d-flex justify-content-between align-items-end">
+                                {% trans "ESS ID" %}{% include 'utils/table_header_column_sort.html' with order_by='ess_id' %}
+                            </div>
+                        </th>
+                        <th>
+                            <div class="d-flex justify-content-between align-items-end">
+                                {% trans "Panelist" %}{% include 'utils/table_header_column_sort.html' with order_by='full_name' %}
+                            </div>
+                        </th>
+
+                        <th>
+                            <div class="d-flex justify-content-between align-items-end">
+                                {% trans "Started at" %}{% include 'utils/table_header_column_sort.html' with order_by='started_at' %}
+                            </div>
+                        </th>
+                        <th>
+                            <div class="d-flex justify-content-between align-items-end">
+                                {% trans "Finished at" %}
+                            </div>
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for l in profiles.object_list %}
+                        <tr class="{% if l.finished %}bg-success {% elif l.started %}bg-warning{% elif l.partially_finished %}bg-danger opacity-75{% else %}bg-danger{% endif %} text-white bg-gradient">
+                            <td><a class ="text-white" href="{% url 'manager:panel-member-update' l.profile_id %}">{{ l.ess_id }}</a></td>
+                            <td>{{ l.full_name }}</td>
+                            <td>{{ l.started_at|default:'' }}</td>
+                            {% if l.finished and not l.completed_at %}
+                                {# Date unknown because "anonymize responses" is enabled in the survey settings #}
+                                <td>Unknown (anonymized)</td>
+                            {% else %}
+                                <td>{{ l.completed_at|default:'' }}</td>
+                            {% endif %}
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                {% bootstrap_pagination page=profiles url=request.get_full_path %}
+            </div>
+            <a class="btn btn-secondary mb-3" href="{% url 'manager:panel-survey-links-export' panel.pk object.pk %}">
+            {% icon 'download' 'me-2' %}{% trans "Export response statuses" %}
+            </a>
+        {% else %}
+            <div class="alert alert-info">
+                {% if counts.total != counts.grand_total %}
+                    {% trans "No result" %}
+                {% else %}
+                    {% trans "No links were generated for this distribution (maybe the panel was empty when the survey was distributed)" %}
+                {% endif %}
+            </div>
+        {% endif %}
+    </section>
+{% endblock %}

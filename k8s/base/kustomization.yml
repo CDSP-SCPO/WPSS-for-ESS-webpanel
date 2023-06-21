@@ -1,0 +1,17 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - pvc-backup.yml
+  - db/service.yml
+  - db/deployment.yml
+  - db/cronjob.yml
+  - rabbit/service.yml
+  - rabbit/deployment.yml
+  - worker/deployment.yml
+  - qxsms/deployment.yml
+  - qxsms/service.yml
+
+commonLabels:
+  owner: cdsp
+  app: qxsms

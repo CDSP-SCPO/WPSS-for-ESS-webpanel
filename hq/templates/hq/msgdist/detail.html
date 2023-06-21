@@ -1,0 +1,62 @@
+{% extends "hq/base.html" %}
+{% load static qxsms_tags i18n %}
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem 'hq:msg-distribution-list' %}{% trans "Message deliveries" %}{% endbreadcrumbitem %}
+    {% breadcrumbitem 'hq:msg-distribution-detail' object.pk %}{% trans "Message delivery details" %}{% endbreadcrumbitem %}
+{% endblock %}
+{% block title_lead %}{% trans "Detailed summary of this message delivery's settings" %}{% endblock %}
+{% block content %}
+    <section class="container">
+        {% include 'hq/msgdist/msgdist_details.html' %}
+        {% if object.qx_id %}
+            {% if object.is_email %}
+                <h1>Stats</h1>
+                {% include 'hq/msgdist/email_stats_by_panel.html' %}
+            {% else %}
+                <h1>Stats preview for ALL panels in this distribution</h1>
+                {% include 'utils/sms_stats.html' %}
+                {% if detailedstatssms %}
+                    <h1>Detailed stats</h1>
+                   <table class="table table-bordered bg-white mb-3">
+                        <thead class="table-light">
+                        <th>Panelist ID</th>
+                        <th>Status</th>
+                        <th>Bounce Reason</th>
+                        <th>Last status update</th>
+                        </thead>
+                        <tbody>
+                            {% for stat in detailedstatssms %}
+                                <tr>
+                                    <td>{{ stat.panelist.panelist_id }}</td>
+                                    <td>{{ stat.smsstatus }}</td>
+                                    <td>{{ stat.bouncereason }}</td>
+                                    <td>{{ stat.datefile }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    <a href="{% url 'hq:msg-distribution-dlsmsstats' object.pk %}" class="btn btn-primary me-2">Download CSV</a>
+                {% else %}
+                    <p class="alert alert-info">To get a detailed report about this SMS distribution's outcome, please contact WPSS support with reference: <b>{{ object.short_uid }}</b></p>
+                {% endif %}
+            {% endif %}
+        {% elif object.get_send_date %}
+            {% if object.links__count > 0 %}
+                {# Loading animation while the messages are sent #}
+                {% include "utils/loading_spinner.html" with spinner_progress_info="Message are being sent." %}
+            {% else %}
+                <div class="alert alert-info">No recipient for this message.{% if object.fallback %} Please check the fallback message.{% endif %}</div>
+            {% endif %}
+        {% else %}
+                {% if object.can_add_fallback %}
+                    <a href="{% url 'hq:msg-distribution-fallback-create' object.pk %}" class="btn btn-primary me-2">{% trans "Add fallback message" %}</a>
+                {% endif %}
+                {% if not object.is_fallback %}
+                    <a href="{% url 'hq:msg-distribution-update' object.pk %}" class="btn btn-info me-2">{% trans "Edit the description" %}</a>
+                    <a href="{% url 'hq:msg-distribution-send' object.pk %}" class="btn btn-success me-2">{% trans "Send" %}</a>
+                {% endif %}
+                <a href="{% url 'hq:msg-distribution-delete' object.pk %}" class="btn btn-danger">{% trans "Delete" %}</a>
+        {% endif %}
+    </section>
+{% endblock %}

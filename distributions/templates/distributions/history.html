@@ -1,0 +1,28 @@
+{% extends "distributions/base.html" %}
+{% block content %}
+    <h1>Distribution history</h1>
+    {% include 'distributions/distribution_details.html' %}
+    <h2>Detailed stats</h2>
+    <table>
+    <thead>
+        <tr>
+            <th>Panel</th>
+            <th>Links</th>
+            <th>Pending</th>
+            <th>Started</th>
+            <th>Finished</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for panel, stats in records_stats.items %}
+            <tr>
+                <td>{{ panel }}</td>
+                <td>{{ stats.total }}</td>
+                <td>{{ stats.not_started }}</td>
+                <td>{{ stats.started }}</td>
+                <td>{{ stats.finished }}</td>
+            </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

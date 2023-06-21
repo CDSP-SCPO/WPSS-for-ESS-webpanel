@@ -1,0 +1,12 @@
+{% extends 'distributions/base.html' %}
+{% block content %}
+    <h1>Add a fallback distribution</h1>
+    <h2>Primary distribution</h2>
+    {% include 'distributions/msgd/msgd_details.html' %}
+    <h2>Fallback message</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Create">
+    </form>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'distributions/base.html' %}
+{% block content %}
+    <h1>Distribution details</h1>
+    {% include 'distributions/distribution_details.html' %}
+    {% if object.qx_id %}
+        <h2>Stats</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Links generated</th>
+                <th>In progress</th>
+                <th>Finished</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{ object.link__count }}</td>
+                <td>{{ stats.in_progress }}</td>
+                <td>{{ stats.finished }}</td>
+            </tr>
+            </tbody>
+        </table>
+        <a href="{% url 'dist:history' object.pk %}">Details...</a>
+    {% elif object.expiration_date %}
+        <p>Generating links...</p>
+    {% else %}
+        <a href="{% url 'dist:generate' object.pk %}">Generate links</a>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "hq/base.html" %}
+{% load qxsms_tags django_bootstrap5 i18n %}
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem 'hq:msg-distribution-list' %}{% trans "Message deliveries" %}{% endbreadcrumbitem %}
+    {% breadcrumbitem 'hq:email-distribution-create' %}{% trans "Create a message delivery" %}{% endbreadcrumbitem %}
+{% endblock %}
+{% block title_lead %}
+    {% blocktrans %}
+        Deliver a set of individual links to their recipients using an email or SMS drafted and translated on Qualtrics.
+        A fallback message can optionally be added.
+    {% endblocktrans %}
+{% endblock %}
+
+{% block content %}
+    <section class="container">
+        <form method="post">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <button type="submit" class="btn btn-success me-2">{% trans "Create" %}</button>
+        </form>
+    </section>
+{% endblock %}

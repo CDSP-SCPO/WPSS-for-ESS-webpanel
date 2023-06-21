@@ -1,0 +1,22 @@
+{% load django_bootstrap5 qxsms_tags %}
+<div class="card card-body mb-3">
+    <div class="d-flex align-items-center">
+        <div class="btn-group btn-group-sm align-self-start me-2">
+            <button type="button" class="btn btn-secondary position-relative" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                Filters
+                {% if counts.total != counts.grand_total %}
+                    <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle" style="z-index: 2;"><span class="visually-hidden">Filters set</span></span>
+                {% endif %}
+            </button>
+            <a href="./" class="btn btn-outline-secondary">Reset</a>
+        </div>
+        <span class="badge rounded-pill bg-primary">{{ counts.total }}/{{ counts.grand_total }} panelists</span>
+    </div>
+
+    <div class="collapse mt-3" id="collapseOne">
+        <form>
+            {% bootstrap_form form bound_css_class='' %}
+            <button class="btn btn-success" type="submit">Search</button>
+        </form>
+    </div>
+</div>

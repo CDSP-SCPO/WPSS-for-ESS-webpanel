@@ -1,0 +1,93 @@
+{% extends 'manager/panel_member_list.html' %}
+{% load qxsms_tags django_bootstrap5 i18n %}
+
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem 'manager:panel-member-import' panel.pk %}{% trans "Import" %}{% endbreadcrumbitem %}
+{% endblock %}
+{% block title_lead %}{% trans "Create panelist accounts from a CSV file" %}{% endblock %}
+
+{% block content %}
+    <section class="container">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <button type="submit" class="btn btn-success me-2">{% trans "Confirm" %}</button>
+            {% url 'manager:panel-member-list' panel.pk as cancel_url %}
+            {% include 'utils/cancel_button.html' %}
+            <a href="{% url 'manager:members-import-sample' %}" class="btn btn-info ms-2">{% icon 'download' 'me-2'%}{% trans "Example file" %}</a>
+        </form>
+        {# Errors #}
+
+        {% if errors %}
+            <ul class="list-unstyled ps-0">
+                {% for row, e in errors.items %}
+                    <li{% if not forloop.last %} class="mb-3"{% endif %}><b>Line {{ row }}</b><ul class="list-unstyled ps-3">
+                        {% for field, message in e.items %}
+                            <li><span class="badge rounded-pill bg-danger">{{ field }}</span> {{ message.0 }}</li>
+                        {% endfor %}
+                </ul></li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% if result %}
+            {% if not result.has_change %}
+            <div class="mt-3 alert alert-danger">{% trans 'No change detected.' %}</div>
+            {% else %}
+            <div class="mt-3 alert alert-danger">{% trans 'Something went awry. No data was imported.'%}</div>
+            {% endif %}
+            {# Non-validation errors, only to be shown when debugging #}
+            {% if result.has_errors and debug %}
+                <h3>{% trans "Base errors" %}</h3>
+                <ul>
+                    {% for error in result.base_errors %}
+                        <li>
+                            <p>Line number: {{ line }} - {{ error.error }}</p>
+                            <pre><code>{{ error.row.values|join:", " }}</code></pre>
+                            <div>{{ error.traceback|linebreaks }}</div>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <h3>{% trans "Line errors" %}</h3>
+                <ul>
+                    {% for line, errors in result.row_errors %}
+                        {% for error in errors %}
+                            <li>
+                                <p>Line number: {{ line }} - {{ error.error }}</p>
+                                <pre><code>{{ error.row.values|join:", " }}</code></pre>
+                                <div>{{ error.traceback|linebreaks }}</div>
+                            </li>
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            {# Show validation errors to the user #}
+            {% if result.has_errors %}
+                <ul class="list-unstyled ps-0">
+                    {% for line, errors in result.row_errors %}
+                        {% for error in errors %}
+                            <li><b>Line {{ line }}</b> - {{ error.error }}</li>
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            {% if result.has_validation_errors %}
+                <ul class="list-unstyled ps-0">
+                    {% for row in result.invalid_rows %}
+                        <li{% if not forloop.last %} class="mb-3"{% endif %}><b>Line {{ row.number }}</b><ul class="list-unstyled ps-3">
+                            {% for field, errors in row.error.message_dict.items %}
+                                <li><span class="badge rounded-pill bg-danger">{% get_csv_field_name field %}</span> {% for error in errors %}{{ error }}{% if not forloop.last %} | {% endif %}{% endfor %}</li>
+                            {% endfor %}
+                        </ul></li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endif %}
+    </section>
+{% endblock %}
+{% block js %}
+<script>
+f = document.querySelector('.container form'); b = document.querySelector('.container button[type=submit]');
+f.onsubmit = function() { b.disabled = true; b.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>' + b.innerHTML }
+</script>
+{% endblock %}

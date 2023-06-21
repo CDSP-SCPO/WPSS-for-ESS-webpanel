@@ -1,0 +1,5 @@
+{% load qxsms_tags %}
+<div class="d-flex ms-3">
+    <a href="{% add_url_params request.get_full_path order_by=order_by sort='asc' %}">{% icon 'caret-up-fill' %}</a>
+    <a href="{% add_url_params request.get_full_path order_by=order_by sort='desc' %}">{% icon 'caret-down-fill' %}</a>
+</div>

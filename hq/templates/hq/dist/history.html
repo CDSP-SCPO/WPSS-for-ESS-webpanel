@@ -1,0 +1,16 @@
+{% extends "hq/base.html" %}
+{% load qxsms_tags i18n %}
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem 'hq:link-distribution-list' %}{% trans "Link sets" %}{% endbreadcrumbitem %}
+    {% breadcrumbitem 'hq:link-distribution-detail' object.pk %}{% trans "Details" %}{% endbreadcrumbitem %}
+    {% breadcrumbitem 'hq:link-distribution-history' object.pk %}{% trans "History" %}{% endbreadcrumbitem %}
+{% endblock %}
+{% block title_lead %}{% trans "Detailed link statuses" %}{% endblock %}
+{% block content %}
+    <section class="container">
+        {% include 'hq/dist/distribution_details.html' %}
+        <h1>Detailed stats</h1>
+        {% include 'utils/distribution_stats.html' with records_stats=records_stats %}
+    </section>
+{% endblock %}

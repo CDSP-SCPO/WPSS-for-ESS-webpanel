@@ -1,0 +1,6 @@
+{% load qxsms_tags %}
+{% if panelist_attribute %}
+    {% icon 'check-lg' 'text-success' title="Yes" %}
+{% else %}
+    {% icon 'x-lg' 'text-danger' title="No" %}
+{% endif %}

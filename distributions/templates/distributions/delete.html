@@ -1,0 +1,8 @@
+{% extends 'distributions/base.html' %}
+{% block content %}
+    <h1>Confirm delete set of individual links</h1>
+    <form method="post" class="text-center">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger me-2">Yes</button>
+    </form>
+{% endblock %}

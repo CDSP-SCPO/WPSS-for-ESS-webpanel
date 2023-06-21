@@ -1,0 +1,12 @@
+@import "variables";
+
+// Variables
+$primary: $manager-primary;
+
+@import "base";
+
+// Components
+@import "bootstrap/scss/button-group";
+@import "bootstrap/scss/progress";
+@import "bootstrap/scss/pagination";
+@import "bootstrap/scss/progress";

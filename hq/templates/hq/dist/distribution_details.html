@@ -1,0 +1,22 @@
+<table class="table table-bordered table-striped bg-white">
+    <tr><th>UID</th><td><b><a href="{% url 'hq:link-distribution-detail' object.pk %}">{{ object.short_uid }}</a></b></td></tr>
+    <tr><th>Description</th><td>{{ object.description}} </td></tr>
+    <tr><th>Survey</th><td>{{ object.survey.name }}</td></tr>
+    {% if generated %}
+    <tr><th>Number of links</th><td>{{ object.link__count }}</td>
+    <tr><th>Generated at</th><td>{{ object.qx_created_date|date:'Y-m-d H\hi'}}</td>
+    <tr><th>Expire in</th><td>{{ object.expiration_date|timeuntil }}</td>
+    <tr><th>In progress</th><td>{{ stats.in_progress }}</td>
+    <tr><th>Finished</th><td>{{ stats.finished }}</td>
+    {% else %}
+        <tr><th>Panels</th>
+        <td>
+            <ul>
+                {% for panel in object.panels.all %}
+                    <li>{{ panel.name }}</li>
+                {% endfor %}
+            </ul>
+        </td>
+    </tr>
+    {% endif %}
+</table>

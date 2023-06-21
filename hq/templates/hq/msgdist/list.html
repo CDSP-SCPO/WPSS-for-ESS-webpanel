@@ -1,0 +1,107 @@
+{% extends 'hq/base.html' %}
+{% load static qxsms_tags i18n django_bootstrap5 %}
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem 'hq:msg-distribution-list' %}{% trans "Message deliveries" %}{% endbreadcrumbitem %}
+{% endblock %}
+{% block title_lead %}{% trans "Send individual links to their recipients via email or SMS." %}{% endblock %}
+{% block content %}
+    <section class="container">
+        <p>
+            When a link set is generated, every included panelist can
+            see their individual link by logging into their account.
+        </p>
+        <p>
+            However, it may be convenient to send an email or a text
+            message to eligible panelists, drawing their attention on
+            a new survey being available, and directly giving them the
+            link they would otherwise find on their portal page.
+        </p>
+        <p>
+            This is exactly the purpose of <b>Message Deliveries</b>.
+            For an existing individual link set, the message delivery
+            procedure lets you choose a preferred channel (email or
+            SMS), a <a href="{% url 'hq:message-list' %}">Qualtrics
+            message template</a> to use, a subset of
+            panelists to target (eg, those who haven't started the
+            survey yet) and schedule a sending date. You can also
+            optionaly add a fallback contact mode, that will be used
+            to get in touch with panelists not reachable by the
+            primary channel.
+        </p>
+        <p>
+            Listed below are message deliveries created so far. Columns
+            are to be interpreted as follows:
+        <dl>
+            <dt>ID</dt>
+            <dd>The internal identifier of the message delivery</dd>
+            <dt>Created</dt>
+            <dd>
+                The date when this message delivery was created. By contrast, <b>Send date</b>
+                below is the posterior date when the message was sent to panelists.
+            </dd>
+        </dl>
+        </p>
+        <a href="{% url 'hq:email-distribution-create' %}" class="btn btn-success mb-3">
+            {% icon 'envelope' 'me-2' %}{% trans "New email delivery" %}
+        </a>
+        <a href="{% url 'hq:sms-distribution-create' %}" class="btn btn-success ms-2 mb-3">
+            {% icon 'pen' 'me-2' %}{% trans "New SMS delivery" %}
+        </a>
+        {% if object_list %}
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover bg-white">
+                    <thead class="table-light">
+                    <tr>
+                        <th>ID</th>
+                        <th>Created</th>
+                        <th>Description</th>
+                        <th>Link set</th>
+                        <th>Type</th>
+                        <th>Target</th>
+                        <th>Subject</th>
+                        <th>Message</th>
+                        <th>Send date</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for dist in object_list %}
+                        <tr>
+                            <td><a href="{% url 'hq:msg-distribution-detail' dist.pk %}">{{ dist.short_uid }}</a></td>
+                            <td>{{ dist.created_date|date:'Y-m-d H\hi' }}</td>
+                            <td>{{dist.description}}</td>
+                            <td><a href="{% url 'hq:link-distribution-detail' dist.link_distribution.pk %}">{{ dist.link_distribution.description }}</a></td>
+                            <td>{{ dist.get_contact_mode_display }}</td>
+                            <td>{{ dist.get_target_display }}</td>
+                            <td>{{ dist.subject.description }}</td>
+                            <td>{{ dist.message.description }}</td>
+                            <td>{{ dist.send_date|date:'Y-m-d H\hi'|default:'Not scheduled' }}</td>
+                        </tr>
+                        {% if dist.has_fallback %}
+                            {% with dist.fallback as f %}
+                                <tr>
+                                    <td style="border-left: 20px solid #28a745">
+                                        {% icon 'reply-fill' 'me-2' 'fallback-row' %}
+                                        <a href="{% url 'hq:msg-distribution-detail' f.pk %}">{{ f.short_uid }}</a>
+                                    </td>
+                                    <td>{{ f.created_date|date:'Y-m-d H\hi' }}</td>
+                                    <td>{{f.description}}</td>
+                                    <td><a href="{% url 'hq:link-distribution-detail' f.link_distribution.pk %}">{{ f.link_distribution.description }}</a></td>
+                                    <td>{{ f.get_contact_mode_display }}</td>
+                                    <td>{{ f.get_target_display }}</td>
+                                    <td>{{ f.subject.description }}</td>
+                                    <td>{{ f.message.description }}</td>
+                                    <td class="table-secondary"></td>
+                                </tr>
+                            {% endwith %}
+                        {% endif %}
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% bootstrap_pagination page=page_obj url=request.get_full_path %}
+        {% else %}
+            <div class="alert alert-info">{% trans "No message deliveries have been created yet." %}</div>
+        {% endif %}
+    </section>
+{% endblock %}

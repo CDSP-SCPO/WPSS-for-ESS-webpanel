@@ -1,0 +1,18 @@
+<ul>
+    <li>UID: <b><a href="{{ object.get_absolute_url }}">{{ object.short_uid }}</a></b></li>
+        <li>Description: {{ object.description}}</li>
+        <li>Survey: {{ object.survey.name }}</li>
+        <li>Panels</li>
+        <ul>
+            {% for panel in object.panels.all %}
+                <li>{{ panel.name }}</li>
+            {% endfor %}
+        </ul>
+        {% if object.expiration_date %}
+            <li>Links ({{ object.link__count }})</li>
+            <ul>
+                <li>Generated: {{ object.qx_created_date|date:'Y-m-d H\hi'|default:'Pending...' }}</li>
+                <li>Expire in: {{ object.expiration_date|timeuntil }}</li>
+            </ul>
+        {% endif %}
+</ul>

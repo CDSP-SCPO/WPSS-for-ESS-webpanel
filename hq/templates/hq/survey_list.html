@@ -1,0 +1,48 @@
+{% extends 'hq/base.html' %}
+{% load qxsms_tags i18n %}
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem 'hq:survey-list' %}{% trans "Surveys" %}{% endbreadcrumbitem %}
+{% endblock %}
+{% block title_lead %}{% trans "Surveys currently available on Qualtrics" %}{% endblock %}
+{% block content %}
+    <section class="container">
+        <p>
+            {% blocktrans %}
+                Below are listed the surveys that are shared with the
+                WPSS Qualtrics accounts. If a survey is active, sets
+                of links can be generated and send to panelists via
+                email or SMS. Otherwise the survey must be activated
+                on Qualtrics.
+            {% endblocktrans %}
+        </p>
+        {% if survey_list %}
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover bg-white">
+                    <thead class="table-light">
+                        <tr>
+                            <th>{% trans "Name" %}</th>
+                            <th>{% trans "Qualtrics status" %}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for survey in survey_list %}
+                            <tr>
+                                <td>{{ survey.name }}</td>
+                                <td>
+                                    {% if survey.isActive %}
+                                        <span class="badge rounded-pill bg-success">{% trans "Active" %}</span>
+                                    {% else %}
+                                        <span class="badge rounded-pill bg-info">{% trans "Inactive" %}</span>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <div class="alert alert-info">{% trans "No existing survey" %}</div>
+        {% endif %}
+    </section>
+{% endblock %}

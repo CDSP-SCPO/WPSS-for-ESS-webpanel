@@ -1,0 +1,38 @@
+{% extends 'hq/panel_member_list.html' %}
+{% load static qxsms_tags i18n %}
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem 'hq:blankslot-list' %}{% trans "Additional variables" %}{% endbreadcrumbitem %}
+{% endblock %}
+{% block title_lead %}{% trans "All additional variables currently managed by the application" %}{% endblock %}
+{% block content %}
+    <section class="container">
+        <a href="{% url 'hq:blankslot-create' %}" class="btn btn-success mb-3">{% icon 'plus-lg' 'me-2' %}{% trans "New additional variable" %}</a>
+        {% if object_list|length == 0 %}
+        <div class="alert alert-info">{% trans "No additional variables available" %}</div>
+        {% else %}
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover bg-white">
+                <thead class="table-light">
+                <tr>
+                    <th>{% trans "Name" %}</th>
+                    <th>{% trans "Description" %}</th>
+                    <th>{% trans "Action" %}</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for blankslot in object_list %}
+                <tr>
+                    <td>{{ blankslot.name }}</td>
+                    <td>{{ blankslot.description }}</td>
+                    <td>
+                        <a href="{% url 'hq:blankslot-update' blankslot.pk %}" class="btn btn-sm btn-info me-2">{% icon 'pen' 'me-2' %}{% trans "Edit" %}</a>
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endif %}
+    </section>
+{% endblock %}

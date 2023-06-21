@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static qxsms_tags i18n %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/hq.css' %}?{{ QXSMS_VERSION }}">
+{% endblock %}
+{% block menu_links %}
+    {% if request.user.is_authenticated %}
+        <a class="nav-item nav-link" href="{% url 'hq:panelmember-list' %}">{% trans "Panelists" %}</a>
+        <a class="nav-item nav-link" href="{% url 'hq:panel-list' %}">{% trans "Panels" %}</a>
+        <a class="nav-item nav-link" href="{% url 'hq:manager-list' %}">{% trans "National coordinators" %}</a>
+        <a class="nav-item nav-link" href="{% url 'hq:survey-list' %}">{% trans "Surveys" %}</a>
+        <a class="nav-item nav-link" href="{% url 'hq:link-distribution-list' %}">{% trans "Individual links" %}</a>
+        <a class="nav-item nav-link" href="{% url 'hq:msg-distribution-list' %}">{% trans "Message deliveries" %}</a>
+    {% endif %}
+{% endblock %}
+{% block profile_link %}{% url 'hq:profile-update' %}{% endblock %}
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem 'hq:home' %}{% trans "Headquarters" %}{% endbreadcrumbitem %}
+{% endblock %}

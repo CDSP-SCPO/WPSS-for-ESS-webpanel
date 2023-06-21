@@ -1,0 +1,36 @@
+{% extends 'hq/base.html' %}
+{% load static qxsms_tags i18n %}
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem 'hq:panel-list' %}{% trans "Panels" %}{% endbreadcrumbitem %}
+{% endblock %}
+{% block title_lead %}{% trans "All panels currently managed by the application" %}{% endblock %}
+{% block content %}
+    <section class="container">
+        <a href="{% url 'hq:panel-create' %}" class="btn btn-success mb-3">{% icon 'plus-lg' 'me-2' %}{% trans "New panel" %}</a>
+        {% if object_list %}
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover bg-white">
+                    <thead class="table-light">
+                    <tr>
+                        <th>{% trans "Name" %}</th>
+                        <th>{% trans "National coordinators" %}</th>
+                        <th>{% trans "Panelists" %}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for panel in object_list %}
+                        <tr>
+                            <td><a href="{% url 'hq:panel-detail' panel.pk %}">{{ panel.name }}</a></td>
+                            <td><span class="badge rounded-pill bg-secondary">{{ panel.manager_count }}</span></td>
+                            <td><span class="badge rounded-pill bg-secondary">{{ panel.profile_count }}</span></td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <div class="alert alert-info">{% trans "No panel" %}</div>
+        {% endif %}
+    </section>
+{% endblock %}

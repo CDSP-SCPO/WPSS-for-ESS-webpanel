@@ -1,0 +1,29 @@
+{% extends 'hq/base.html' %}
+{% load qxsms_tags i18n %}
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem 'hq:message-list' %}{% trans "Messages" %}{% endbreadcrumbitem %}
+{% endblock %}
+{% block title_lead %}{% trans "Messages drafted and translated on Qualtrics" %}{% endblock %}
+{% block content %}
+    <section class="container">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover bg-white">
+                <thead class="table-light">
+                    <tr>
+                        <th>Description</th>
+                        <th>Category</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for object in object_list %}
+                        <tr>
+                            <td>{{ object.description }}</td>
+                            <td><span class="badge bg-secondary">{{ object.category }}</span></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,37 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: qxsms-wpss
+
+bases:
+  - ../../../base/
+
+resources:
+  - pvc.yml
+  - ingress.yml
+  - scpcronjob.yml
+
+patchesStrategicMerge:
+- env.yml
+
+commonLabels:
+  stage: production
+
+secretGenerator:
+- name: postgres
+  env: postgres.env
+
+- name: qxsms
+  env: qxsms.env
+
+- name: scp
+  env: scp.env
+
+images:
+  - name: postgres
+    newTag: '13-alpine'
+  - name: rabbitmq
+    newTag: '3.9-alpine'
+  - name: gitlab.sciences-po.fr:4567/cdspit/qxsms/qxsms
+    newName: index.docker.io/itcdsp/qxsms
+    newTag: 'ovh'

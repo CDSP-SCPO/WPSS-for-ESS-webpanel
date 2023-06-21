@@ -1,0 +1,82 @@
+{% extends "manager/msgdist/list.html" %}
+{% load static qxsms_tags i18n django_bootstrap5 %}
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem 'manager:msg-distribution-detail' panel.pk object.pk %}{% trans "Message delivery details" %}{% endbreadcrumbitem %}
+{% endblock %}
+{% block title_lead %}{% trans "Detailed summary of this message delivery's settings" %}{% endblock %}
+{% block content %}
+    <section class="container">
+        {% include 'manager/msgdist/msgdist_details.html' %}
+        {% if object.qx_id %}
+            {% if object.is_email %}
+                <h1>Stats</h1>
+                {% include 'manager/msgdist/email_stats.html'%}
+                {% include 'utils/table_filter.html' with form=filter.form counts=counts %}
+            {% else %}
+                <h1>Stats preview for ALL panels in this distribution</h1>
+                {% include 'utils/sms_stats.html' %}
+            {% endif %}
+
+            <div class="table-responsive">
+                {% if object.is_email %}
+                    <table class="table table-bordered bg-white mb-3">
+                        <thead class="table-light">
+                        <th>ESS ID</th>
+                        <th>Status</th>
+                        <th>Opened at</th>
+                        </thead>
+                        <tbody>
+                            {% for record in profiles.object_list %}
+                                <tr>
+                                    <td><a href="{% url 'manager:panel-member-update' record.profile_id %}">{{ record.ess_id }}</a></td>
+                                    <td>{{ record.status }}</td>
+                                    <td>{{ record.opened_at|date:"Y-m-d h:m:s"|default_if_none:"Not yet" }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% bootstrap_pagination page=profiles url=request.get_full_path %}
+                {% else %}
+                    {% if detailedstatssms %}
+                        <h1>Detailed stats</h1>
+                        <table class="table table-bordered bg-white mb-3">
+                            <thead class="table-light">
+                            <th>ESS ID</th>
+                            <th>Status</th>
+                            <th>Bounce Reason</th>
+                            <th>Last status update</th>
+                            </thead>
+                            <tbody>
+                                {% for stat in detailedstatssms %}
+                                    <tr>
+                                        <td><a href="{% url 'manager:panel-member-update' stat.panelist.id %}">{{ stat.panelist.ess_id }}</a></td>
+                                        <td>{{ stat.smsstatus }}</td>
+                                        <td>{{ stat.bouncereason }}</td>
+                                        <td>{{ stat.datefile }}</td>
+                                    </tr>
+                                {% empty %}
+                                    <tr>
+                                        <td>
+                                            To get a detailed report about this SMS distribution's outcome, please contact WPSS support with reference:  <b>{{ object.short_uid }}</b>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        <a href="{% url 'manager:msg-distribution-dlsmsstats' panel.pk object.pk %}" class="btn btn-primary me-2">Download CSV</a>
+                    {% else %}
+                        <p class="alert alert-info">To get a detailed report about this SMS distribution's outcome, please contact WPSS support with reference: <b>{{ object.short_uid }}</b></p>
+                    {% endif %}
+                {% endif %}
+            </div>
+        {% elif object.send_date %}
+            {% if object.links__count > 0 %}
+                {# Loading animation while the messages are sent #}
+                {% include "utils/loading_spinner.html" with spinner_progress_info="Message are being sent." %}
+            {% else %}
+                <div class="alert alert-info">No recipient for this message.{% if object.fallback %} Please check the fallback message.{% endif %}</div>
+            {% endif %}
+        {% endif %}
+    </section>
+{% endblock %}

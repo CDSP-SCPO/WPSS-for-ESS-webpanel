@@ -1,0 +1,28 @@
+{% extends 'panelist/base.html' %}
+{% load i18n qxsms_tags django_bootstrap5 %}
+
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem 'panelist:profile-update' %}{% trans "Profile" %}{% endbreadcrumbitem %}
+{% endblock %}
+
+{% block title_lead %}{% trans "Change your contact details" %}{% endblock %}
+
+{% block content %}
+    <section class="container">
+        <form method="post">
+            <div class="mb-3">
+                <label for="id_panelist_id" class="form-label">Panelist ID</label>
+                <input id="id_panelist_id" class="form-control" type="text" value="{{ object.panelist_id }}" disabled/>
+            </div>
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <button type="submit" class="btn btn-success me-2">{% trans "Save" %}</button>
+            <a href="{% url 'password-change' %}" class="btn btn-secondary me-2">{% trans "Change your password" %}</a>
+            <a href="{% url 'panelist:email-change' %}" class="btn btn-secondary me-2">{% trans "Change your email" %}</a>
+            <a href="{% url 'panelist:phone-change' %}" class="btn btn-secondary me-2">{% trans "Change your phone number" %}</a>
+            {% url 'panelist:home' as cancel_url %}
+            {% include 'utils/cancel_button.html' %}
+        </form>
+    </section>
+{% endblock %}

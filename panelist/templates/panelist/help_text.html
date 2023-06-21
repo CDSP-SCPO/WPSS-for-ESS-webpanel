@@ -1,0 +1,20 @@
+{% load static i18n %}
+<section class="container">
+    <article class="mt-5">
+        {% blocktrans trimmed %}
+            <p><b>The {{ INSTANCE_NAME }}</b> is a study of carefully selected people who are asked to give their views on a wide range of topical social issues, such as family life, work, health, the media and politics. The information collected will provide researchers and policy makers (amongst others) with valuable insights regarding the most important topics in our society today.</p>
+            <p>A new survey will be issued every 1-2 months and you will receive a ‘thank you’ gift of <b>{{ incentive_amount }}</b> with each survey invitation.</p>
+            <p>Only you can complete the survey so please do not share your details with anyone else.</p>
+            <p>No special knowledge is needed to answer the surveys  there are no wrong answers, we just want to know your opinions and experiences.</p>
+            <p>Your data will be handled in the strictest confidence and in accordance with the General Data Protection Regulation (GDPR).</p>
+        {% endblocktrans %}
+        <h1>{% trans "Contact us" %}</h1>
+        {% if contact_info %}
+            <p>{{ contact_info }}</p>
+        {% else %}
+            {% blocktrans trimmed with first_name=manager.first_name last_name=manager.last_name email=manager.email phone=manager.phone %}
+                <p>If you need to get in touch, please contact <b>{{ first_name }} {{ last_name }} (<a href="mailto:{{ email }}">{{ email }}</a> / <a href="tel:{{ phone }}">{{ phone }}</a>)</b>.</p>
+            {% endblocktrans %}
+        {% endif %}
+    </article>
+</section>

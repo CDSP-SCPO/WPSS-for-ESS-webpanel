@@ -1,0 +1,47 @@
+{% extends 'manager/task_import_list.html' %}
+{% load qxsms_tags i18n django_bootstrap5 %}
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem 'manager:task-import-detail' panel.pk panel.pk%}{% trans "Import history detail" %}{% endbreadcrumbitem %}
+{% endblock %}
+{% block title_lead %}{{ object.file_name }}{% endblock %}
+
+
+{% block content %}
+    <div class="container-fluid">
+        {% if completed %}
+            <div class="alert alert-info">
+                {% if not dry_run %}
+                    <p class="fw-bold">{{ result.new }} members created. {{ result.update }} members updated. {{ result.skip }} rows skipped.</p>
+                    <p>Import completed, you can now click <a href="{% url 'manager:panel-member-list' panel.pk %}">here</a></p>
+                {% else %}
+                    <p>The dry run import is successful. You can <a href="{% url 'manager:panel-member-import' panel.pk %}">import your csv</a></p>
+                {% endif %}
+            </div>
+
+        {% elif not errors %}
+            {# Loading animation during the import of the panelist #}
+            {% include "utils/loading_spinner.html" with spinner_progress_info="Data validation and import in progress." %}
+        {% endif %}
+        {% if errors %}
+            <div class="alert alert-danger mb-3 fw-bold">Errors occurred during the import. No panelists have been imported</div>
+            <div class="card">
+                <div class="card-body">
+                    <ul class="list-unstyled mb-0">
+                        {% for nb_line, detail_error in errors.items %}
+                            <li>
+                                <b>Line {{ nb_line }}</b>
+                                <ul class="list-unstyled ps-3">
+                                    {% for field, description in detail_error.items %}
+                                        <li><span class="badge rounded-pill bg-danger">{{ field }}</span> {{ description.0 }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        {% endif %}
+
+    </div>
+{% endblock %}

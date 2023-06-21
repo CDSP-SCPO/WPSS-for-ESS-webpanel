@@ -1,0 +1,41 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: qxsms-pprd
+
+bases:
+  - ../../../base/
+
+resources:
+  - pvc.yml
+  - ingress.yml
+
+patchesStrategicMerge:
+- env.yml
+
+commonLabels:
+  stage: staging
+
+secretGenerator:
+- name: postgres
+  env: postgres.env
+
+- name: qxsms
+  env: qxsms.env
+
+images:
+  - name: postgres
+    newTag: '13-alpine'
+  - name: rabbitmq
+    newTag: '3.9-alpine'
+  - name: gitlab.sciences-po.fr:4567/cdspit/qxsms/qxsms
+    newTag: 'staging'
+
+patches:
+    - target:
+        kind: CronJob
+        name: db-backup
+      patch:  |-
+          - op: replace
+            path: /apiVersion
+            value: batch/v1beta1

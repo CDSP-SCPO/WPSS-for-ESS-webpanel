@@ -1,0 +1,800 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-06 09:06+0000\n"
+"PO-Revision-Date: 2021-08-15 19:21+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.3.1\n"
+
+#. Translators: ignore
+#: panelist/forms.py:194
+msgid "Cannot assign multiple values to the same variable"
+msgstr ""
+
+#. Translators: ignore
+#: panelist/models.py:32
+msgid "Must be between 1 and 99."
+msgstr ""
+
+#. Translators: ignore
+#: panelist/models.py:38
+msgid "Must be between 1 and 31, or 77, 88, 99."
+msgstr ""
+
+#. Translators: ignore
+#: panelist/models.py:44
+msgid "Must be between 1 and 12, or 77, 88, 99."
+msgstr ""
+
+#. Translators: ignore
+#: panelist/models.py:50
+msgid "Must be between 1900 and 2005, or 7777, 8888, 9999."
+msgstr ""
+
+#: panelist/models.py:144
+msgid "Austria"
+msgstr "Itävalta"
+
+#: panelist/models.py:145
+msgid "Belgium"
+msgstr "Belgia"
+
+#: panelist/models.py:146
+msgid "Bulgaria"
+msgstr "Bulgaria"
+
+#: panelist/models.py:147
+msgid "Czechia"
+msgstr "Tšekki"
+
+#: panelist/models.py:148
+msgid "Croatia"
+msgstr "Kroatia"
+
+#: panelist/models.py:149
+msgid "Cyprus"
+msgstr "Kypros"
+
+#: panelist/models.py:150
+msgid "Estonia"
+msgstr "Viro"
+
+#: panelist/models.py:151
+msgid "Finland"
+msgstr "Suomi"
+
+#: panelist/models.py:152
+msgid "France"
+msgstr "Ranska"
+
+#: panelist/models.py:153
+msgid "Germany"
+msgstr "Saksa"
+
+#: panelist/models.py:154
+msgid "Hungary"
+msgstr "Unkari"
+
+#: panelist/models.py:155
+msgid "Iceland"
+msgstr "Islanti"
+
+#: panelist/models.py:156
+msgid "Ireland"
+msgstr "Irlanti"
+
+#: panelist/models.py:157
+msgid "Italy"
+msgstr "Italia"
+
+#: panelist/models.py:158
+msgid "Latvia"
+msgstr "Latvia"
+
+#: panelist/models.py:159
+msgid "Lithuania"
+msgstr "Liettua"
+
+#: panelist/models.py:160
+msgid "The Netherlands"
+msgstr "Alankomaat"
+
+#: panelist/models.py:161
+msgid "Norway"
+msgstr "Norja"
+
+#: panelist/models.py:162
+msgid "Poland"
+msgstr "Puola"
+
+#: panelist/models.py:163
+msgid "Portugal"
+msgstr "Portugali"
+
+#: panelist/models.py:164
+msgid "Slovakia"
+msgstr "Slovakia"
+
+#: panelist/models.py:165
+msgid "Slovenia"
+msgstr "Slovenia"
+
+#: panelist/models.py:166
+msgid "Sweden"
+msgstr "Ruotsi"
+
+#: panelist/models.py:167
+msgid "United Kingdom"
+msgstr "Iso-Britannia"
+
+#: panelist/models.py:168
+msgid "Switzerland"
+msgstr "Sveitsi"
+
+#: panelist/models.py:169
+msgid "Albania"
+msgstr "Albania"
+
+#: panelist/models.py:170
+msgid "Denmark"
+msgstr "Tanska"
+
+#: panelist/models.py:171
+msgid "Israel"
+msgstr "Israel"
+
+#: panelist/models.py:172
+msgid "Montenegro"
+msgstr "Montenegro"
+
+#: panelist/models.py:173
+msgid "Serbia"
+msgstr "Serbia"
+
+#: panelist/models.py:174
+msgid "Spain"
+msgstr "Espanja"
+
+#: panelist/models.py:175
+msgid "Greece"
+msgstr "Kreikka"
+
+#: panelist/models.py:176
+msgid "Kosovo"
+msgstr "Kosovo"
+
+#: panelist/models.py:177
+msgid "Luxembourg"
+msgstr "Luxemburg"
+
+#: panelist/models.py:178
+msgid "Romania"
+msgstr "Romania"
+
+#: panelist/models.py:179
+msgid "Russia"
+msgstr "Venäjä"
+
+#: panelist/models.py:180
+msgid "Turkey"
+msgstr "Turkki"
+
+#: panelist/models.py:181
+msgid "Ukraine"
+msgstr "Ukraina"
+
+#. Translators: ignore
+#: panelist/models.py:190
+msgid "Never logged in"
+msgstr ""
+
+#. Translators: ignore
+#: panelist/models.py:192
+msgid "Has logged in"
+msgstr ""
+
+#. Translators: ignore
+#: panelist/models.py:194
+msgid "Deactivated"
+msgstr ""
+
+#: panelist/models.py:202
+msgid "first name"
+msgstr "etunimi"
+
+#: panelist/models.py:203
+msgid "last name"
+msgstr "sukunimi"
+
+#: panelist/models.py:205 qxauth/forms.py:43
+msgid "email address"
+msgstr "sähköpostiosoite"
+
+#: panelist/models.py:210 qxauth/forms.py:66
+msgid "A user with that email address already exists."
+msgstr "Sähköpostiosoite on jo käytössä."
+
+#: panelist/models.py:223 qxauth/forms.py:49
+msgid "phone number"
+msgstr "puhelinnumero"
+
+#: panelist/models.py:228
+msgid "A user with that phone number already exists."
+msgstr "Puhelinnumero on jo käytössä."
+
+#: panelist/models.py:233
+msgid "language"
+msgstr "kieli"
+
+#: panelist/models.py:235
+msgid "name of property"
+msgstr "kiinteistön nimi"
+
+#: panelist/models.py:236
+msgid "number"
+msgstr "numero"
+
+#: panelist/models.py:237
+msgid "address line 1"
+msgstr "osoiterivi 1"
+
+#: panelist/models.py:238
+msgid "address line 2"
+msgstr "osoiterivi 2"
+
+#: panelist/models.py:239
+msgid "city"
+msgstr "kaupunki"
+
+#: panelist/models.py:240
+msgid "county"
+msgstr "maakunta"
+
+#: panelist/models.py:241
+msgid "postcode"
+msgstr "postinumero"
+
+#: panelist/models.py:242
+msgid "country"
+msgstr "maa"
+
+#: panelist/models.py:244
+msgid "day of birth"
+msgstr "syntymäpäivä"
+
+#: panelist/models.py:245
+msgid "month of birth"
+msgstr "syntymäkuukausi"
+
+#: panelist/models.py:246
+msgid "year of birth"
+msgstr "syntymävuosi"
+
+#: panelist/models.py:347
+msgid "Male"
+msgstr "Mies"
+
+#: panelist/models.py:348
+msgid "Female"
+msgstr "Nainen"
+
+#: panelist/models.py:349
+msgid "Other"
+msgstr "Muu"
+
+#: panelist/models.py:350 panelist/models.py:361
+msgid "Refusal"
+msgstr "Kieltäytyy"
+
+#: panelist/models.py:351 panelist/models.py:362
+msgid "Don't know"
+msgstr "Ei tiedä"
+
+#: panelist/models.py:352 panelist/models.py:363
+msgid "No answer"
+msgstr "Ei vastausta"
+
+#: panelist/models.py:356
+msgid "Never"
+msgstr "En koskaan"
+
+#: panelist/models.py:357
+msgid "Only occasionally"
+msgstr "Melko harvoin"
+
+#: panelist/models.py:358
+msgid "A few times a week"
+msgstr "Muutaman kerran viikossa"
+
+#: panelist/models.py:359
+msgid "Most days"
+msgstr "Useimpina päivinä"
+
+#: panelist/models.py:360
+msgid "Every day"
+msgstr "Päivittäin"
+
+#: panelist/models.py:374
+msgid "Not available"
+msgstr "Ei saatavilla"
+
+#: panelist/models.py:377
+msgid "sex"
+msgstr "sukupuoli"
+
+#: panelist/models.py:378
+msgid "internet use"
+msgstr "Internetin käyttö"
+
+#: panelist/models.py:380
+msgid "years of education"
+msgstr "koulutus vuosina"
+
+#. Translators: ignore
+#: panelist/models.py:443 panelist/models.py:445
+msgid "Email or phone number required."
+msgstr ""
+
+#. Translators: ignore
+#: panelist/models.py:449
+msgid "The panelist should be opt out if a date or reason is filled."
+msgstr ""
+
+#. Translators: ignore
+#: panelist/models.py:482
+msgid "{attr.capitalize()} belongs to another user."
+msgstr ""
+
+#. Translators: ignore
+#: panelist/models.py:514
+msgid "The distributionId generated on qualtrics when this link was created"
+msgstr "Qualtricsin luoma id-numero tämän linkin luonnin yhteydessä"
+
+#: panelist/models.py:589
+msgid "Finished"
+msgstr "Valmis"
+
+#: panelist/models.py:591
+msgid "Started"
+msgstr "Aloitettu"
+
+#: panelist/models.py:593
+msgid "Not started"
+msgstr "Ei aloitettu"
+
+#: panelist/templates/panelist/base.html:9
+#: panelist/templates/panelist/survey_list.html:5
+msgid "My surveys"
+msgstr "Omat kyselyni"
+
+#: panelist/templates/panelist/base.html:10
+#: panelist/templates/panelist/help.html:5
+#: panelist/templates/panelist/index.html:29
+msgid "Help"
+msgstr "Tietoa"
+
+#: panelist/templates/panelist/email_change.html:6
+#: panelist/templates/panelist/profile_update.html:22
+msgid "Change your email"
+msgstr "Vaihda sähköpostiosoite"
+
+#: panelist/templates/panelist/email_change.html:11
+msgid ""
+"<p>This page allows you to change the email address linked to your account. "
+"We need to ensure that the new address is valid as it is used as a login "
+"identifier and as a primary means of communication,</p> <p>Once you have "
+"changed the email address, you will receive a link to validate the new email "
+"address. The change will be effective only after the link is clicked. In the "
+"meantime, your old email address will still be used for login and "
+"communication.</p>"
+msgstr ""
+"<p>Tällä sivulla voit vaihtaa sähköpostiosoitteesi. Uusi osoite tulee "
+"vahvistaa, sillä sitä käytetään sisäänkirjautumiseen sekä ensisijaisena "
+"yhteystietona.</p> <p>Kun olet vaihtanut sähköpostiosoitteesi, saat "
+"sähköpostiisi linkin uuden osoitteen vahvistamiseksi. Uusi osoite tulee "
+"voimaan vasta, kun painat linkkiä. Siihen saakka sisäänkirjautumiseen ja "
+"yhteydenpitoon käytetään vanhaa osoitettasi.</p>"
+
+#: panelist/templates/panelist/email_change.html:18
+msgid "Send request"
+msgstr "Lähetä pyyntö"
+
+#: panelist/templates/panelist/email_change_confirm.html:6
+#: panelist/templates/panelist/email_change_subject.txt:1
+msgid "Confirm your email"
+msgstr "Vahvista sähköpostiosoitteesi"
+
+#: panelist/templates/panelist/email_change_confirm.html:11
+#, python-format
+msgid ""
+"<p>Are you sure you want to change your email %(email)s by %(temp_email)s?</"
+"p>"
+msgstr ""
+"<p>Oletko varma että haluat vaihtaa sähköpostisi osoitteesta %(email)s "
+"osoitteeseen %(temp_email)s?</p>"
+
+#: panelist/templates/panelist/email_change_confirm.html:17
+msgid "Confirm request"
+msgstr "Vahvista pyyntö"
+
+#: panelist/templates/panelist/email_change_confirm.html:20
+msgid ""
+"This link is invalid, possibly because it has already been used. Please "
+"request a new link to change your email."
+msgstr ""
+"Linkki ei toiminut mahdollisesti siksi, että sitä on jo käytetty. Ole hyvä "
+"ja pyydä uusi vahvistuslinkki sähköpostin vaihtamiseksi."
+
+#: panelist/templates/panelist/email_change_email.html:2
+#, python-format
+msgid ""
+"\n"
+"We have sent you this email because you requested to change the email "
+"address linked to your account on %(site_name)s.\n"
+"Please visit the link below to confirm the new email address:\n"
+msgstr ""
+"\n"
+"Tämä sähköposti on lähetetty, koska halusit vaihtaa sähköpostiosoitteesi "
+"sivustolla %(site_name)s.\n"
+"Klikkaa allaolevaa linkkiä vahvistaaksesi uuden sähköpostiosoitteen:\n"
+
+#: panelist/templates/panelist/help.html:11
+#, python-format
+msgid ""
+"<p><b>The %(INSTANCE_NAME)s</b> is a study of carefully selected people who "
+"are asked to give their views on a wide range of topical social issues, such "
+"as family life, work, health, the media and politics. The information "
+"collected will provide researchers and policy makers (amongst others) with "
+"valuable insights regarding the most important topics in our society today.</"
+"p> <p>A new survey will be issued every 1-2 months and you will receive a "
+"‘thank you’ gift of <b>%(incentive_amount)s</b> with each survey invitation."
+"</p> <p>Only you can complete the survey so please do not share your details "
+"with anyone else.</p> <p>No special knowledge is needed to answer the "
+"surveys  there are no wrong answers, we just want to know your opinions and "
+"experiences.</p> <p>Your data will be handled in the strictest confidence "
+"and in accordance with the General Data Protection Regulation (GDPR).</p>"
+msgstr ""
+"<p><b>%(INSTANCE_NAME)s</b> on tutkimus, jossa tiedustellaan vastaajien "
+"näkemyksiä eri aiheista, kuten perhe-elämästä, työstä, terveydestä, mediasta "
+"ja politiikasta. Tutkimuksen tulokset antavat tutkijoille ja "
+"päätöksentekijöille tietoa tämän hetken keskeisimmistä yhteiskunnallisista "
+"kysymyksistä.</p> <p>Uusia kyselyitä lähetetään 2-3 kuukauden välein, ja "
+"palkkioksi jokaisesta kyselystä saat <b>%(incentive_amount)s</b> arvoisen "
+"lahjakortin.</p> <p>Vain sinä voit vastata kyselyyn, joten älä luovuta "
+"yhteystietojasi muiden käyttöön.</p> <p>Kyselyihin vastaaminen ei vaadi "
+"valmistautumista. Kysymyksiin ei ole oikeita tai vääriä vastauksia. Haluamme "
+"vain kuulla mielipiteesi.</p> <p>Tietojasi käsitellään ehdottoman "
+"luottamuksellisesti ja EU:n tietosuoja-asetuksen (GDPR) mukaisesti.</p>"
+
+#: panelist/templates/panelist/help.html:18
+msgid "Contact us"
+msgstr "Ota yhteyttä"
+
+#: panelist/templates/panelist/help.html:22
+#, python-format
+msgid ""
+"<p>If you need to get in touch, please contact <b>%(manager.first_name)s "
+"%(manager.last_name)s (<a href=\"mailto:%(manager.email)s\">"
+"%(manager.email)s</a> / <a href=\"tel:%(manager.email)s\">%(manager.email)s</"
+"a>)</b>.</p>"
+msgstr ""
+"<p>Voit halutessasi ottaa meihin yhteyttä. Yhteydenpitoa hoitaa <b>"
+"%(manager.first_name)s %(manager.last_name)s (<a href=\"mailto:"
+"%(manager.email)s\">%(manager.email)s</a> / <a href=\"tel:%(manager.email)s"
+"\">%(manager.email)s</a>)</b>.</p>"
+
+#: panelist/templates/panelist/index.html:6
+#, python-format
+msgid "Welcome %(panelist_first_name)s"
+msgstr "Tervetuloa %(panelist_first_name)s"
+
+#: panelist/templates/panelist/index.html:10
+msgid "Latest surveys"
+msgstr "Viimeisimmät kyselyt"
+
+#: panelist/templates/panelist/index.html:13
+msgid "See more"
+msgstr "Näytä lisää"
+
+#: panelist/templates/panelist/index.html:17
+msgid "Other actions"
+msgstr "Muut toiminnot"
+
+#: panelist/templates/panelist/index.html:22
+#: panelist/templates/panelist/profile_update.html:9
+msgid "Change your contact details"
+msgstr "Vaihda yhteystietojasi"
+
+#: panelist/templates/panelist/password_change.html:6
+msgid "Password change"
+msgstr "Salasanan vaihto"
+
+#: panelist/templates/panelist/profile_update.html:6 templates/base.html:33
+msgid "Profile"
+msgstr "Käyttäjäprofiili"
+
+#: panelist/templates/panelist/profile_update.html:20
+#: templates/password_change_form.html:6
+msgid "Save"
+msgstr "Tallenna"
+
+#: panelist/templates/panelist/profile_update.html:21
+msgid "Change your password"
+msgstr "Vaihda salasana"
+
+#: panelist/templates/panelist/utils/survey_list.html:15
+msgid "No survey available"
+msgstr "Ei kyselyjä saatavilla"
+
+#: panelist/views.py:71
+msgid "Your personal information has been updated"
+msgstr "Henkilökohtaiset tietosi on päivitetty"
+
+#: panelist/views.py:100
+msgid "Request email change"
+msgstr "Vaihda sähköpostiosoite"
+
+#: panelist/views.py:101
+#, python-format
+msgid "Email sent to %(email)s, with a link to validate the address"
+msgstr "Sähköposti ja vahvistuslinkki lähetetty osoitteeseen %(email)s"
+
+#: panelist/views.py:117
+msgid "Confirm email change"
+msgstr "Vahvista sähköpostiosoitteen vaihto"
+
+#: qxauth/forms.py:27
+#, python-brace-format
+msgid ""
+"Follow this link to reset your password on {site_name} : {protocol}://"
+"{domain}{url}"
+msgstr ""
+"Klikkaa tätä linkkiä vaihtaaksesi salasanan sivustolle {site_name} : "
+"{protocol}://{domain}{url}"
+
+#: qxauth/forms.py:44
+msgid "Email"
+msgstr "Sähköposti"
+
+#: qxauth/forms.py:50 qxauth/forms.py:120
+msgid "Phone number"
+msgstr "Puhelinnumero"
+
+#: qxauth/forms.py:65
+msgid "The two email address didn't match."
+msgstr "Sähköpostiosoitteet eivät täsmänneet."
+
+#: qxauth/forms.py:73
+msgid "New email"
+msgstr "Uusi sähköpostiosoite"
+
+#: qxauth/forms.py:76
+msgid "New email confirmation"
+msgstr "Uusi sähköpostiosoite, kirjoita uudelleen"
+
+#: qxauth/views.py:83
+msgid "An email with a password reset link has been sent."
+msgstr "Lähetetty sähköposti, jossa linkki salasanan vaihtamiseen."
+
+#: qxauth/views.py:90
+msgid "An sms with a password reset link has been sent."
+msgstr "Lähetetty tekstiviesti, jossa linkki salasanan vaihtamiseen."
+
+#: qxauth/views.py:97
+msgid "Password updated!"
+msgstr "Salasana vaihdettu!"
+
+#: qxsms/settings.py:159
+msgid "Czech"
+msgstr "Tšekki"
+
+#: qxsms/settings.py:160
+msgid "German"
+msgstr "Saksa"
+
+#: qxsms/settings.py:161
+msgid "English"
+msgstr "Englanti"
+
+#: qxsms/settings.py:162
+msgid "Finnish"
+msgstr "Suomi"
+
+#: qxsms/settings.py:163
+msgid "French"
+msgstr "Ranska"
+
+#: qxsms/settings.py:164
+msgid "Hungarian"
+msgstr "Unkari"
+
+#: qxsms/settings.py:165
+msgid "Icelandic"
+msgstr "Islanti"
+
+#: qxsms/settings.py:166
+msgid "Italian"
+msgstr "Italia"
+
+#: qxsms/settings.py:167
+msgid "Dutch"
+msgstr "Hollanti"
+
+#: qxsms/settings.py:168
+msgid "Portuguese"
+msgstr "Portugali"
+
+#: qxsms/settings.py:169
+msgid "Slovenian"
+msgstr "Slovenia"
+
+#: qxsms/settings.py:170
+msgid "Swedish"
+msgstr "Ruotsi"
+
+#: templates/403.html:6
+msgid "Permission denied"
+msgstr "Pääsy estetty"
+
+#: templates/403.html:10
+msgid "You do not have access to this part of the application"
+msgstr "Sinulla ei ole käyttöoikeuksia sovelluksen tämän osion käyttöön"
+
+#: templates/404.html:6
+msgid "Not found"
+msgstr "Sivua ei löytynyt"
+
+#: templates/404.html:10
+msgid "Did you mispell the URL?"
+msgstr "Kirjoititko URL-osoitteen oikein?"
+
+#: templates/base.html:35 templates/base.html:38
+msgid "Log out"
+msgstr "Kirjaudu ulos"
+
+#: templates/login.html:26 templates/login.html:34
+msgid "Log in"
+msgstr "Kirjaudu sisään"
+
+#: templates/login.html:28
+msgid "First Log in"
+msgstr "Ensimmäinen sisäänkirjautuminen"
+
+#: templates/login.html:36 templates/password_reset.html:25
+msgid "Use email"
+msgstr "Käytä sähköpostia"
+
+#: templates/login.html:38 templates/password_reset.html:27
+msgid "Use phone number"
+msgstr "Käytä puhelinnumeroa"
+
+#: templates/login.html:44
+msgid "Forgot password ?"
+msgstr "Unohditko salasanan?"
+
+#: templates/password_reset.html:5
+msgid "Reset password"
+msgstr "Vaihda salasana"
+
+#: templates/password_reset.html:10
+msgid "Enter your phone number to receive a link to reset your password."
+msgstr ""
+"Kerro puhelinnumerosi, jonne voi lähettää linkin salasanan vaihtamiseksi."
+
+#: templates/password_reset.html:12
+msgid "Enter your email address to receive a link to reset your password."
+msgstr ""
+"Kerro sähköpostiosoitteesi, jonne voi lähettää linkin salasanan "
+"vaihtamiseksi."
+
+#: templates/password_reset.html:21
+msgid "Send"
+msgstr "Lähetä"
+
+#: templates/password_reset_confirm.html:6
+msgid "Choose a new password"
+msgstr "Kirjoita uusi salasana"
+
+#: templates/password_reset_confirm.html:15
+msgid "Confirm password"
+msgstr "Vahvista salasana"
+
+#: templates/password_reset_confirm.html:21
+#, python-format
+msgid ""
+"This link is invalid, possibly because it has already been used or expired. "
+"Please <a href=\"%(password_reset_url)s\">request a new link</a> to reset "
+"your password."
+msgstr ""
+"Linkki ei toiminut, mahdollisesti siksi että sitä on jo käytetty tai se on "
+"vanhentunut. Ole hyvä ja <a href=\"%(password_reset_url)s\">pyydä uutta "
+"linkkiä</a> salasanan vaihtamiseksi."
+
+#: templates/password_reset_email.html:2
+msgid ""
+"We have sent you this email because you requested to change the password of "
+"your account"
+msgstr ""
+"Tämä sähköposti on lähetetty, koska pyysit käyttäjätilisi salasanan vaihtoa"
+
+#: templates/password_reset_email.html:4
+msgid "Please go to the following page and choose a new password:"
+msgstr "Siirry seuraavalle sivulle vaihtaaksesi salasanan:"
+
+#: utils/context_processors.py:46
+msgid "Opinion Study"
+msgstr "Arvot ja mielipiteet Suomessa -jatkotutkimus"
+
+#: utils/context_processors.py:49
+#, python-format
+msgid "Opinion Study for %(country)s"
+msgstr "Arvot ja mielipiteet Suomessa -jatkotutkimus"
+
+#: utils/signals.py:13
+#, python-brace-format
+msgid "{user} has been Logged out"
+msgstr "{user} kirjattu ulos"
+
+#: utils/templates/utils/cancel_button.html:2
+msgid "Cancel"
+msgstr "Peruuta"
+
+#: utils/templates/utils/distribution_status.html:4
+msgid "Sent"
+msgstr "Lähetetty"
+
+#: utils/templates/utils/distribution_status.html:8
+msgid "Sending"
+msgstr "Lähetetään"
+
+#: utils/templates/utils/distribution_status.html:11
+msgid "Not sent"
+msgstr "Ei lähetetty"
+
+#~ msgid "Wrong message for primary contact"
+#~ msgstr "Väärä viesti ensisijaiselle yhteystiedolle"
+
+#~ msgid "Wrong message for fallback contact"
+#~ msgstr "Väärä viesti varayhteystiedolle"
+
+#~ msgid "SMS"
+#~ msgstr "Tekstiviesti"
+
+#~ msgid "N/A"
+#~ msgstr "Ei saatavilla"
+
+#~ msgid "All"
+#~ msgstr "Kaikki"
+
+#~ msgid "Survey completed"
+#~ msgstr "Kysely valmis"
+
+#~ msgid "Survey not completed"
+#~ msgstr "Kysely kesken"
+
+#~ msgid "First log in / Reset password"
+#~ msgstr "Ensimmäinen sisäänkirjautuminen"
+
+#~ msgid "Update password"
+#~ msgstr "Päivitä salasana"
+
+#~ msgid "Your username, in case you’ve forgotten:"
+#~ msgstr "Käyttäjänimesi (siltä varalta että unohdit):"
+
+#~ msgid "Thanks for using our site!"
+#~ msgstr "Kiitos!"
+
+#~ msgid "Successfully logged out <strong>{user}</strong>"
+#~ msgstr "Kirjattu ulos käyttäjä <strong>{user}</strong>"

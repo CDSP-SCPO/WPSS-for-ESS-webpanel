@@ -1,0 +1,10 @@
+{% extends 'panelist/base.html' %}
+{% load i18n qxsms_tags %}
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem 'panelist:help' %}{% trans "Help" %}{% endbreadcrumbitem %}
+{% endblock %}
+{% block title_lead %}{% endblock %}
+{% block content %}
+    {% include "panelist/help_text.html" %}
+{% endblock %}

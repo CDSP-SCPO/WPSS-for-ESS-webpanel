@@ -1,0 +1,46 @@
+{% extends 'manager/panel_member_update.html' %}
+{% load qxsms_tags i18n %}
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem %}{% trans "Please confirm deactivation" %}{% endbreadcrumbitem %}
+{% endblock %}
+{% block content %}
+    <section class="container">
+    <div class="d-flex justify-content-center">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="card-title">
+                    {% blocktrans with panelist_id=object.panelist_id %}
+                        Proceed to permanently deactivate panelist {{ panelist_id }}?
+                    {% endblocktrans %}
+                </h1>
+                <p class="card-text">
+                    The panelist profile will be set to read-only and the following values will be overwritten:
+                </p>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover bg-white">
+                        <thead class="table-light">
+                            <th>Variable</th>
+                            <th>New value</th>
+                        </thead>
+                        <tbody>
+                            {% for key, value in anonymized_values.items %}
+                                <tr>
+                                    <td>{{ key }}</td>
+                                    <td>{{ value }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <form method="post" class="text-center">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger me-2">{% trans "Yes" %}</button>
+                    {% url 'manager:panel-member-update' object.pk as cancel_url %}
+                    {% include 'utils/cancel_button.html' %}
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

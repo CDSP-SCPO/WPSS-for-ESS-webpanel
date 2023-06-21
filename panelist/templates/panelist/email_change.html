@@ -1,0 +1,23 @@
+{% extends 'panelist/base.html' %}
+{% load i18n qxsms_tags django_bootstrap5 %}
+
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem 'panelist:profile-update' %}{% trans "Change your email" %}{% endbreadcrumbitem %}
+{% endblock %}
+
+{% block content %}
+    <section class="container">
+        {% blocktrans trimmed %}
+            <p>This page allows you to change the email address linked to your account. We need to ensure that the new address is valid as it is used as a login identifier and as a primary means of communication,</p>
+            <p>Once you have changed the email address, you will receive a link to validate the new email address. The change will be effective only after the link is clicked. In the meantime, your old email address will still be used for login and communication.</p>
+        {% endblocktrans %}
+        <form method="post">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <button type="submit" class="btn btn-success me-2">{% trans "Send request" %}</button>
+            {% url 'panelist:profile-update' as cancel_url %}
+            {% include 'utils/cancel_button.html' %}
+        </form>
+    </section>
+{% endblock %}

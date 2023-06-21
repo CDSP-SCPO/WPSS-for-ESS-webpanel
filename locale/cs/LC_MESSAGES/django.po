@@ -1,0 +1,792 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-06 09:06+0000\n"
+"PO-Revision-Date: 2021-08-13 11:59+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: cs_CZ\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n "
+"<= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
+"X-Generator: Poedit 2.4.2\n"
+
+#. Translators: ignore
+#: panelist/forms.py:194
+msgid "Cannot assign multiple values to the same variable"
+msgstr "Stejné proměnné nelze přiřadit více hodnot"
+
+#. Translators: ignore
+#: panelist/models.py:32
+msgid "Must be between 1 and 99."
+msgstr "Musí být mezi 1 a 99."
+
+#. Translators: ignore
+#: panelist/models.py:38
+msgid "Must be between 1 and 31, or 77, 88, 99."
+msgstr "Musí být mezi 1 a 31, nebo 77, 88, 99."
+
+#. Translators: ignore
+#: panelist/models.py:44
+msgid "Must be between 1 and 12, or 77, 88, 99."
+msgstr "Musí být mezi 1 a 12, nebo 77, 88, 99."
+
+#. Translators: ignore
+#: panelist/models.py:50
+msgid "Must be between 1900 and 2005, or 7777, 8888, 9999."
+msgstr "Musí být mezi 1900 a 2005, nebo 7777, 8888, 9999."
+
+#: panelist/models.py:144
+msgid "Austria"
+msgstr "Rakousko"
+
+#: panelist/models.py:145
+msgid "Belgium"
+msgstr "Belgie"
+
+#: panelist/models.py:146
+msgid "Bulgaria"
+msgstr "Bulharsko"
+
+#: panelist/models.py:147
+msgid "Czechia"
+msgstr "Česko"
+
+#: panelist/models.py:148
+msgid "Croatia"
+msgstr "Chorvatsko"
+
+#: panelist/models.py:149
+msgid "Cyprus"
+msgstr "Kypr"
+
+#: panelist/models.py:150
+msgid "Estonia"
+msgstr "Estonsko"
+
+#: panelist/models.py:151
+msgid "Finland"
+msgstr "Finsko"
+
+#: panelist/models.py:152
+msgid "France"
+msgstr "Francie"
+
+#: panelist/models.py:153
+msgid "Germany"
+msgstr "Německo"
+
+#: panelist/models.py:154
+msgid "Hungary"
+msgstr "Maďarsko"
+
+#: panelist/models.py:155
+msgid "Iceland"
+msgstr "Island"
+
+#: panelist/models.py:156
+msgid "Ireland"
+msgstr "Irsko"
+
+#: panelist/models.py:157
+msgid "Italy"
+msgstr "Itálie"
+
+#: panelist/models.py:158
+msgid "Latvia"
+msgstr "Lotyšsko"
+
+#: panelist/models.py:159
+msgid "Lithuania"
+msgstr "Litva"
+
+#: panelist/models.py:160
+msgid "The Netherlands"
+msgstr "Nizozemsko"
+
+#: panelist/models.py:161
+msgid "Norway"
+msgstr "Norsko"
+
+#: panelist/models.py:162
+msgid "Poland"
+msgstr "Polsko"
+
+#: panelist/models.py:163
+msgid "Portugal"
+msgstr "Portugalsko"
+
+#: panelist/models.py:164
+msgid "Slovakia"
+msgstr "Slovensko"
+
+#: panelist/models.py:165
+msgid "Slovenia"
+msgstr "Slovinsko"
+
+#: panelist/models.py:166
+msgid "Sweden"
+msgstr "Švédsko"
+
+#: panelist/models.py:167
+msgid "United Kingdom"
+msgstr "Velká Británie"
+
+#: panelist/models.py:168
+msgid "Switzerland"
+msgstr "Švýcarsko"
+
+#: panelist/models.py:169
+msgid "Albania"
+msgstr "Albánie"
+
+#: panelist/models.py:170
+msgid "Denmark"
+msgstr "Dánsko"
+
+#: panelist/models.py:171
+msgid "Israel"
+msgstr "Izrael"
+
+#: panelist/models.py:172
+msgid "Montenegro"
+msgstr "Černá Hora"
+
+#: panelist/models.py:173
+msgid "Serbia"
+msgstr "Srbsko"
+
+#: panelist/models.py:174
+msgid "Spain"
+msgstr "Španělsko"
+
+#: panelist/models.py:175
+msgid "Greece"
+msgstr "Řecko"
+
+#: panelist/models.py:176
+msgid "Kosovo"
+msgstr "Kosovo"
+
+#: panelist/models.py:177
+msgid "Luxembourg"
+msgstr "Lucembursko"
+
+#: panelist/models.py:178
+msgid "Romania"
+msgstr "Rumunsko"
+
+#: panelist/models.py:179
+msgid "Russia"
+msgstr "Rusko"
+
+#: panelist/models.py:180
+msgid "Turkey"
+msgstr "Turecko"
+
+#: panelist/models.py:181
+msgid "Ukraine"
+msgstr "Ukrajina"
+
+#. Translators: ignore
+#: panelist/models.py:190
+msgid "Never logged in"
+msgstr "Dosud nepřihlášen/a"
+
+#. Translators: ignore
+#: panelist/models.py:192
+msgid "Has logged in"
+msgstr "Už jsem se přihlásil/a"
+
+#. Translators: ignore
+#: panelist/models.py:194
+msgid "Deactivated"
+msgstr "Deaktivováno"
+
+#: panelist/models.py:202
+msgid "first name"
+msgstr "křestní jméno"
+
+#: panelist/models.py:203
+msgid "last name"
+msgstr "příjmení"
+
+#: panelist/models.py:205 qxauth/forms.py:43
+msgid "email address"
+msgstr "emailová adresa"
+
+#: panelist/models.py:210 qxauth/forms.py:66
+msgid "A user with that email address already exists."
+msgstr "Uživatel s touto emailovou adresou již existuje."
+
+#: panelist/models.py:223 qxauth/forms.py:49
+msgid "phone number"
+msgstr "telefonní číslo"
+
+#: panelist/models.py:228
+msgid "A user with that phone number already exists."
+msgstr "Uživatel s tímto telefonním číslem již existuje."
+
+#: panelist/models.py:233
+msgid "language"
+msgstr "jazyk"
+
+#: panelist/models.py:235
+msgid "name of property"
+msgstr "název budovy"
+
+#: panelist/models.py:236
+msgid "number"
+msgstr "číslo"
+
+#: panelist/models.py:237
+msgid "address line 1"
+msgstr "1. řádek adresy"
+
+#: panelist/models.py:238
+msgid "address line 2"
+msgstr "2. řádek adresy"
+
+#: panelist/models.py:239
+msgid "city"
+msgstr "město /obec"
+
+#: panelist/models.py:240
+msgid "county"
+msgstr "kraj"
+
+#: panelist/models.py:241
+msgid "postcode"
+msgstr "poštovní směrovací číslo"
+
+#: panelist/models.py:242
+msgid "country"
+msgstr "země"
+
+#: panelist/models.py:244
+msgid "day of birth"
+msgstr "den narození"
+
+#: panelist/models.py:245
+msgid "month of birth"
+msgstr "měsíc narození"
+
+#: panelist/models.py:246
+msgid "year of birth"
+msgstr "rok narození"
+
+#: panelist/models.py:347
+msgid "Male"
+msgstr "Muž"
+
+#: panelist/models.py:348
+msgid "Female"
+msgstr "Žena"
+
+#: panelist/models.py:349
+msgid "Other"
+msgstr "Jiné"
+
+#: panelist/models.py:350 panelist/models.py:361
+msgid "Refusal"
+msgstr "Odmítnutí"
+
+#: panelist/models.py:351 panelist/models.py:362
+msgid "Don't know"
+msgstr "Nevím"
+
+#: panelist/models.py:352 panelist/models.py:363
+msgid "No answer"
+msgstr "Bez odpovědi"
+
+#: panelist/models.py:356
+msgid "Never"
+msgstr "Nikdy"
+
+#: panelist/models.py:357
+msgid "Only occasionally"
+msgstr "Jen občas"
+
+#: panelist/models.py:358
+msgid "A few times a week"
+msgstr "Několikrát týdně"
+
+#: panelist/models.py:359
+msgid "Most days"
+msgstr "Většinu dní"
+
+#: panelist/models.py:360
+msgid "Every day"
+msgstr "Každý den"
+
+#: panelist/models.py:374
+msgid "Not available"
+msgstr "Není k dispozici"
+
+#: panelist/models.py:377
+msgid "sex"
+msgstr "pohlaví"
+
+#: panelist/models.py:378
+msgid "internet use"
+msgstr "používání internetu"
+
+#: panelist/models.py:380
+msgid "years of education"
+msgstr "délka studia"
+
+#. Translators: ignore
+#: panelist/models.py:443 panelist/models.py:445
+msgid "Email or phone number required."
+msgstr "Je nutný email nebo telefonní číslo."
+
+#. Translators: ignore
+#: panelist/models.py:449
+msgid "The panelist should be opt out if a date or reason is filled."
+msgstr "Panelista by měl být odhlášen, pokud je vyplněno datum nebo důvod."
+
+#. Translators: ignore
+#: panelist/models.py:482
+msgid "{attr.capitalize()} belongs to another user."
+msgstr "{attr.capitalize()} patří jinému uživateli."
+
+#. Translators: ignore
+#: panelist/models.py:514
+msgid "The distributionId generated on qualtrics when this link was created"
+msgstr ""
+
+#: panelist/models.py:589
+msgid "Finished"
+msgstr "Ukončeno"
+
+#: panelist/models.py:591
+msgid "Started"
+msgstr "Zahájeno"
+
+#: panelist/models.py:593
+msgid "Not started"
+msgstr "Nezahájeno"
+
+#: panelist/templates/panelist/base.html:9
+#: panelist/templates/panelist/survey_list.html:5
+msgid "My surveys"
+msgstr "Moje výzkumy"
+
+#: panelist/templates/panelist/base.html:10
+#: panelist/templates/panelist/help.html:5
+#: panelist/templates/panelist/index.html:29
+msgid "Help"
+msgstr "Pomoc"
+
+#: panelist/templates/panelist/email_change.html:6
+#: panelist/templates/panelist/profile_update.html:22
+msgid "Change your email"
+msgstr "Změňte svůj email"
+
+#: panelist/templates/panelist/email_change.html:11
+msgid ""
+"<p>This page allows you to change the email address linked to your account. "
+"We need to ensure that the new address is valid as it is used as a login "
+"identifier and as a primary means of communication,</p> <p>Once you have "
+"changed the email address, you will receive a link to validate the new email "
+"address. The change will be effective only after the link is clicked. In the "
+"meantime, your old email address will still be used for login and "
+"communication.</p>"
+msgstr ""
+"<p> Tato stránka Vám umožňuje změnit si emailovou adresu spojenou s Vaším "
+"účtem. Musíme zajistit, aby nová adresa byla platná, protože se používá jako "
+"přihlašovací identifikátor a jako hlavní komunikační prostředek, </p> <p> "
+"Jakmile změníte emailovou adresu, obdržíte odkaz k ověření nové emailové "
+"adresy. Změna bude účinná až po kliknutí na odkaz. Mezitím bude pro "
+"přihlášení a komunikaci stále používána Vaše stará emailová adresa. </p>"
+
+#: panelist/templates/panelist/email_change.html:18
+msgid "Send request"
+msgstr "Poslat žádost"
+
+#: panelist/templates/panelist/email_change_confirm.html:6
+#: panelist/templates/panelist/email_change_subject.txt:1
+msgid "Confirm your email"
+msgstr "Potvrdit email"
+
+#: panelist/templates/panelist/email_change_confirm.html:11
+#, python-format
+msgid ""
+"<p>Are you sure you want to change your email %(email)s by %(temp_email)s?</"
+"p>"
+msgstr "<p> Opravdu chcete změnit svůj email %(email)s na %(temp_email)s? </p>"
+
+#: panelist/templates/panelist/email_change_confirm.html:17
+msgid "Confirm request"
+msgstr "Potvrdit žádost"
+
+#: panelist/templates/panelist/email_change_confirm.html:20
+msgid ""
+"This link is invalid, possibly because it has already been used. Please "
+"request a new link to change your email."
+msgstr ""
+"Tento odkaz je neplatný, možná proto, že již byl použit. Chcete-li změnit "
+"svůj email, požádejte o nový odkaz."
+
+#: panelist/templates/panelist/email_change_email.html:2
+#, python-format
+msgid ""
+"\n"
+"We have sent you this email because you requested to change the email "
+"address linked to your account on %(site_name)s.\n"
+"Please visit the link below to confirm the new email address:\n"
+msgstr ""
+"\n"
+"Tento email jsme Vám zaslali, protože jste požádal/a o změnu emailové adresy "
+"spojené s Vaším účtem na %(site_name)s.\n"
+"Kliknutím na odkaz níže potvrďte novou emailovou adresu:\n"
+
+#: panelist/templates/panelist/help.html:11
+#, python-format
+msgid ""
+"<p><b>The %(INSTANCE_NAME)s</b> is a study of carefully selected people who "
+"are asked to give their views on a wide range of topical social issues, such "
+"as family life, work, health, the media and politics. The information "
+"collected will provide researchers and policy makers (amongst others) with "
+"valuable insights regarding the most important topics in our society today.</"
+"p> <p>A new survey will be issued every 1-2 months and you will receive a "
+"‘thank you’ gift of <b>%(incentive_amount)s</b> with each survey invitation."
+"</p> <p>Only you can complete the survey so please do not share your details "
+"with anyone else.</p> <p>No special knowledge is needed to answer the "
+"surveys  there are no wrong answers, we just want to know your opinions and "
+"experiences.</p> <p>Your data will be handled in the strictest confidence "
+"and in accordance with the General Data Protection Regulation (GDPR).</p>"
+msgstr ""
+"<p> <b>The %(INSTANCE_NAME)s </b> je studie pečlivě vybraných lidí, kteří "
+"jsou požádáni, aby poskytli své názory na širokou škálu aktuálních "
+"sociálních problémů, jako je rodinný život, práce, zdraví, média a politika. "
+"Shromážděné informace poskytnou vědcům a tvůrcům politik (mimo jiné) cenné "
+"postřehy týkající se nejdůležitějších témat naší dnešní společnosti. </p> "
+"<p> Každé 2-3 měsíce bude vydáván nový průzkum a budete dostávat jako "
+"poděkování <b>%(incentive_amount)s </b> s každou pozvánkou k průzkumu. </p> "
+"<p> Výzkum můžete dokončit pouze Vy, proto prosím nesdělujte své údaje "
+"nikomu jinému. </p> <p> K zodpovězení výzkumných otázek nejsou potřeba žádné "
+"zvláštní znalosti, neexistují žádné špatné odpovědi, chceme jen znát Vaše "
+"názory a zkušenosti. </p> <p> S Vašimi údaji bude zacházeno přísně důvěrně a "
+"v souladu s obecnými zásadami Nařízení o ochraně osobních údajů (GDPR). </p>"
+
+#: panelist/templates/panelist/help.html:18
+msgid "Contact us"
+msgstr "Kontaktujte nás"
+
+#: panelist/templates/panelist/help.html:22
+#, python-format
+msgid ""
+"<p>If you need to get in touch, please contact <b>%(manager.first_name)s "
+"%(manager.last_name)s (<a href=\"mailto:%(manager.email)s\">"
+"%(manager.email)s</a> / <a href=\"tel:%(manager.email)s\">%(manager.email)s</"
+"a>)</b>.</p>"
+msgstr ""
+"<p> Pokud potřebujete, abychom se s Vámi spojili, kontaktujte prosím <b>"
+"%(manager.first_name)s %(manager.last_name)s (<a href=\"mailto:"
+"%(manager.email)s\">%(manager.email)s </a> / <a href=\"tel:%(manager.email)s"
+"\">%(manager.email)s </a>) </b>. </p>"
+
+#: panelist/templates/panelist/index.html:6
+#, python-format
+msgid "Welcome %(panelist_first_name)s"
+msgstr "Dobrý den %(panelist_first_name)s"
+
+#: panelist/templates/panelist/index.html:10
+msgid "Latest surveys"
+msgstr "Nejnovější výzkumy"
+
+#: panelist/templates/panelist/index.html:13
+msgid "See more"
+msgstr "Více informací"
+
+#: panelist/templates/panelist/index.html:17
+msgid "Other actions"
+msgstr "Jiné činnosti"
+
+#: panelist/templates/panelist/index.html:22
+#: panelist/templates/panelist/profile_update.html:9
+msgid "Change your contact details"
+msgstr "Změňte si kontaktní údaje"
+
+#: panelist/templates/panelist/password_change.html:6
+msgid "Password change"
+msgstr "Změna hesla"
+
+#: panelist/templates/panelist/profile_update.html:6 templates/base.html:33
+msgid "Profile"
+msgstr "Profil"
+
+#: panelist/templates/panelist/profile_update.html:20
+#: templates/password_change_form.html:6
+msgid "Save"
+msgstr "Uložit"
+
+#: panelist/templates/panelist/profile_update.html:21
+msgid "Change your password"
+msgstr "Změňte si heslo"
+
+#: panelist/templates/panelist/utils/survey_list.html:15
+msgid "No survey available"
+msgstr "Źádný výzkum není k dispozici"
+
+#: panelist/views.py:71
+msgid "Your personal information has been updated"
+msgstr "Vaše osobní údaje byly aktualizovány"
+
+#: panelist/views.py:100
+msgid "Request email change"
+msgstr "Požádejte o změnu emailu"
+
+#: panelist/views.py:101
+#, python-format
+msgid "Email sent to %(email)s, with a link to validate the address"
+msgstr "Email byl odeslán na <b>%(email)s </b> s odkazem na ověření adresy"
+
+#: panelist/views.py:117
+msgid "Confirm email change"
+msgstr "Potvrďte změnu emailu"
+
+#: qxauth/forms.py:27
+#, python-brace-format
+msgid ""
+"Follow this link to reset your password on {site_name} : {protocol}://"
+"{domain}{url}"
+msgstr ""
+"Pomocí tohoto odkazu můžete obnovit heslo na webu {site_name}: "
+"{protocol}: // {domain} {url}"
+
+#: qxauth/forms.py:44
+msgid "Email"
+msgstr "Email"
+
+#: qxauth/forms.py:50 qxauth/forms.py:120
+msgid "Phone number"
+msgstr "Telefonní číslo"
+
+#: qxauth/forms.py:65
+msgid "The two email address didn't match."
+msgstr "Emailové adresy se neshodovaly."
+
+#: qxauth/forms.py:73
+msgid "New email"
+msgstr "Nový email"
+
+#: qxauth/forms.py:76
+msgid "New email confirmation"
+msgstr "Potvrzení nového emailu"
+
+#: qxauth/views.py:83
+msgid "An email with a password reset link has been sent."
+msgstr "Byl odeslán email s odkazem na obnovení hesla."
+
+#: qxauth/views.py:90
+msgid "An sms with a password reset link has been sent."
+msgstr "Byla odeslána SMS s odkazem na obnovení hesla."
+
+#: qxauth/views.py:97
+msgid "Password updated!"
+msgstr "Heslo bylo aktualizováno!"
+
+#: qxsms/settings.py:159
+msgid "Czech"
+msgstr "Čeština"
+
+#: qxsms/settings.py:160
+msgid "German"
+msgstr "Němčina"
+
+#: qxsms/settings.py:161
+msgid "English"
+msgstr "Angličtina"
+
+#: qxsms/settings.py:162
+msgid "Finnish"
+msgstr "Finština"
+
+#: qxsms/settings.py:163
+msgid "French"
+msgstr "Francouzština"
+
+#: qxsms/settings.py:164
+msgid "Hungarian"
+msgstr "Maďarština"
+
+#: qxsms/settings.py:165
+msgid "Icelandic"
+msgstr "Islandština"
+
+#: qxsms/settings.py:166
+msgid "Italian"
+msgstr "Italština"
+
+#: qxsms/settings.py:167
+msgid "Dutch"
+msgstr "Holandština"
+
+#: qxsms/settings.py:168
+msgid "Portuguese"
+msgstr "Portugalština"
+
+#: qxsms/settings.py:169
+msgid "Slovenian"
+msgstr "Slovinština"
+
+#: qxsms/settings.py:170
+msgid "Swedish"
+msgstr "Švédština"
+
+#: templates/403.html:6
+msgid "Permission denied"
+msgstr "Přístup byl zamítnut"
+
+#: templates/403.html:10
+msgid "You do not have access to this part of the application"
+msgstr "Do této části aplikace nemáte přístup"
+
+#: templates/404.html:6
+msgid "Not found"
+msgstr "Nenalezeno"
+
+#: templates/404.html:10
+msgid "Did you mispell the URL?"
+msgstr "Napsali jste nesprávně adresu URL?"
+
+#: templates/base.html:35 templates/base.html:38
+msgid "Log out"
+msgstr "Odhlášení"
+
+#: templates/login.html:26 templates/login.html:34
+msgid "Log in"
+msgstr "Přihlášení"
+
+#: templates/login.html:28
+msgid "First Log in"
+msgstr "První přihlášení"
+
+#: templates/login.html:36 templates/password_reset.html:25
+msgid "Use email"
+msgstr "Použít email"
+
+#: templates/login.html:38 templates/password_reset.html:27
+msgid "Use phone number"
+msgstr "Použít telefonní číslo"
+
+#: templates/login.html:44
+msgid "Forgot password ?"
+msgstr "Zapomněli jste heslo?"
+
+#: templates/password_reset.html:5
+msgid "Reset password"
+msgstr "Obnovení hesla"
+
+#: templates/password_reset.html:10
+msgid "Enter your phone number to receive a link to reset your password."
+msgstr "Zadejte své telefonní číslo pro získání odkazu na obnovení hesla."
+
+#: templates/password_reset.html:12
+msgid "Enter your email address to receive a link to reset your password."
+msgstr "Zadejte svou emailovou adresu pro získání odkazu na obnovení hesla."
+
+#: templates/password_reset.html:21
+msgid "Send"
+msgstr "Odeslat"
+
+#: templates/password_reset_confirm.html:6
+msgid "Choose a new password"
+msgstr "Vyberte si nové heslo"
+
+#: templates/password_reset_confirm.html:15
+msgid "Confirm password"
+msgstr "Potvrďte heslo"
+
+#: templates/password_reset_confirm.html:21
+#, python-format
+msgid ""
+"This link is invalid, possibly because it has already been used or expired. "
+"Please <a href=\"%(password_reset_url)s\">request a new link</a> to reset "
+"your password."
+msgstr ""
+"Tento odkaz je neplatný, možná proto, že již byl použit nebo jeho platnost "
+"vypršela. <a href=\"%(password_reset_url)s\"> Požádejte o nový odkaz </a> a "
+"obnovte své heslo."
+
+#: templates/password_reset_email.html:2
+msgid ""
+"We have sent you this email because you requested to change the password of "
+"your account"
+msgstr ""
+"Tento email jsme Vám zaslali, protože jste požádal/a o změnu hesla ke svému "
+"účtu"
+
+#: templates/password_reset_email.html:4
+msgid "Please go to the following page and choose a new password:"
+msgstr "Přejděte na následující stránku a vyberte si nové heslo:"
+
+#: utils/context_processors.py:46
+msgid "Opinion Study"
+msgstr "Studie veřejného mínění"
+
+#: utils/context_processors.py:49
+#, python-format
+msgid "Opinion Study for %(country)s"
+msgstr "Česká studie veřejného mínění"
+
+#: utils/signals.py:13
+#, python-brace-format
+msgid "{user} has been Logged out"
+msgstr "{user} se odhlásil"
+
+#: utils/templates/utils/cancel_button.html:2
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: utils/templates/utils/distribution_status.html:4
+msgid "Sent"
+msgstr "Odesláno"
+
+#: utils/templates/utils/distribution_status.html:8
+msgid "Sending"
+msgstr "Odesílání"
+
+#: utils/templates/utils/distribution_status.html:11
+msgid "Not sent"
+msgstr "K odeslání nedošlo"
+
+#~ msgid "SMS"
+#~ msgstr "SMS"
+
+#~ msgid "N/A"
+#~ msgstr "Bez odpovědi"
+
+#~ msgid "All"
+#~ msgstr "Vše"
+
+#~ msgid "Survey completed"
+#~ msgstr "Výzkum dokončen"
+
+#~ msgid "Survey not completed"
+#~ msgstr "Výzkum nebyl dokončen"
+
+#~ msgid "First log in / Reset password"
+#~ msgstr "První přihlášení / Obnovení hesla"
+
+#~ msgid "Update password"
+#~ msgstr "Aktualizace hesla"
+
+#~ msgid "Your username, in case you’ve forgotten:"
+#~ msgstr "Vaše uživatelské jméno, pokud jste zapomněli:"
+
+#~ msgid "Thanks for using our site!"
+#~ msgstr "Thanks for using our site!"
+
+#~ msgid "Successfully logged out <strong>{user}</strong>"
+#~ msgstr "Odhlášení bylo úspěšné <strong> {user} </strong>"

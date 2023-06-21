@@ -1,0 +1,45 @@
+{% extends 'distributions/base.html' %}
+{% block content %}
+    <h1>Message distributions</h1>
+    {% if object_list %}
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Created</th>
+                    <th>Link set</th>
+                    <th>Type</th>
+                    <th>Target</th>
+                    <th>Subject</th>
+                    <th>Message</th>
+                    <th>Fallback</th>
+                    <th>Send date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for dist in object_list %}
+                    <tr>
+                        <td><a href="{% url 'dist:msgd:detail' dist.pk %}">{{ dist.short_uid }}</a></td>
+                        <td>{{ dist.created_date|date:'Y-m-d H\hi' }}</td>
+                        <td><a href="{% url 'dist:detail' dist.link_distribution.pk %}">{{ dist.link_distribution.description }}</a></td>
+                        <td>{{ dist.get_contact_mode_display }}</td>
+                        <td>{{ dist.get_target_display }}</td>
+                        <td>{{ dist.subject.description }}</td>
+                        <td>{{ dist.message.description }}</td>
+                        <td>
+                            {% if dist.has_fallback %}
+                                <a href="{% url 'dist:msgd:detail' dist.fallback.pk %}">{{ dist.fallback.short_uid }}</a>
+                            {% endif %}
+                        </td>
+                        <td>{{ dist.send_date|date:'Y-m-d H\hi'|default:'Not scheduled' }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+    <h2>Create a new distribution</h2>
+    <ul>
+        <li><a href="{% url 'dist:msgd:create-email' %}">Email</a></li>
+        <li><a href="{% url 'dist:msgd:create-sms' %}">SMS</a></li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,29 @@
+// Main
+a, a:hover { text-decoration: none; }  // Remove underline
+main {
+    background-color: $light;
+    flex: 1;
+    padding-bottom: $spacer*3;  // Add space before the footer
+    & > *:last-child { margin-bottom: 0; }  // Remove margin bottom of the last element
+}
+.main-header { border-bottom: 0.25rem solid fade_out($primary, 0.5); }
+#main-messages .alert:first-child { @extend .mt-5; }  // Add margin to alert container (disappear when dismissed)
+section h1 { @extend h5; }  // Make size smaller
+section h2 { @extend h6; }  // Make size smaller
+footer { padding: $spacer*2 0; }
+
+// Fields
+.field-required > label { position: relative; }
+.field-required > label:after {
+    content: '•';
+    color: red;
+    margin-left: 0.25rem;
+    top: -0.25rem;
+    left: 100%;
+    position: absolute;
+}
+
+// Icons
+.icon-md svg { height: 1em; width: 1em; }
+.icon-lg svg { height: 2em; width: 2em; }
+.icon-xl svg { height: 2.5em; width: 2.5em; }

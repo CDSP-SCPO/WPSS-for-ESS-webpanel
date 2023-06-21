@@ -1,0 +1,98 @@
+{% extends 'manager/panel_detail.html' %}
+{% load static qxsms_tags i18n %}
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem 'manager:msg-distribution-list' panel.pk %}{% trans "Message deliveries" %}{% endbreadcrumbitem %}
+{% endblock %}
+{% block title_lead %}{% trans "Individual links sent to their recipients by e-mail or SMS" %}{% endblock %}
+{% block content %}
+    <section class="container">
+        <p>
+            When a link set is generated, every included panelist can
+            see their individual link by logging into their account.
+        </p>
+        <p>
+            However, it may be convenient to send an email or a text
+            message to eligible panelists, drawing their attention on
+            a new survey being available, and directly giving them the
+            link they would otherwise find on their portal page.
+        </p>
+        <p>
+            This is exactly the purpose of <b>Message Deliveries</b>.
+            For an existing individual link set, the message delivery
+            procedure lets choose a preferred channel (email or
+            SMS), a Qualtrics message template to use, a subset of
+            panelists to target (eg, those who haven't started the
+            survey yet) and schedule a sending date. A fallback
+            contact mode can optionally be added. It will be used
+            to get in touch with panelists not reachable by the
+            primary channel.
+        </p>
+
+        <p>
+            Listed below are message deliveries created so far. Columns
+            are to be interpreted as follows:
+        </p>
+        <dl>
+            <dt>ID</dt>
+            <dd>The internal identifier of the message delivery</dd>
+            <dt>Created</dt>
+            <dd>
+                The date when this message delivery was created. By contrast, <b>Send date</b>
+                below is the posterior date when the message was sent to panelists.
+            </dd>
+        </dl>
+
+        {% if object_list %}
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover bg-white">
+                    <thead class="table-light">
+                    <tr>
+                        <th>ID</th>
+                        <th>Created</th>
+                        <th>Link set</th>
+                        <th>Type</th>
+                        <th>Target</th>
+                        <th>Subject</th>
+                        <th>Message</th>
+                        <th>Send date</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for dist in object_list %}
+                        <tr>
+                            <td><a href="{% url 'manager:msg-distribution-detail' panel.pk dist.pk %}">{{ dist.short_uid }}</a></td>
+                            <td>{{ dist.created_date|date:'Y-m-d H\hi' }}</td>
+                            <td><a href="{% url 'manager:panel-survey-detail' panel.pk dist.link_distribution.pk %}">{{ dist.link_distribution.description }}</a></td>
+                            <td>{{ dist.get_contact_mode_display }}</td>
+                            <td>{{ dist.get_target_display }}</td>
+                            <td>{{ dist.subject.description }}</td>
+                            <td>{{ dist.message.description }}</td>
+                            <td>{{ dist.send_date|date:'Y-m-d H\hi'|default:'Not scheduled' }}</td>
+                        </tr>
+                        {% if dist.has_fallback %}
+                            {% with dist.fallback as f %}
+                                <tr>
+                                    <td style="border-left: 20px solid #28a745">
+                                        {% icon 'reply-fill' 'me-2' 'fallback-row' %}
+                                        <a href="{% url 'manager:msg-distribution-detail' panel.pk f.pk %}">{{ f.short_uid }}</a>
+                                    </td>
+                                    <td>{{ f.created_date|date:'Y-m-d H\hi' }}</td>
+                                    <td><a href="{% url 'manager:panel-survey-detail' panel.pk f.link_distribution.pk %}">{{ f.link_distribution.description }}</a></td>
+                                    <td>{{ f.get_contact_mode_display }}</td>
+                                    <td>{{ f.get_target_display }}</td>
+                                    <td>{{ f.subject.description }}</td>
+                                    <td>{{ f.message.description }}</td>
+                                    <td class="table-secondary"></td>
+                                </tr>
+                            {% endwith %}
+                        {% endif %}
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <div class="alert alert-info">{% trans "No message deliveries have been created yet." %}</div>
+        {% endif %}
+    </section>
+{% endblock %}

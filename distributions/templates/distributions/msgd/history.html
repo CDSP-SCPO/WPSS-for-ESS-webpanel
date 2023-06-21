@@ -1,0 +1,22 @@
+{% extends "distributions/base.html" %}
+{% block content %}
+    <h1>Message distribution details</h1>
+    {% include 'distributions/msgd/msgd_details.html' %}
+    <h2>Detailed stats</h2>
+    <table>
+    <tr>
+        <th>Panel</th>
+        <th>ESS ID</th>
+        <th>Status</th>
+        <th>Opened at</th>
+    </tr>
+    {% for record in object_list %}
+        <tr>
+            <td>{{ record.panel }}</td>
+            <td>{{ record.ess_id }}</td>
+            <td>{{ record.status }}</td>
+            <td>{{ record.opened_at|date:"Y-m-d h:m:s"|default_if_none:"Not yet" }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}

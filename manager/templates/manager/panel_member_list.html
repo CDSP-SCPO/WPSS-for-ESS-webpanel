@@ -1,0 +1,117 @@
+{% extends 'manager/panel_detail.html' %}
+{% load qxsms_tags i18n django_bootstrap5 %}
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem 'manager:panel-member-list' panel.pk %}{% trans "Panelists" %}{% endbreadcrumbitem %}
+{% endblock %}
+{% block title_lead %}{% trans "Panelist accounts belonging to this panel" %}{% endblock %}
+{% block content %}
+    <section class="container-fluid mw-1920">
+        <div class="btn-toolbar mb-3">
+            <div class="btn-group">
+                <a href="{% url 'manager:panel-member-create' panel.pk %}" class="btn btn-success">{% icon 'plus-lg' 'me-2' %}{% trans "New panelist" %}</a>
+                <div class="btn-group">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="import-menu-dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        {% icon 'upload' 'me-2' %}{% trans "Import" %}
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="import-menu-dropdown">
+                        <a class="dropdown-item" href="{% url 'manager:panel-member-import' panel.pk %}">{% trans "Panelists" %}</a>
+                        <a class="dropdown-item" href="{% url 'manager:panel-blank-slot-import' panel.pk %}">{% trans "Additional variables" %}</a>
+                    </div>
+                </div>
+                <div class="btn-group">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="export-menu-dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        {% icon 'download' 'me-2' %}{% trans "Export" %}
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="export-menu-dropdown">
+                        <h6 class="dropdown-header">{% trans "Panelists" %}</h6>
+                        <a class="dropdown-item" href="{% url 'manager:panel-member-export' panel.pk %}">{% trans "With default fields" %}</a>
+                        <a class="dropdown-item" href="{% url 'manager:panel-member-export-custom' panel.pk %}">{% trans "With custom fields" %}</a>
+                        <a class="dropdown-item" href="{% url 'manager:panel-member-export' panel.pk %}?all">{% trans "With all fields" %}</a>
+                        <hr class="dropdown-divider">
+                        <a class="dropdown-item" href="{% url 'manager:panel-blank-slot-export' panel.pk %}">{% trans "Additional variables" %}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>
+            Summary of language codes: {% for lang in language_codes %}'{{ lang }}'{% if not forloop.last %} {% endif %}{% endfor %}
+        </p>
+        {% include 'utils/table_filter.html' with form=filter.form counts=counts %}
+        {% if object_list %}
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover bg-white">
+                    <thead class="table-light">
+                        <tr>
+                            <th>
+                                <div class="d-flex justify-content-between align-items-end">
+                                    ID{% include 'utils/table_header_column_sort.html' with order_by='ess_id' %}
+                                </div>
+                            </th>
+                            <th>
+                                <div class="d-flex justify-content-between align-items-end">
+                                    First name{% include 'utils/table_header_column_sort.html' with order_by='first_name' %}
+                                </div>
+                            </th>
+                            <th>
+                                <div class="d-flex justify-content-between align-items-end">
+                                    Last name{% include 'utils/table_header_column_sort.html' with order_by='last_name' %}
+                                </div>
+                            </th>
+                            <th>
+                                <div class="d-flex justify-content-between align-items-end">
+                                    Sex{% include 'utils/table_header_column_sort.html' with order_by='sex' %}
+                                </div>
+                            </th>
+                            <th>
+                                <div class="d-flex justify-content-between align-items-end">
+                                    Email{% include 'utils/table_header_column_sort.html' with order_by='email' %}
+                                </div>
+                            </th>
+                            <th>
+                                <div class="d-flex justify-content-between align-items-end">
+                                    Phone{% include 'utils/table_header_column_sort.html' with order_by='phone' %}
+                                </div>
+                            </th>
+                            <th>
+                                <div class="d-flex justify-content-between align-items-end">
+                                    Language{% include 'utils/table_header_column_sort.html' with order_by='language' %}
+                                </div>
+                            </th>
+                            <th>State</th>
+                            <th>Additional variables</th>
+                            <th>Edit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for panelist in object_list %}
+                        <tr>
+                            <td>{{ panelist.panelist_id }}</td>
+                            <td>{{ panelist.first_name }}</td>
+                            <td>{{ panelist.last_name }}</td>
+                            <td>{{ panelist.get_sex_display }}</td>
+                            <td>{{ panelist.email }}</td>
+                            <td>{{ panelist.phone }}</td>
+                            <td><span class="badge rounded-pill bg-secondary">{{ panelist.language|upper }}</span></td>
+                            <td><span class="badge rounded-pill {{ panelist.state_label.1 }}">{{ panelist.state_label.0 }}</span></td>
+                            <td>
+                                <a class="btn btn-sm btn-info" href="{% url 'manager:blankslotvalue-list' panelist.pk %}">
+                                    {% icon 'search' %}
+                                </a>
+                            </td>
+                            <td>
+                                <a class="btn btn-sm btn-info" href="{% url 'manager:panel-member-update' panelist.pk %}">
+                                    {% icon 'pen' %}
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% bootstrap_pagination page=page_obj url=request.get_full_path %}
+        {% else %}
+            <div class="alert alert-info">{% trans "No panelist" %}</div>
+        {% endif %}
+    </section>
+{% endblock %}

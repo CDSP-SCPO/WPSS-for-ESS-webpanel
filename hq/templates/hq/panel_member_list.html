@@ -1,0 +1,170 @@
+{% extends 'hq/base.html' %}
+{% load qxsms_tags i18n django_bootstrap5 %}
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem 'hq:panelmember-list' %}{% trans "Panelists" %}{% endbreadcrumbitem %}
+{% endblock %}
+{% block title_lead %}{% trans "All panelist accounts currently managed by the application" %}{% endblock %}
+{% block content %}
+    <section class="container mw-1920">
+        <div class="btn-toolbar mb-3">
+            <div class="btn-group me-2">
+                <div class="btn-group">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="import-menu-dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        {% icon 'upload' 'me-2' %}{% trans "Import" %}
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="import-menu-dropdown">
+                        <a class="dropdown-item" href="{% url 'hq:blank-slot-import' %}">{% trans "Additional variables" %}</a>
+                    </div>
+                </div>
+                <div class="btn-group">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="export-menu-dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        {% icon 'download' 'me-2' %}{% trans "Export" %}
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="export-menu-dropdown">
+                        <a class="dropdown-item" href="{% url 'hq:panelist-export' %}">{% trans "Panelists" %}</a>
+                        <a class="dropdown-item" href="{% url 'hq:blank-slot-export' %}">{% trans "Additional variables" %}</a>
+                    </div>
+                </div>
+            </div>
+            <a class="btn btn-info ms-auto" href="{% url 'hq:blankslot-list' %}">{% trans "Manage additional variables" %}</a>
+        </div>
+        <p>
+            Summary of language codes: {% for lang in language_codes %}'{{ lang }}'{% if not forloop.last %} {% endif %}{% endfor %}
+        </p>
+        {% include 'utils/table_filter.html' with form=filter.form counts=counts %}
+        {% if object_list %}
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover bg-white">
+                    <thead class="table-light">
+                        <tr>
+                            <th>
+                                <div class="d-flex justify-content-between align-items-end">
+                                    ID{% include 'utils/table_header_column_sort.html' with order_by='ess_id' %}
+                                </div>
+                            </th>
+                            <th>
+                                <div class="d-flex justify-content-between align-items-end">
+                                    Age{% include 'utils/table_header_column_sort.html' with order_by='year_of_birth' %}
+                                </div>
+                            </th>
+                            <th>
+                                <div class="d-flex justify-content-between align-items-end">
+                                    Sex{% include 'utils/table_header_column_sort.html' with order_by='sex' %}
+                                </div>
+                            </th>
+                            <th>
+                                <div class="d-flex justify-content-between align-items-end">
+                                    Language{% include 'utils/table_header_column_sort.html' with order_by='language' %}
+                                </div>
+                            </th>
+                            <th>
+                                <div class="d-flex justify-content-between align-items-end">
+                                    Email{% include 'utils/table_header_column_sort.html' with order_by='email' %}
+                                </div>
+                            </th>
+                            <th>
+                                <div class="d-flex justify-content-between align-items-end">
+                                    Phone{% include 'utils/table_header_column_sort.html' with order_by='phone' %}
+                                </div>
+                            </th>
+                            <th>
+                                <div class="d-flex justify-content-between align-items-end">
+                                    Address{% include 'utils/table_header_column_sort.html' with order_by='address' %}
+                                </div>
+                            </th>
+                            <th>
+                                <div class="d-flex justify-content-between align-items-end">
+                                    Internet use{% include 'utils/table_header_column_sort.html' with order_by='internet_use' %}
+                                </div>
+                            </th>
+                            <th>
+                                <div class="d-flex justify-content-between align-items-end">
+                                    Opt out{% include 'utils/table_header_column_sort.html' with order_by='is_opt_out' %}
+                                </div>
+                            </th>
+                            <th>
+                                <div class="d-flex justify-content-between align-items-end">
+                                    Opt out date{% include 'utils/table_header_column_sort.html' with order_by='opt_out_date' %}
+                                </div>
+                            </th>
+                            <th>
+                                <div class="d-flex justify-content-between align-items-end">
+                                    Opt out reason{% include 'utils/table_header_column_sort.html' with order_by='opt_out_reason' %}
+                                </div>
+                            </th>
+                            <th>
+                                <div class="d-flex justify-content-between align-items-end">
+                                    Delete contact data{% include 'utils/table_header_column_sort.html' with order_by='delete_contact_data' %}
+                                </div>
+                            </th>
+                            <th>
+                                <div class="d-flex justify-content-between align-items-end">
+                                    Delete survey data{% include 'utils/table_header_column_sort.html' with order_by='delete_survey_data' %}
+                                </div>
+                            </th>
+                            <th>
+                                <div class="d-flex justify-content-between align-items-end">
+                                    Out of country{% include 'utils/table_header_column_sort.html' with order_by='out_of_country' %}
+                                </div>
+                            </th>
+                            <th>
+                                <div class="d-flex justify-content-between align-items-end">
+                                    No incentive{% include 'utils/table_header_column_sort.html' with order_by='no_incentive' %}
+                                </div>
+                            </th>
+                            <th>
+                                <div class="d-flex justify-content-between align-items-end">
+                                    No letter{% include 'utils/table_header_column_sort.html' with order_by='no_letter' %}
+                                </div>
+                            </th>
+                            <th>
+                                <div class="d-flex justify-content-between align-items-end">
+                                    No text{% include 'utils/table_header_column_sort.html' with order_by='no_text' %}
+                                </div>
+                            </th>
+                            <th>
+                                <div class="d-flex justify-content-between align-items-end">
+                                    No email{% include 'utils/table_header_column_sort.html' with order_by='no_email' %}
+                                </div>
+                            </th>
+                            <th>Additional variables</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for panelist in object_list %}
+                        <tr>
+                            <td>{{ panelist.panelist_id }}</td>
+                            <td>{{ panelist.age }}</td>
+                            <td>{{ panelist.get_sex_display }}</td>
+                            <td><span class="badge rounded-pill bg-secondary">{{ panelist.language|upper }}</span></td>
+                            <td>{% include "hq/utils/member_list_boolean.html" with panelist_attribute=panelist.email %}</td>
+                            <td>{% include "hq/utils/member_list_boolean.html" with panelist_attribute=panelist.phone %}</td>
+                            <td>{% include "hq/utils/member_list_boolean.html" with panelist_attribute=panelist.address %}</td>
+                            <td>{{ panelist.get_internet_use_display }}</td>
+                            <td>{% include "hq/utils/member_list_boolean.html" with panelist_attribute=panelist.is_opt_out %}</td>
+                            <td>{{ panelist.opt_out_date }}</td>
+                            <td>{{ panelist.opt_out_reason }}</td>
+                            <td>{% include "hq/utils/member_list_boolean.html" with panelist_attribute=panelist.delete_contact_data %}</td>
+                            <td>{% include "hq/utils/member_list_boolean.html" with panelist_attribute=panelist.delete_survey_data %}</td>
+                            <td>{% include "hq/utils/member_list_boolean.html" with panelist_attribute=panelist.out_of_country %}</td>
+                            <th>{% include "hq/utils/member_list_boolean.html" with panelist_attribute=panelist.no_incentive %}</th>
+                            <td>{% include "hq/utils/member_list_boolean.html" with panelist_attribute=panelist.no_letter %}</td>
+                            <td>{% include "hq/utils/member_list_boolean.html" with panelist_attribute=panelist.no_text %}</td>
+                            <td>{% include "hq/utils/member_list_boolean.html" with panelist_attribute=panelist.no_email %}</td>
+                            <td>
+                                <a class="btn btn-sm btn-info" href="{% url 'hq:blankslotvalue-list' panelist.pk %}">
+                                    {% icon 'search' %}
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% bootstrap_pagination page=page_obj url=request.get_full_path %}
+        {% else %}
+            <div class="alert alert-info">{% trans "No panelist" %}</div>
+        {% endif %}
+    </section>
+{% endblock %}

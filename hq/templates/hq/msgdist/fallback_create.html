@@ -1,0 +1,25 @@
+{% extends 'hq/base.html' %}
+{% load qxsms_tags django_bootstrap5 i18n %}
+{% block breadcrumb %}
+    {{ block.super }}
+    {% breadcrumbitem 'hq:msg-distribution-list' %}{% trans "Message deliveries" %}{% endbreadcrumbitem %}
+    {% breadcrumbitem 'hq:msg-distribution-detail' object.pk %}{% trans "Details" %}{% endbreadcrumbitem %}
+    {% breadcrumbitem 'hq:msg-distribution-fallback-create' object.pk %}{% trans "Add fallback message" %}{% endbreadcrumbitem %}
+{% endblock %}
+{% block title_lead %}
+    {% blocktrans %}
+        Select a fallback message that will be sent to panelists that are not reachable using the primary contact mode.
+    {% endblocktrans %}
+{% endblock %}
+{% block content %}
+    <section class="container">
+        <h1>Primary message delivery</h1>
+        {% include "hq/msgdist/msgdist_details.html" %}
+        <h1>Fallback message template</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <button type="submit" class="btn btn-success">Add fallback</button>
+        </form>
+    </section>
+{% endblock %}
