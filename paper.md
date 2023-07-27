@@ -63,7 +63,7 @@ WPSS enables a centralized management of survey fielding tasks based on user rol
 
 # Statement of need
 
-To fill the need of cross-national web surveys,
+To meet the need of cross-national web surveys,
 Researchers are in great demand of data collected through surveys, especially for the Social Sciences and Humanities. Online or web surveys are a way to start collecting data in an efficient way, regarding costs and time, compared for example to interviews. Online surveys are also conduced within harmonised and comparative studies such as SHARE, the Survey of Health, Ageing and Retirement in Europe, GGP, the Generations and Gender Programme, EVS, the European Values Study, or Pew Research Center international surveys.
 
 The global service provided should allow to manage respondents samples (importing, managing and exporting respondents' contact data), design and translate questionnaires, draft and translate messages, distribute questionnaires to respondents using messages (both in relevant language version). Respondents should be able to connect to a web application to access questionnaires alternatively, a so-called "panelist portal".
@@ -81,7 +81,7 @@ WPSS has been used by the "The CROss-National Online Survey, second version" led
 
 # Acknowledgements
 
-This project has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreements No 871063. DOI:10.3030/871063 and No 823782 DOI:10.3030/823782.
+This project has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreements No 871063. [DOI:10.3030/871063](https://doi.org/10.3030/871063) and No 823782 [DOI:10.3030/823782](https://doi.org/10.3030/823782).
 
 # References
 Rory Fitzgerald, Gianmaria Bottoni, Curtis Jessop, Øyvind Straume, Quentin Agren, Geneviève Michaud, & Nicolas Sauger. (2019). SSHOC D4.1 A sample management system for cross- national web survey (V2.6). Zenodo. https://doi.org/10.5281/zenodo.4436727
