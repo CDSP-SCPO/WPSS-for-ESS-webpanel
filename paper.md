@@ -9,47 +9,47 @@ tags:
   - Quantitative Survey
   - Online panel
 authors:
- - name: Quentin Agren
+  - name: Quentin Agren
     orcid:
     equal-contrib: true
     affiliation: 1
- - name: Malaury Lemaître-Salmon
+  - name: Malaury Lemaître-Salmon
     orcid: 0000-0001-6263-9019
     equal-contrib: true
     affiliation: 1
- - name: Genevieve Michaud
+  - name: Genevieve Michaud
     orcid: 0000-0001-9288-2888
     equal-contrib: true
     affiliation: 1
- - name: Baptiste Rouxel
+  - name: Baptiste Rouxel
     orcid: 0000-0002-4162-8326
     equal-contrib: true
     affiliation: 1
- - name: Tom Villette
+  - name: Tom Villette
     orcid: 0000-0002-7249-4228
     equal-contrib: true
     affiliation: 1
- - name: Jimmy Barreau
+  - name: Jimmy Barreau
     orcid:
     equal-contrib: false
     affiliation: 1
- - name: Simon Dellac
+  - name: Simon Dellac
     orcid:
     equal-contrib: false
     affiliation: 1
- - name: Lothaire Epee
+  - name: Lothaire Epee
     orcid:
     equal-contrib: false
     affiliation: 1
- - name: El Hassane Gargem
+  - name: El Hassane Gargem
     orcid:
     equal-contrib: false
     affiliation: 1
- - name: Keenen Remir
+  - name: Keenen Remir
     orcid:
     equal-contrib: false
     affiliation: 1
-  
+
 affiliations:
  - name: Sciences Po, Centre de données Socio-Politiques (CDSP), CNRS
    index: 1
@@ -71,7 +71,7 @@ The global service provided should allow to manage respondents samples (importin
 A share of the features above can be provided by existing survey platform, the term "survey platform" refers to the software application used to design web questionnaires and publish them to a set of panellists that can use the platform to read the questions and then submit their answers online. There is no shortage of existing web survey platforms, generally, along with user-friendly questionnaire design tools, they allow study coordinators to manage lists of contacts to which surveys may be distributed through different communication channels, often emails and Short Text Messages. We selected Qualtrics, to be integrated using the Qualtrics API to a custom web application providing additional features.
 
 To maximise survey response rates, study coordinators may want to freely intertwine contact modes during fieldwork: for example, sending an email invite followed by a Short Text Message reminder, or the other way round. This feature is commonly not available among available web survey platforms (Fitzgerald, Bottoni, Straume, Agren, Michaud and Sauger, 2019). The study coordination also needs centralised dashboards to monitor the study, getting an eagle-eye view of the study indicators related to messages delivery performance and survey completion (and response rates).
-In addition, the service should comply with the General Data Protection Regulation (GDPR), a regulation in force in the European Union. Specifically, data flows should be minimised (either personal contact data or survey data). Data should be exchanged and stored encrypted, including on the survey patform. Survey data and contact data should be accessible only to distinct and authorized roles : on the survey platform.     
+In addition, the service should comply with the General Data Protection Regulation (GDPR), a regulation in force in the European Union. Specifically, data flows should be minimised (either personal contact data or survey data). Data should be exchanged and stored encrypted, including on the survey patform. Survey data and contact data should be accessible only to distinct and authorized roles : on the survey platform.
 
 We focused on designing and providing a web application that would complement the chosen survey platform and provide the additional feature needed (message mode flexibility, global dashboards, personal data control, panelist portal).
 
