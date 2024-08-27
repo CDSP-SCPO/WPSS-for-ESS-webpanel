@@ -143,3 +143,82 @@ In production, the CSS files are copied directly to the `/qxsms/static/` folder 
 [Generating individual links](./docs/user/src/hq/fieldwork.md) for a survey creates a snapshot (Qualtrics transaction) of the information about the panelists used in Qualtrics: contact information (name, email, phone, ...) + [embedded data](./docs/user/src/survey/survey-creation.md). Each time the links are used to send a message, the panelist information used is taken from this snapshot. If panelists are updated after the creation of the links, the state of this information will not update. The new information will only be included in future link creations, when new snapshots are made.
 
 All links are stored in the WPSS database, and they are also available as embedded data on Qualtric side, with other variables (see [survey creation](./docs/user/src/survey/survey-creation.md)).
+
+
+
+### Use Case 1: Managing a Multi-Country Study
+
+**User Role**: Study Coordinator
+
+**Scenario**: A study coordinator is tasked with overseeing a cross-national survey.
+
+**Steps**:
+
+1.  **Initial Setup**:
+    
+    -   The study coordinator logs into WPSS and creates user accounts for sample managers in each participating country.
+    -   National samples are imported, and national coordinators are assigned to manage these samples.
+2.  **Questionnaire and Messaging**:
+    
+    -   The coordinator reviews available surveys and tracks translation progress through WPSS.
+    -   Contact messages (both emails and SMS) are drafted and their translation status monitored.
+3.  **Fieldwork Management**:
+    
+    -   The survey is published to the national samples.
+    -   Initial email invitations and subsequent SMS reminders are triggered to increase response rates.
+    -   Survey completion indicators are monitored throughout the fieldwork.
+4.  **Data Management**:
+    
+    -   Additional sample variables are imported and a subset of panelist data fields is exported for analysis.
+
+**Outcome**: The study coordinator successfully manages the survey across multiple countries, ensuring efficient fieldwork management and high response rates with the help of WPSS.
+
+----------
+
+### Use Case 2: Coordinating National Sample Data
+
+**User Role**: Sample Manager
+
+**Scenario**: A sample manager is responsible for handling data within a national sample.
+
+**Steps**:
+
+1.  **Data Import and Management**:
+    
+    -   Panelist contact data for the national sample is imported using a CSV file.
+    -   Panelist records are viewed and updated as needed, either individually or in bulk, and the updated sample data is exported for postal mail merging.
+2.  **Fieldwork Monitoring**:
+    
+    -   The effective distribution of survey invitations is monitored.
+    -   Bounced messages are tracked, and contact details are adjusted as needed.
+3.  **Panelist Portal**:
+    
+    -   Custom help text is provided for the panelist portal to assist respondents with any issues during the survey.
+
+**Outcome**: The sample manager effectively manages the national sample’s data and fieldwork monitoring, contributing to the success of the study. WPSS provides the tools needed for efficient data and communication management.
+
+----------
+
+### Use Case 3: Preparing and Publishing a Survey
+
+**User Role**: Survey Manager
+
+**Scenario**: A survey manager is preparing a new survey for publication.
+
+**Steps**:
+
+1.  **Survey Creation**:
+    
+    -   Security parameters are defined to control survey invitations.
+    -   Partial responses are managed to prevent data loss and ensure accurate response rates.
+    -   WPSS data is embedded into the survey for data merging purposes.
+    -   Survey style is customized and paradata collection is set up.
+2.  **Collaboration**:
+    
+    -   Translators are invited to ensure the survey is available in multiple languages.
+    -   Data archive staff are invited to access the survey dataset.
+3.  **Finalization**:
+    
+    -   The survey is shared with WPSS for final integration and publication.
+
+**Outcome**: The survey manager prepares and publishes a well-configured survey, ready for distribution and data collection. WPSS integrates smoothly with the survey platform to ensure all settings and data are correctly managed.
