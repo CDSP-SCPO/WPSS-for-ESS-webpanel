@@ -62,20 +62,21 @@ Web Panel Sample Service (WPSS) is a web application integrated with the Qualtri
 
 # Statement of need
 
-Cross-national web surveys are crucial for research, particularly in the Social Sciences and Humanities. Collecting data through online surveys is an efficient method, both in terms of cost and time, especially when compared to alternatives like interviews. These surveys are often conducted within harmonized and comparative studies, such as SHARE (Survey of Health, Ageing and Retirement in Europe), GGP (Generations and Gender Programme), EVS (European Values Study), or Pew Research Center international surveys.
+Cross-national web surveys are critical tools in research, especially within the Social Sciences and Humanities. These surveys enable the collection of harmonized data across multiple countries, providing valuable insights into comparative social phenomena. However, managing such complex surveys presents significant challenges, particularly in terms of efficiently handling respondent samples, ensuring accurate translation and distribution of questionnaires, and maintaining compliance with strict data protection regulations like the GDPR.
 
-However, managing such surveys presents several challenges:
+Challenges and WPSS Solutions:
 
-- Respondent Sample Management: Importing, managing, and exporting respondents' contact data.
-- Questionnaire Design and Translation: Designing and translating questionnaires, as well as drafting and translating messages.
-- Questionnaire Distribution: Distributing questionnaires to respondents using messages, ensuring they receive the correct language version.
-- Panelist Access: Respondents should have access to a web application, known as the "panelist portal," where they can complete the questionnaires.
+- Managing Respondent Samples: In large-scale studies, coordinating respondent data across multiple countries can be daunting. WPSS facilitates this by enabling centralized management of respondent contact data, while still allowing decentralized handling to ensure privacy compliance. This dual approach simplifies the complex logistics of cross-national studies.
 
-While existing survey platforms provide some of these features, they often lack flexibility, particularly in terms of contact mode management. For example, study coordinators may wish to alternate between sending email invitations and SMS reminders, a feature not commonly available on most platforms (Fitzgerald et al., 2019). Additionally, centralized dashboards are essential for monitoring study progress, including message delivery performance and survey completion rates.
+- Flexible Communication: Traditional survey platforms often lack the flexibility needed for multi-modal communication. For example, a study coordinator might want to send an initial email invitation followed by an SMS reminder. WPSS, integrated with Qualtrics via its API, overcomes this limitation by offering a customizable messaging system that adapts to various communication strategies, thereby maximizing response rates.
 
-To address these needs, WPSS was developed as a complementary web application that integrates with Qualtrics via its API. WPSS enhances the capabilities of the survey platform by offering flexible messaging modes, global dashboards, and strict control over personal data, ensuring compliance with the General Data Protection Regulation (GDPR). This includes minimizing data flows and ensuring that both survey and contact data are encrypted and accessible only to authorized roles.
+- Data Protection Compliance: Ensuring GDPR compliance is paramount in cross-national surveys. WPSS minimizes data flows and ensures that personal contact data and survey data are encrypted and accessible only to authorized roles. This feature is particularly critical in maintaining the trust of respondents and the integrity of the study.
 
-By focusing on these aspects, WPSS effectively meets the complex demands of cross-national web surveys, providing significant value to researchers in this field.
+## Use Case Examples:
+
+- Use Case 1: In a European  Study , a research team need to distribute surveys in multiple languages across 15 countries. WPSS enable them to design, translate, and distribute the survey through a combination of emails and SMS, achieving a higher response rate compared to previous methodologies.
+
+- Use Case 2: A survey conducted across different age groups in the GGP required strict data protection measures due to the sensitivity of the information collected. WPSS ensure that all data are encrypted and managed according to GDPR standards, while also providing real-time dashboards for monitoring the progress of the survey.
 
 # Mentions
 
