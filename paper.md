@@ -66,10 +66,10 @@ Cross-national web surveys are crucial for research, particularly in the Social 
 
 However, managing such surveys presents several challenges:
 
-    Respondent Sample Management: Importing, managing, and exporting respondents' contact data.
-    Questionnaire Design and Translation: Designing and translating questionnaires, as well as drafting and translating messages.
-    Questionnaire Distribution: Distributing questionnaires to respondents using messages, ensuring they receive the correct language version.
-    Panelist Access: Respondents should have access to a web application, known as the "panelist portal," where they can complete the questionnaires.
+- Respondent Sample Management: Importing, managing, and exporting respondents' contact data.
+- Questionnaire Design and Translation: Designing and translating questionnaires, as well as drafting and translating messages.
+- Questionnaire Distribution: Distributing questionnaires to respondents using messages, ensuring they receive the correct language version.
+- Panelist Access: Respondents should have access to a web application, known as the "panelist portal," where they can complete the questionnaires.
 
 While existing survey platforms provide some of these features, they often lack flexibility, particularly in terms of contact mode management. For example, study coordinators may wish to alternate between sending email invitations and SMS reminders, a feature not commonly available on most platforms (Fitzgerald et al., 2019). Additionally, centralized dashboards are essential for monitoring study progress, including message delivery performance and survey completion rates.
 
